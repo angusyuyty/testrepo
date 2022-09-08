@@ -1,0 +1,25 @@
+﻿
+    <MatDialogTitle>
+       
+    </MatDialogTitle>
+    <MatDialogContent>
+        <fieldset>
+            <div class="form-group">
+                <MatTextField  @bind-Value="RoleName" Disabled="@isCurrentRoleReadOnly" Label="Role Name" Icon="add" IconTrailing="true" FullWidth="true" Required="true"></MatTextField>
+            </div>
+        </fieldset>
+        <MatTable  Class="mat-elevation-z5, mdc-table-allow" ShowPaging="false" PageSize="@int.MaxValue" Items="@permissionsSelections">
+            <MatTableHeader>
+                <th>Permissions</th>
+                <th>Allow</th>
+            </MatTableHeader>
+            <MatTableRow>
+                <td>@context.DisplayValue</td>
+                <td><MatCheckbox TValue="bool" @bind-Value="@context.Selected"></MatCheckbox></td>
+            </MatTableRow>
+        </MatTable>
+    </MatDialogContent>
+    <MatDialogActions>
+        <MatButton OnClick="@CancelUpdate">Cancel</MatButton>
+        <MatButton OnClick="@UpsertRole">Save</MatButton>
+    </MatDialogActions>

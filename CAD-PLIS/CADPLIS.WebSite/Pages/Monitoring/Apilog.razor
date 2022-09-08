@@ -1,0 +1,42 @@
+﻿@page "/monitoring/apilog"
+
+
+<h3>Apilog</h3>
+<MatButton OnClick="@(()=>showMore=!showMore)" >@(showMore==true? "show less":"show more")</MatButton>
+@if (auditInfoDtos == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+
+    <MatTable Items="@auditInfoDtos.data" class="mat-elevation-z5" ShowPaging="false" Striped="true"  PageSize="@PageSize">
+        <MatTableHeader>
+            <th style="width:10%">Date/Time</th>
+            <th style="width:10%">IP Address</th>
+            <th style="width:10%">Method</th>
+            <th style="width:10%">Response Time</th>
+            <th style="width:10%">UserId</th>
+            <th style="width:12%">Path</th>
+            @if (showMore == true) {
+            <th>Browser</th>
+            }
+
+        </MatTableHeader>
+        <MatTableRow Context="auditRow">
+            <td>@auditRow.CreatedTime</td>
+            <td>@auditRow.IpAddress</td>
+            <td>@auditRow.Method</td>
+            <td>@auditRow.ExecuteTime</td>
+            <td>@auditRow.Operator</td>
+            <td>api/@(auditRow.Controller+"/"+auditRow.ActionName)</td>
+            @if (showMore == true)
+            {
+                <td>@auditRow.Browser</td>
+            }
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+}

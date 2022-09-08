@@ -1,0 +1,115 @@
+﻿<MatNavMenu Class="app-sidebar">
+    @foreach (var item in navMenuList.Children)
+    {
+        if (item.Children.Count()==0)
+        {
+            <MatNavItem Href="@item.RouteUrl"><MatIcon Icon="@item.Icon"></MatIcon><span class="miniHover">@item.MenuName</span></MatNavItem>
+        }
+        else
+        {
+            <MatNavSubMenu>
+                <MatNavSubMenuHeader Title="@item.MenuName">
+                    <MatNavItem AllowSelection="false">
+                        <MatIcon Icon="@item.Icon" /><span class="miniHover">@item.MenuName</span>
+                    </MatNavItem>
+                </MatNavSubMenuHeader>
+                <MatNavSubMenuList>
+                    @foreach (var itemsubchild in item.Children)
+                    {
+
+                        @if (itemsubchild.Children.Count()==0)
+                        {
+                            <MatNavItem Href="@itemsubchild.RouteUrl"><MatIcon Icon="@itemsubchild.Icon"></MatIcon><span class="miniHover">@itemsubchild.MenuName</span></MatNavItem>
+
+                        }
+                        else
+                        {
+
+                            <MatNavSubMenu>
+                                <MatNavSubMenuHeader Title="@itemsubchild.MenuName">
+                                    <MatNavItem AllowSelection="false">
+                                        <MatIcon Icon="@item.Icon" /><span class="miniHover">@itemsubchild.MenuName</span>
+                                    </MatNavItem>
+                                </MatNavSubMenuHeader>
+                                <MatNavSubMenuList>
+                                    @foreach (var itemchild in itemsubchild.Children)
+                                    {
+                                        <MatNavItem Href="@itemchild.RouteUrl"><MatIcon Icon="@itemchild.Icon"></MatIcon><span class="miniHover">@itemchild.MenuName</span></MatNavItem>
+                                    }
+                                </MatNavSubMenuList>
+                            </MatNavSubMenu>
+
+                        }
+
+                    }
+                </MatNavSubMenuList>
+            </MatNavSubMenu>
+        }
+    }
+    @*<MatNavItem Href="/" NavLinkMatch="NavLinkMatch.All"><MatIcon Icon="home"></MatIcon><span class="miniHover">Home</span></MatNavItem>
+        <MatNavItem Href="counter"><MatIcon Icon="add"></MatIcon><span class="miniHover">Counter</span></MatNavItem>
+        <MatNavItem Href="fetchdata"><MatIcon Icon="list"></MatIcon><span class="miniHover">Fetch Data</span></MatNavItem>
+        <MatNavItem Href="upload"><MatIcon Icon="cloud_upload"></MatIcon><span class="miniHover">upload Data</span></MatNavItem>
+        <MatNavItem Href="Menu/navmenu"><MatIcon Icon="menu"></MatIcon><span class="miniHover">Nav Menu</span></MatNavItem>
+        <MatNavItem Href="Menu/MenuHorizontal"><MatIcon Icon="menu"></MatIcon><span class="miniHover">MenuHorizontal</span></MatNavItem>
+        <MatNavSubMenu>
+            <MatNavSubMenuHeader Title="WorkFlow">
+                <MatNavItem AllowSelection="false">
+                    <MatIcon Icon="folder" /><span class="miniHover">WorkFlow</span>
+                </MatNavItem>
+            </MatNavSubMenuHeader>
+            <MatNavSubMenuList>
+                <MatNavItem Href="Designer/Index" @attributes="@(new Dictionary<string, object> { { "target", "_bank" } })"><MatIcon Icon="flip"></MatIcon><span class="miniHover">Workflow Designer</span></MatNavItem>
+                <MatNavItem Href="WorkFlow/WorkFlow"><MatIcon Icon="list"></MatIcon><span class="miniHover">WorkFlow</span></MatNavItem>
+                <MatNavItem Href="WorkFlow/Inbox"><MatIcon Icon="list"></MatIcon><span class="miniHover">Inbox</span></MatNavItem>
+            </MatNavSubMenuList>
+        </MatNavSubMenu>
+
+        <MatNavSubMenu>
+            <MatNavSubMenuHeader Title="UserManage">
+                <MatNavItem AllowSelection="false">
+                    <MatIcon Icon="folder" /><span class="miniHover">User Manage</span>
+                </MatNavItem>
+            </MatNavSubMenuHeader>
+            <MatNavSubMenuList>
+                <MatNavItem Href="User/UserInfo"><MatIcon Icon="list"></MatIcon><span class="miniHover">User</span></MatNavItem>
+                <MatNavItem Href="User/UserRolesInfo"><MatIcon Icon="list"></MatIcon><span class="miniHover">Role</span></MatNavItem>
+                <MatNavItem Href="/Group/Index"><MatIcon Icon="list"></MatIcon><span class="miniHover">Group</span></MatNavItem>
+            </MatNavSubMenuList>
+        </MatNavSubMenu>
+        <MatNavSubMenu>
+            <MatNavSubMenuHeader Title="Role Manage">
+                <MatNavItem AllowSelection="false">
+                    <MatIcon Icon="folder" /><span class="miniHover">User Role Manage</span>
+                </MatNavItem>
+            </MatNavSubMenuHeader>
+            <MatNavSubMenuList>
+                <MatNavItem Href="User/UserRolesInfo"><MatIcon Icon="list"></MatIcon><span class="miniHover">User Role Maintenance</span></MatNavItem>
+            </MatNavSubMenuList>
+        </MatNavSubMenu>
+        <MatNavSubMenu>
+            <MatNavSubMenuHeader Title="Monitoring">
+                <MatNavItem AllowSelection="false">
+                    <MatIcon Icon="folder" /><span class="miniHover">Monitoring</span>
+                </MatNavItem>
+            </MatNavSubMenuHeader>
+            <MatNavSubMenuList>
+                <MatNavItem Href="monitoring/apilog"><MatIcon Icon="list"></MatIcon><span class="miniHover">Api Audit Log</span></MatNavItem>
+                <MatNavItem Href="Log/DataLogRecord"><MatIcon Icon="list"></MatIcon><span class="miniHover">DataLogRecord</span></MatNavItem>
+            </MatNavSubMenuList>
+        </MatNavSubMenu>
+        *@
+
+
+</MatNavMenu>
+@code
+{
+    bool isshow = false;
+}
+<style>
+    .mdc-list-item--selected, .mdc-list-item--activated {
+        color: var(--mdc-theme-primary, #6200ee) !important;
+    }
+</style>
+
+

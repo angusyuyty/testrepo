@@ -1,0 +1,162 @@
+﻿<section id="personalInformationForm">
+    <div class="row formHeader my-3">
+        <p>
+            Please enter your current employment information (if applicable)
+        </p>
+    </div>
+    <EditForm Model="model">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <div class="row">
+                        <label for="empStatusInput">Employment status*</label>
+                    </div>
+                    <div class="row">
+                        <RadioButtonInput Type="EmploymentStatus" Class="flex-row" GetSelectedValue="@GetSelectedValue"></RadioButtonInput>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (model.EmpStatus == "Employed")
+        {
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="industryOfEmployerInput">Industry of employer</label>
+                        <input type="text" class="form-control" id="industryOfEmployerInput" @bind-value="model.Industry" @onfocusout="validation">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="employerNameInput">Employer Name</label>
+                        <input type="text" class="form-control" id="employerNameInput" @bind-value="model.EmployerName" @onfocusout="validation">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="staffCardNumberInput">Staff Card Number</label>
+                        <input type="text" class="form-control" id="staffCardNumberInput" @bind-value="model.StaffNumber" @onfocusout="validation">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="staffCardProofInput">Proof of Staff Card*</label>
+                        @*<InputFile OnChange="@UploadStaffCardProof" />*@
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="employedFromInput">Employed from*</label>
+                        <input type="text" class="form-control" id="employedFromInput" @bind-value="model.EmployedFrom" @onfocusout="validation">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        }
+    </EditForm>
+    <div class="row" id="nextBtnDiv">
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-secondary w-100">Previous</button>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-primary w-100" id="nextBtn">Next</button>
+        </div>
+    </div>
+</section>
+
+<style>
+</style>
+
+@code {
+        [Parameter]
+        public Action OnPrevActionClicked { get; set; }
+        [Parameter]
+        public Action OnNextActionClicked { get; set; }
+    private bool isValid { get; set; } = false;
+    private List<String> empStatusList = new List<String>();
+    private EmploymentInformationFormModel model { get; set; } = new EmploymentInformationFormModel();
+
+    #region Dummy Data
+    private void initDummyData()
+    {
+        empStatusList = new List<string>();
+        empStatusList.Add("Employed");
+        empStatusList.Add("Not specified");
+    }
+    #endregion Dummy Data
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        initDummyData();
+    }
+
+    private void validation()
+    {
+        isValid = false;
+        //if (!String.IsNullOrEmpty(LoginId) && !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(RePassword) && Password == RePassword)
+        if (1 == 1)
+        {
+            isValid = true;
+        }
+    }
+
+    private void OnNextBtnClicked()
+    {
+        validation();
+        if (isValid)
+        {
+            OnNextActionClicked?.Invoke();
+        }
+    }
+
+    private void GetSelectedValue(String value)
+    {
+        model.EmpStatus = value;
+        Console.WriteLine("## GetSelectedValue: " + value);
+    }
+
+    //#region Setting
+    //private List<IBrowserFile> loadedFiles = new();
+    //private long maxFileSize = 1024 * 15;
+    //private int maxAllowedFiles = 3;
+    //private bool isLoading;
+    //#endregion Setting
+
+    //private async Task UploadStaffCardProof(InputFileChangeEventArgs e)
+    //{
+    //    isLoading = true;
+    //    loadedFiles.Clear();
+
+    //    foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+    //    {
+    //        try
+    //        {
+    //            loadedFiles.Add(file);
+
+    //            var trustedFileNameForFileStorage = Path.GetRandomFileName();
+    //            //var path = Path.Combine(Environment.ContentRootPath,
+    //            //        Environment.EnvironmentName, "unsafe_uploads",
+    //            //        trustedFileNameForFileStorage);
+    //            var path = trustedFileNameForFileStorage;
+
+    //            await using FileStream fs = new(path, FileMode.Create);
+    //            await file.OpenReadStream(maxFileSize).CopyToAsync(fs);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            //Logger.LogError("File: {Filename} Error: {Error}", file.Name, ex.Message);
+    //            Console.WriteLine("File: {Filename} Error: {Error}", file.Name, ex.Message);
+    //        }
+    //    }
+    //    isLoading = false;
+    //}
+}

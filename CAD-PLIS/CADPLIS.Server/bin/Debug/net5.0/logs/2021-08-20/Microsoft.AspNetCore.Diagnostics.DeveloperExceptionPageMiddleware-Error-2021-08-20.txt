@@ -1,0 +1,66 @@
+2021-08-20 09:18:05.4178 | An unhandled exception has occurred while executing the request. Role In Use Warning 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:18:22.9574 | An unhandled exception has occurred while executing the request. Role In Use Warning 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:19:38.2493 | An unhandled exception has occurred while executing the request. Role In Use Warning 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:20:16.7928 | An unhandled exception has occurred while executing the request. Role In Use Warning 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:20:30.1563 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:20:33.4921 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:20:37.0456 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:20:40.4087 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 09:43:30.2186 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 09:43:52.9621 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 13:57:32.6072 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-20 15:03:21.7848 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 15:06:22.6739 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 15:23:50.4387 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 15:41:25.5158 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 15:43:16.0695 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 16:03:07.6278 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 16:03:18.0340 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 16:03:30.4493 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 16:04:50.1543 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 16:05:11.4693 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-20 16:06:37.6309 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

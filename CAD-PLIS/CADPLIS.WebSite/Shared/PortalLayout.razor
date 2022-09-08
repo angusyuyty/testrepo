@@ -1,0 +1,30 @@
+﻿@inherits LayoutComponentBase
+
+<MatAppBarContainer Class="appbar">
+    <MatAppBar Fixed="true">
+        <MatAppBarRow>
+            <MatAppBarSection>
+                <MatIconButton Icon="menu"></MatIconButton>
+                <MatAppBarTitle Class="apptitle">CADPLIS</MatAppBarTitle>
+            </MatAppBarSection>
+            <MatAppBarSection>
+                <NavMenu />
+            </MatAppBarSection>
+            <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+                <MatIconButton Icon="favorite"></MatIconButton>
+            </MatAppBarSection>
+        </MatAppBarRow>
+    </MatAppBar>
+
+    <MatAppBarContent>
+        @Body
+    </MatAppBarContent>
+</MatAppBarContainer>
+<style>
+    .appbar {
+    width:100%;
+    }
+    .apptitle {
+    color:black;
+    }
+</style>

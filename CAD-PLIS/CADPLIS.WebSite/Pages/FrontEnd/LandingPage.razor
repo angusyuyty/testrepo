@@ -1,0 +1,91 @@
+﻿@page "/landing"
+@using CADPLIS.WebSite.Components
+@using CADPLIS.WebSite.Components.LandingPage
+@inject IJSRuntime js
+
+<BSRow Class="p-0 m-0">
+    <BSCol Class="col-12 p-0 m-0 mainContent">
+        <Banner bannerImgUrl="/images/shutterstock_171507251.jpg" bannerTitle="@bannerTitle" bannerContainerCss="margin-bottom: 0px;"></Banner>
+        <Carousel></Carousel>
+        <Steps></Steps>
+        <NewsCarousel></NewsCarousel>
+        <FAQ></FAQ>
+    </BSCol>
+    <BSCol Class="col jumpMenuCol d-none d-lg-flex d-xl-flex">
+        <JumpMenu links="@links"></JumpMenu>
+    </BSCol>
+</BSRow>
+
+<style>
+    .landingHeader {
+        justify-content: center;
+    }
+
+    .mainContent {
+        background-color: #F7FBFD;
+    }
+
+    .sectionTitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 36px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #35496e;
+        text-align: center;
+    }
+
+    .jumpMenuCol {
+        position: absolute;
+        left: 95%;
+    }
+
+    #bannerContainer {
+        margin-bottom: 15vh;
+    }
+</style>
+
+@code
+{
+    private List<CarouselObject> firstCarouselList = new List<CarouselObject>();
+    private List<CarouselObject> secondCarouselList = new List<CarouselObject>();
+    private List<String> links = new List<string>();
+    private List<String> bannerTitle = new List<string>{ "Welcome to", "Personnel Licensing Information System" };
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        firstCarouselList.Add(new CarouselObject { id = 1, title = "How to apply for \n Aircraft Maintenance Licence", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_626787275.jpg", learnMoreRoute = "#" });
+        firstCarouselList.Add(new CarouselObject { id = 2, title = "About Us", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_626787275.jpg", learnMoreRoute = "#" });
+        firstCarouselList.Add(new CarouselObject { id = 3, title = "Contact Us", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_626787275.jpg", learnMoreRoute = "#" });
+        firstCarouselList.Add(new CarouselObject { id = 4, title = "Object 4", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_626787275.jpg", learnMoreRoute = "#" });
+        firstCarouselList.Add(new CarouselObject { id = 5, title = "Object 5", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_626787275.jpg", learnMoreRoute = "#" });
+        firstCarouselList.Add(new CarouselObject { id = 6, title = "Object 6", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_626787275.jpg", learnMoreRoute = "#" });
+
+
+        secondCarouselList.Add(new CarouselObject { id = 1, title = "Professional Pilot's Licence requirements update", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_129707585.jpg", learnMoreRoute = "#" });
+        secondCarouselList.Add(new CarouselObject { id = 2, title = "Flight Crew's Licence requirement update", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_750976636.jpg", learnMoreRoute = "#" });
+        secondCarouselList.Add(new CarouselObject { id = 3, title = "Private Pilot's Licence requirement update", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "#" });
+        secondCarouselList.Add(new CarouselObject { id = 4, title = "Object 4", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "#" });
+        secondCarouselList.Add(new CarouselObject { id = 5, title = "Object 5", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "#" });
+        secondCarouselList.Add(new CarouselObject { id = 6, title = "Object 6", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "#" });
+
+        //links.Add("bannerContainer");
+        links.Add("carouselSection");
+        links.Add("stepsSection");
+        links.Add("newsCarousel");
+        links.Add("faqSection");
+    }
+
+    protected async override Task OnAfterRenderAsync(bool firstrender)
+    {
+        if (firstrender)
+        {
+            await js.InvokeAsync<object>("initFlickity");
+            await js.InvokeAsync<object>("jumpMenuCss");
+        }
+    }
+}
+

@@ -1,0 +1,16 @@
+2021-08-11 15:23:01.9638 | An unhandled exception has occurred while executing the request. 列名 'EmployeeId' 无效。
+列名 'EmployeeId1' 无效。 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-11 15:25:55.1388 | An unhandled exception has occurred while executing the request. The entity type 'EmployeeRole' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-11 16:03:20.5137 | An unhandled exception has occurred while executing the request. Create instance of the process, ProcessId=7be1cd7f-0553-4bdd-a6dc-db8f54a9d193, failed. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-11 16:04:30.6231 | An unhandled exception has occurred while executing the request. Create instance of the process, ProcessId=865c9494-5910-49dd-8ff2-ca90eb2d3743, failed. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-11 16:06:40.4745 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

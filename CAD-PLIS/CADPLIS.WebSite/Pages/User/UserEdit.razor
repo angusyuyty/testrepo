@@ -1,0 +1,156 @@
+﻿@page "/User/Edit/{Id:int}"
+@page "/User/Add"
+<div>
+    <h3>@(Id!=default? "User Edit": "User Add")</h3>
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Account User  ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UId" Disabled="true" Outlined="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UserId" Required="true" Outlined="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User Name</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UserName" Required="true" Outlined="true"></MatTextField>
+                    <ValidationMessage For="()=>currentUser.UserName" />
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Password expiry date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatDatePicker @bind-Value="@currentUser.PasswordExpiryDate" Format="yyyy-MM-dd" EnableTime="false" Class="datelabel" ></MatDatePicker>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Email</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.Email" Outlined="true" Type="mail" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User Type</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatSelect @bind-Value="@currentUser.UserType">
+                        @foreach (var item in UserTypes)
+                        {
+                            <MatOptionString Value="@item.Value">@item.Description</MatOptionString>
+                        }
+                    </MatSelect>
+
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">2FA Enabled</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatCheckbox @bind-Value="@currentUser.Is2FAEnabled" ></MatCheckbox>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Activation Status</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatSelect @bind-Value="@currentUser.RecState">
+                        @foreach (var item in UserStates)
+                        {
+                            <MatOptionString Value="@item.Value">@item.Description</MatOptionString>
+                        }
+                    </MatSelect>
+                    <ValidationMessage For="()=>currentUser.RecState" />
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Corporate Admin User ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.CorpAdmin" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created By</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.CreatedBy" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.CreatedUserRoleId" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.CreatedTimeText" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated By </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UpdatedBy" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated User Role </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UpdatedUserRoleId" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated date </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UpdatedTimeText" Outlined="true" Disabled="true" ></MatTextField>
+                </div>
+            </div>
+
+
+        </div>
+
+    </EditForm>
+</div>
+<div class="btndiv">
+    <MatButton OnClick="@(() => SaveData())" Raised="true">Save</MatButton>
+    <MatButton OnClick="@(() => Close())" Outlined="true">Back</MatButton>
+</div>
+<style>
+    .txtmail {
+        width: 300px !important;
+    }
+</style>

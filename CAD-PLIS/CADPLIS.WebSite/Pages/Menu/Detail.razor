@@ -1,0 +1,99 @@
+﻿@page "/Menu/Detail/{Id:int}"
+
+
+@using CADPLIS.Domain.Shared.NavMenus;
+@using CADPLIS.Application.Contracts.NavMenus;
+<h3>Menu Detail</h3>
+
+
+@if (menuDto == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+<div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">Menu Id</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@menuDto.MenuId</label>
+        </div>
+    </div>
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">Menu Name</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@menuDto.MenuName</label><br />
+        </div>
+    </div>
+
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">Icon</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@menuDto.Icon</label><br />
+        </div>
+    </div>
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">OrderNo</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@menuDto.OrderNo</label><br />
+        </div>
+    </div>
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">RouteUrl</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@menuDto.RouteUrl</label><br />
+        </div>
+    </div>
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">MenuType</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@(menuDto.MenuType.HasValue?(menuDto.MenuType==1? "Front Menu": "Back Menu"):"")</label><br />
+        </div>
+    </div>
+
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">MenuDescription</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">@menuDto.MenuDescription</label><br />
+        </div>
+    </div>
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <label class="label">Parent Menu</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <label class="label">
+                <MatTreeView TNode="NavMenuDto"
+                             RootNode="@menuTree"
+                             @bind-SelectedNode="@SelectedParentNode"
+                             GetChildNodesCallback="@((n)=>n.Children)">
+                    <NodeTemplate Context="con">
+                        @con.MenuName
+                    </NodeTemplate>
+                </MatTreeView>
+            </label><br />
+        </div>
+    </div>
+</div>
+<div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <MatButton OnClick="@(() =>navigationManager.NavigateTo("Menu/navmenu") )" Outlined="true">Back</MatButton>
+        </div>
+    </div>
+</div>
+}

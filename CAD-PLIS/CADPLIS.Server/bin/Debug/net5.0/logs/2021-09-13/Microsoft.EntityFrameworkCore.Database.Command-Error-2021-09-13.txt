@@ -1,0 +1,4 @@
+2021-09-13 14:34:47.9454 | Failed executing DbCommand (12ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[drop_down_description], [p].[drop_down_type], [p].[Value]
+FROM [PLIS_DROPDOWNLIST] AS [p]
+WHERE [p].[drop_down_type] = @__type_0 

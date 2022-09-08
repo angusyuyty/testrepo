@@ -1,0 +1,53 @@
+﻿@page "/UserRoleGroup/detail/{UserId}/{RoleId}"
+
+
+<h3>Detail</h3>
+
+
+<div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+            <label class="label">User  ID</label>
+        </div>
+        <div class="mat-layout-grid-cell">
+            <MatTextField @bind-Value="UserId" Disabled="true"></MatTextField>
+        </div>
+    </div>
+
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+            <label class="label">Role  ID</label>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5">
+            <MatTextField @bind-Value="RoleId" Disabled="true"></MatTextField>
+        </div>
+
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+            <p><MatTextField @bind-Value="RoleName" Disabled=true></MatTextField></p>
+        </div>
+    </div>
+
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+            <label class="label">Group</label>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+            <MatChipSet>
+                @foreach (var group in groupList)
+                {
+                    <MatChip Label="@group.DisplayValue" LeadingIcon="@((group.Selected) ? "done" : "")" />
+                }
+            </MatChipSet>
+        </div>
+    </div>
+</div>
+
+
+<div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+           
+            <MatButton Outlined="true" OnClick="@(()=>navigationManager.NavigateTo("UserRoleGroup/Index"))">Back</MatButton>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,230 @@
+﻿@using CADPLIS.WebSite.Components.FrontEnd.AccountCreation
+@page "/createPersonalAccount"
+@layout FrontEndAccountLayout
+
+<section id="createPersonalAccount">
+    <div class="row mb-5 justify-content-center">
+        @*<div id="createPersonalAccountForm" class="col-12 col-lg-7 col-xl-7 m-0 m-lg-5 m-xl-5">*@
+        <AccountContentForm>
+            <div id="headerText" class="row">
+                <h3 class="contentHeader">
+                    Create personal account
+                </h3>
+            </div>
+            <!-- Desktop view START -->
+            <div id="stepsHolder" class="row d-none d-lg-flex d-xl-flex">
+                <div id="stepOneTabHolder" class="col m-3 p-3 rounded-3 stepDiv @isSelectedStep(1)" @onclick="() => { currentStep = 1; }">
+                    <label>Step 1</label> <br /> <label>Login Credential</label>
+                </div>
+                <div id="stepTwoTabHolder" class="col m-3 p-3 rounded-3 stepDiv @isSelectedStep(2)" @onclick="() => { currentStep = 2; }">
+                    <label>Step 2</label> <br /> <label>Personal information</label>
+                </div>
+                <div id="stepThreeTabHolder" class="col m-3 p-3 rounded-3 stepDiv @isSelectedStep(3)" @onclick="() => { currentStep = 3; }">
+                    <label>Step 3</label> <br /> <label>Residential address</label>
+                </div>
+                <div id="stepFourTabHolder" class="col m-3 p-2 rounded-3 stepDiv @isSelectedStep(4)" @onclick="() => { currentStep = 4; }">
+                    <label>Step 4</label> <br /> <label>Employment information</label>
+                </div>
+            </div>
+            <!-- Desktop view END -->
+            <!-- Mobile view START -->
+            <div id="stepsHolder" class="row d-flex d-lg-none d-xl-none p-3">
+                <div id="stepOneTabHolder" class="col-3 p-3 rounded-3 stepDiv @isSelectedStep(1)" @onclick="() => { currentStep = 1; }">
+                    <label>Step 1</label>
+                </div>
+                <div id="stepTwoTabHolder" class="col-3 p-3 rounded-3 stepDiv @isSelectedStep(2)" @onclick="() => { currentStep = 2; }">
+                    <label>Step 2</label>
+                </div>
+                <div id="stepThreeTabHolder" class="col-3 p-3 rounded-3 stepDiv @isSelectedStep(3)" @onclick="() => { currentStep = 3; }">
+                    <label>Step 3</label>
+                </div>
+                <div id="stepFourTabHolder" class="col-3 p-3 rounded-3 stepDiv @isSelectedStep(4)" @onclick="() => { currentStep = 4; }">
+                    <label>Step 4</label>
+                </div>
+            </div>
+            <!-- Mobile view END -->
+            <div id="stepsContentHolder" class="row">
+                @switch (currentStep)
+                {
+                    case 1:
+                        <LoginCredentialForm OnNextActionClicked="@OnNextActionClicked" OnPrevActionClicked="@OnPrevActionClicked"></LoginCredentialForm>
+                        break;
+                    case 2:
+                        @*<PersonalInformationForm OnNextActionClicked="@OnNextActionClicked" OnPrevActionClicked="@OnPrevActionClicked"></PersonalInformationForm>*@
+                        <PersonalInformationForm></PersonalInformationForm>
+                        break;
+                    case 3:
+                        <ResidentialAddressForm></ResidentialAddressForm>
+                        break;
+                    case 4:
+                        <EmploymentInformationForm OnNextActionClicked="@OnNextActionClicked" OnPrevActionClicked="@OnPrevActionClicked"></EmploymentInformationForm>
+                        break;
+                }
+            </div>
+        </AccountContentForm>
+        @*</div>*@
+        @*<div id="imgHolder" class="col d-none d-lg-flex d-xl-flex">
+                &nbsp;
+            </div>*@
+        <AccountBannerImageHolder BackgroundImageUrl="/images/Img_003.jpeg"></AccountBannerImageHolder>
+    </div>
+</section>
+
+<style>
+    /*    #imgHolder {
+        background-image: url(images/Img_003.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 120vh;
+    }*/
+
+    #headerText {
+        color: #2E4161;
+        font-weight: bolder;
+    }
+
+    #stepsHolder .stepDiv {
+        color: #848484;
+        background: #E9E9E9;
+        text-align: center;
+        align-self: center;
+        background: linear-gradient( 135deg, #E9E9E9, #E9E9E9) top left, linear-gradient( 245deg, transparent 25px, #E9E9E9 0) top right, linear-gradient( 295deg, transparent 25px, #E9E9E9 0) bottom right, linear-gradient( 45deg, #E9E9E9, #E9E9E9) bottom left;
+        background-repeat: no-repeat;
+        background-size: 51% 51%;
+        text-align: left;
+    }
+
+        #stepsHolder .stepDiv.selected {
+            background: #2E4161;
+            background: linear-gradient( 135deg, #2E4161, #2E4161) top left, linear-gradient( 245deg, transparent 25px, #2E4161 0) top right, linear-gradient( 295deg, transparent 25px, #2E4161 0) bottom right, linear-gradient( 45deg, #2E4161, #2E4161) bottom left;
+            color: #FFF;
+            background-repeat: no-repeat;
+            background-size: 51% 51%;
+            text-align: left;
+        }
+
+        #stepsHolder .stepDiv:last-child {
+            color: #848484;
+            background: #E9E9E9;
+            background-repeat: no-repeat;
+            background-size: 51% 51%;
+            text-align: left;
+            padding-left: 15px !important;
+        }
+
+            #stepsHolder .stepDiv:last-child.selected {
+                background: #2E4161;
+                color: #FFF;
+                background-repeat: no-repeat;
+                background-size: 51% 51%;
+                text-align: left;
+            }
+
+        #stepsHolder .stepDiv label {
+            font-size: small;
+        }
+
+            #stepsHolder .stepDiv label:first-child {
+                font-weight: bold;
+                font-size: large;
+            }
+
+    /* Next button in each section*/
+    #nextBtnDiv #nextBtn {
+        background-color: #2E4161;
+    }
+
+        #nextBtnDiv #nextBtn.disabled {
+            background-color: #84ABCA;
+            color: #FFF;
+        }
+
+    @@media only screen and (max-width: 970px) {
+        #stepsHolder .stepDiv {
+            color: #848484;
+            background: #E9E9E9;
+            text-align: center;
+            align-self: center;
+            background: linear-gradient( 135deg, #E9E9E9, #E9E9E9) top left, linear-gradient( 215deg, transparent 25px, #E9E9E9 0) top right, linear-gradient( 320deg, transparent 25px, #E9E9E9 0) bottom right, linear-gradient( 45deg, #E9E9E9, #E9E9E9) bottom left;
+            background-repeat: no-repeat;
+            background-size: 51% 51%;
+        }
+
+            #stepsHolder .stepDiv.selected {
+                background: #2E4161;
+                background: linear-gradient( 135deg, #2E4161, #2E4161) top left, linear-gradient( 215deg, transparent 25px, #2E4161 0) top right, linear-gradient( 320deg, transparent 25px, #2E4161 0) bottom right, linear-gradient( 45deg, #2E4161, #2E4161) bottom left;
+                color: #FFF;
+                background-repeat: no-repeat;
+                background-size: 51% 51%;
+            }
+    }
+
+    #stepsContentHolder .formHeader {
+        font-size: small;
+        font-weight: bold;
+    }
+
+    #stepsContentHolder .form-group label {
+        color: #2E4161;
+        font-weight: bold;
+    }
+    /* Dropdown CSS*/
+    #stepsContentHolder .btn.dropdown-toggle {
+        width: 100%;
+        /* Border Class */
+        border: 1px solid #dee2e6 !important;
+        /* Rounded Class */
+        border-radius: 0.25rem !important;
+    }
+
+    #stepsContentHolder .dropdown-menu {
+        width: 100%;
+    }
+
+    #stepsContentHolder .row {
+        justify-content: space-around !important;
+        align-items: center !important;
+    }
+
+    #stepsContentHolder label {
+        margin-bottom: 0;
+    }
+
+    #stepsContentHolder button.disabled {
+        border-color: transparent;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public int currentStep { get; set; } = 1;
+
+    private String isSelectedStep(int step)
+    {
+        if (currentStep == step)
+        {
+            return "selected";
+        }
+        return "";
+    }
+
+    private void OnPrevActionClicked()
+    {
+        Console.WriteLine("## OnPrevActionClicked: " + currentStep);
+        if (currentStep > 1)
+        {
+            currentStep -= 1;
+            StateHasChanged();
+        }
+    }
+    private void OnNextActionClicked()
+    {
+        Console.WriteLine("## OnNextActionClicked: " + currentStep);
+        if (currentStep < 4)
+        {
+            currentStep += 1;
+            StateHasChanged();
+        }
+    }
+}

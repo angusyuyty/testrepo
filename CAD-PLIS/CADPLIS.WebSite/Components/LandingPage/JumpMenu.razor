@@ -1,0 +1,32 @@
+﻿<div id="jumpMenu">
+    @foreach (String link in links)
+    {
+        <a href="javascript:;" onclick="document.getElementById('@link').scrollIntoView({behavior:'smooth'})" id="dot-@link" name="jumpMenuDot" data-section="@link"><i class="fas fa-circle"></i></a>
+        <BSTooltip Target="@GetToolTipTarget(@link)" Placement="Placement.Left">@link</BSTooltip>
+    }
+</div>
+
+<style>
+    #jumpMenu {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: fixed;
+        top: 35%;
+    }
+
+        #jumpMenu a {
+            color: gray !important;
+            margin-bottom: 20px;
+        }
+</style>
+
+@code {
+    [Parameter]
+    public List<String> links { get; set; } = new List<string>();
+
+    private String GetToolTipTarget(String link)
+    {
+        return "dot-" + link;
+    }
+}

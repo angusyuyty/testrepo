@@ -1,0 +1,66 @@
+﻿<div id="contentForm" Class="row col-12 col-lg-5 col-xl-5 mb-5 mr-5 align-content-start">
+    @ChildContent
+</div>
+
+<style>
+    #contentForm {
+    }
+
+        #contentForm .contentHeader {
+            font-weight: bold;
+            color: #2E4161;
+        }
+
+        #contentForm .contentSubHeader {
+            font-size: smaller;
+            font-weight: normal;
+        }
+
+        #contentForm .inputDescLabel {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            color: #435471;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+            #contentForm .inputDescLabel span {
+                font-size: large;
+                font-weight: bold;
+                color: #435471;
+            }
+
+            #contentForm .inputDescLabel a {
+                color: #424242 !important;
+                font-size: small;
+            }
+
+            #contentForm .inputDescLabel#registerLinkDiv span {
+                font-size: small;
+            }
+
+            #contentForm .inputDescLabel#registerLinkDiv a {
+                color: #1F40E5 !important;
+                text-decoration: underline;
+            }
+
+        #contentForm .confirmBtn {
+            background-color: #2E4161;
+            color: #FFF;
+        }
+
+            #contentForm .confirmBtn.disabled {
+                background-color: #84ABCA;
+                border-color: transparent;
+            }
+
+            #contentForm .confirmBtn:hover {
+                background-color: #122aa5;
+            }
+</style>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

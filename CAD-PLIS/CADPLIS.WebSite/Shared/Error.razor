@@ -1,0 +1,25 @@
+﻿@using CADPLIS.WebSite.Notice
+@inject IViewNotifier viewNotifier
+@inject ILogger<Error> logger
+
+<CascadingValue Value=this>
+    @ChildContent
+</CascadingValue>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    public void ProcessError(Exception ex)
+    {
+        var message = ex.GetBaseException().Message;
+        logger.LogError(ex.ToString());
+        viewNotifier.Show(message, ViewNotifierType.Error);
+    }
+
+    public void ShowError(string msg)
+    {
+        viewNotifier.Show(msg, ViewNotifierType.Error);
+        logger.LogError(msg);
+    }
+}

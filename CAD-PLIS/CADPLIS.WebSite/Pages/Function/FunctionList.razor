@@ -1,0 +1,62 @@
+﻿@page "/Function/List"
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+<h3>Function Maintenance</h3>
+<div>
+    <MatTextField @bind-Value="@fid" Label="Function ID" Class="searchinput"></MatTextField>
+    <MatSelect @bind-Value="@ftype" Label="Function Type" Class="searchinput">
+        <MatOptionString Value=""></MatOptionString>
+        <MatOptionString Value="System">System</MatOptionString>
+        <MatOptionString Value="Menu">Menu</MatOptionString>
+    </MatSelect>
+    <MatTextField @bind-Value="@fname" Label="Function Name" Class="searchinput"></MatTextField>
+    <MatButton Icon="search" Label="Search" OnClick="@(() => Search())"></MatButton>
+
+
+</div>
+    <MatTable Items="@paginator.data" Class="mat-elevation-z5" Striped="true" ShowPaging="false" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" Label="New Function" Raised="true" OnClick="@(() => Add())"></MatButton></th>
+            <th>Function ID</th>
+            <th>Function Type</th>
+            <th class="tableth">Function Name</th>
+            <th>Display Sequence</th>
+            <th>System Function</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Last Updated By</th>
+            <th>Last Updated Date</th>
+
+        </MatTableHeader>
+        <MatTableRow>
+            <td>
+                <div style="width:100%;">
+                    <MatIconButton Icon="visibility" OnClick="(e=>View(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="(e=>Edit(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(e=>Delete(context.Id))" Disabled="context.SystemFunction??Convert.ToBoolean(context.SystemFunction)"></MatIconButton>
+                </div>
+
+            </td>
+            <td>@context.FunctionId</td>
+            <td>@context.FunctionType</td>
+            <td>@context.FunctionDescription</td>
+            <td>@context.DisplaySequence</td>
+            <td>@context.SystemFunction</td>
+            <td>@context.CreatedBy</td>
+            <td>@context.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@context.UpdatedBy</td>
+            <td>@context.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+    <div>
+    </div>
+}
+

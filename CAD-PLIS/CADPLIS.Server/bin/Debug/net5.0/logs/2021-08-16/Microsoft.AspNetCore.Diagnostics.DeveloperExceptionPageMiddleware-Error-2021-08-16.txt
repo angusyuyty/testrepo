@@ -1,0 +1,54 @@
+2021-08-16 11:33:26.8487 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:35:02.0731 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:37:07.9340 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:39:35.2691 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:42:36.1836 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:43:41.8777 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:44:32.0103 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 11:44:50.8516 | An unhandled exception has occurred while executing the request. The user 00000000-0000-0000-0000-000000000000 doesn't exist 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 13:55:00.7788 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'user') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 14:19:39.7350 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'user') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 14:19:53.4349 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'user') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 14:20:05.7879 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'user') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 14:22:13.9721 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'user') 
+ ExecutionContext.RunInternal => AsyncStateMachineBox`1.ExecutionContextCallback => <Invoke>d__9.MoveNext 
+
+2021-08-16 14:25:49.5779 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'user') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-16 17:29:29.2652 | An unhandled exception has occurred while executing the request. The AuthorizationPolicy named: 'User.Update' was not found. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-16 17:29:41.1173 | An unhandled exception has occurred while executing the request. The AuthorizationPolicy named: 'User.Update' was not found. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-16 17:31:06.6473 | An unhandled exception has occurred while executing the request. The AuthorizationPolicy named: 'User.Read' was not found. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-16 17:31:36.1807 | An unhandled exception has occurred while executing the request. The AuthorizationPolicy named: 'User.Read' was not found. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

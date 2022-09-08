@@ -1,0 +1,66 @@
+{
+  //"defaultAssembly": "CADPLIS.Business",
+  "components": [
+    {
+      "type": "CADPLIS.EntityFrameworkCore.EntityFrameworkCore.PlisDbcontext,CADPLIS.EntityFrameworkCore"
+    },
+    {
+      "type": "CADPLIS.Application.WorkFlows.DocumentRepository,CADPLIS.Application",
+      "services": [
+        {
+          "type": "CADPLIS.EntityFrameworkCore.WorkFlowDataAccess.IDocumentRepository, CADPLIS.Application.Contracts"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.Application.WorkFlows.EmployeeRepository,CADPLIS.Application",
+      "services": [
+        {
+          "type": "CADPLIS.EntityFrameworkCore.WorkFlowDataAccess.IEmployeeRepository, CADPLIS.Application.Contracts"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.Application.WorkFlows.SettingsProvider,CADPLIS.Application",
+      "services": [
+        {
+          "type": "CADPLIS.EntityFrameworkCore.WorkFlowDataAccess.ISettingsProvider, CADPLIS.Application.Contracts"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.Application.WorkFlows.PersistenceProviderContainer,CADPLIS.Application",
+      "services": [
+        {
+          "type": "CADPLIS.EntityFrameworkCore.WorkFlowDataAccess.IPersistenceProviderContainer, CADPLIS.Application.Contracts"
+        }
+      ]
+    },
+
+    {
+      "type": "CADPLIS.EntityFrameworkCore.WorkFlows.WorkFlowDocumentRepository,CADPLIS.EntityFrameworkCore",
+      "services": [
+        {
+          "type": "CADPLIS.Domain.WorkFlows.IWorkFlowDocumentRepository, CADPLIS.Domain"
+        }
+      ]
+    },
+
+    {
+      "type": "CADPLIS.EntityFrameworkCore.Users.UserRepository,CADPLIS.EntityFrameworkCore",
+      "services": [
+        {
+          "type": "CADPLIS.Domain.Users.IUserRepository, CADPLIS.Domain"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.EntityFrameworkCore.UserRoles.UserRoleRepository,CADPLIS.EntityFrameworkCore",
+      "services": [
+        {
+          "type": "CADPLIS.Domain.Users.IUserRoleRepository, CADPLIS.Domain"
+        }
+      ]
+    }
+  ]
+}

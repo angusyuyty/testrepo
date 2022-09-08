@@ -1,0 +1,428 @@
+﻿@implements IDisposable
+@inject NavigationManager NavigationManager
+<!-- Desktop Menu -->
+<div id="frontNavMenu" style=" position: relative;" class="d-none d-md-none d-lg-block d-xl-block" @onmouseleave="() => { frontEndNavSubMenuSelectedMenu = 0; }">
+    <div id="rootMenu" class="row justify-content-around">
+        <a class="navbar-brand col-3 h-100" href="/landing">
+            <img src="/images/CAD_Icon.png" class="navbar-brand-img" alt="CAD-PLIS Icon">
+        </a>
+        <ul class="nav flex-row col-6" id="rootMenuList">
+            @foreach (MenuItem menuItem in menuItems)
+            {
+                if (menuItem.parentId == null || menuItem.parentId == 0)
+                {
+                    <li class="nav-item px-3 rootItem">
+                        <NavLink class="nav-link" @onclick="() => updateExpendParentIds(0, menuItem.id)" @onmouseover="() => updateExpendParentIds(0, menuItem.id, menuItem.parentId)" href="@menuItem.RouteUrl">
+                            <span class="oi oi-list-rich" aria-hidden="true">@menuItem.name</span>
+
+                        </NavLink>
+                    </li>
+                }
+            }
+        </ul>
+        <NavMenuRightButton IconImgUrl="/images/active.svg" IconText="Login" Url="/frontLogin"></NavMenuRightButton>
+    </div>
+    <FrontEndNavSubMenu selectedMenu="@frontEndNavSubMenuSelectedMenu"></FrontEndNavSubMenu>
+</div>
+
+<div class="d-block d-md-block d-lg-none">
+    <BSNavbar IsExpand="true" IsDark="false" Color="Color.Light" Class="w-100">
+        <BSNavbarBrand Href="/landing   " Class="col-3">
+            <BSImage src="/images/CAD_logo.gif" alt="CAD Icon" Class="w-100" />
+        </BSNavbarBrand>
+        <BSNavbarToggler @onclick="onclick" />
+        <BSCollapse @ref="NavbarCollapse" IsNavbar="true" IsOpenChanged="OpenChanged">
+            <BSTree Expand="false">
+                @foreach (MenuItem rootMenuItem in menuItems)
+                {
+                    if (rootMenuItem.parentId == null || rootMenuItem.parentId == 0)
+                    {
+                        <BSTreeNode>
+                            <BSTreeItem Label="@rootMenuItem.name" href="@rootMenuItem.RouteUrl" @onclick:preventDefault="@String.IsNullOrEmpty(rootMenuItem.RouteUrl) ? true : false">
+                                @if (hasChild(rootMenuItem.id))
+                                {
+                                    <BSTreeNode>
+                                        @foreach (MenuItem subMenuItem in getChildMenuItemList(rootMenuItem.id))
+                                        {
+                                            <BSTreeItem Label="@subMenuItem.name" href="@subMenuItem.RouteUrl" @onclick:preventDefault="@String.IsNullOrEmpty(subMenuItem.RouteUrl) ? true : false">
+                                                @if (hasChild(subMenuItem.id))
+                                                {
+                                                    <BSTreeNode>
+                                                        @foreach (MenuItem sub2MenuItem in getChildMenuItemList(subMenuItem.id))
+                                                        {
+                                                            <BSTreeItem Label="@sub2MenuItem.name" href="@sub2MenuItem.RouteUrl" @onclick:preventDefault="@String.IsNullOrEmpty(sub2MenuItem.RouteUrl) ? true : false">
+                                                                @if (hasChild(sub2MenuItem.id))
+                                                                {
+                                                                    <BSTreeNode>
+                                                                        @foreach (MenuItem sub3MenuItem in getChildMenuItemList(sub2MenuItem.id))
+                                                                        {
+                                                                            <BSTreeItem Label="@sub3MenuItem.name" href="@sub3MenuItem.RouteUrl" @onclick:preventDefault="@String.IsNullOrEmpty(sub3MenuItem.RouteUrl) ? true : false">
+                                                                                @if (hasChild(sub3MenuItem.id))
+                                                                                {
+                                                                                    <BSTreeNode>
+                                                                                        @foreach (MenuItem sub4MenuItem in getChildMenuItemList(sub3MenuItem.id))
+                                                                                        {
+                                                                                            <BSTreeItem Label="@sub4MenuItem.name" href="@sub4MenuItem.RouteUrl" @onclick:preventDefault="@String.IsNullOrEmpty(sub4MenuItem.RouteUrl) ? true : false"></BSTreeItem>
+                                                                                        }
+                                                                                    </BSTreeNode>
+                                                                                }
+                                                                            </BSTreeItem>
+                                                                        }
+                                                                    </BSTreeNode>
+                                                                }
+                                                            </BSTreeItem>
+                                                        }
+                                                    </BSTreeNode>
+                                                }
+                                            </BSTreeItem>
+                                        }
+                                    </BSTreeNode>
+                                }
+                            </BSTreeItem>
+                        </BSTreeNode>
+                    }
+                }
+                <BSTreeNode>
+                    <BSTreeItem href="/frontLogin" @onclick:preventDefault="false">
+                        <ChildContent>
+                            <span class="oi oi-list-rich" aria-hidden="true">Login</span>&nbsp;
+                            <img src="/images/active.svg" alt="loginIcon" />
+                        </ChildContent>
+                    </BSTreeItem>
+                </BSTreeNode>
+            </BSTree>
+        </BSCollapse>
+    </BSNavbar>
+</div>
+
+<style>
+    #rootMenu {
+        height: 10vh;
+    }
+
+        #rootMenu .navbar-brand-img {
+            width: auto;
+            height: 100%;
+        }
+
+    #rootMenuList {
+        justify-content: end;
+        margin-right: 7%;
+    }
+
+    #rootMenuList, #loginList {
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-content: center;
+    }
+
+    .subMenu {
+        flex-direction: column;
+    }
+
+    .subMenuList {
+        flex-direction: column;
+    }
+
+    .nav-item, .nav-link, .nav-item a, .nav-item span, .nav-item i, .nav-link i {
+        font-family: 'Roboto', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000 !important;
+    }
+
+    .subMenu {
+        max-width: 50%;
+    }
+
+    #subMenuDiv {
+        position: absolute;
+        z-index: 10;
+        background-color: #FFF;
+        color: #969696;
+    }
+
+    .rootItem {
+        color: #9C9C9C !important;
+        text-transform: uppercase;
+        text-align: center;
+        align-self: center;
+    }
+
+        .rootItem a, .rootItem a span {
+            color: #9C9C9C !important;
+        }
+
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    #loginNavLink {
+        display: flex !important;
+        flex-direction: column;
+        font-size: 1px;
+    }
+
+        #loginNavLink img {
+            height: 3vh;
+            width: auto;
+        }
+</style>
+
+@code {
+    private int frontEndNavSubMenuSelectedMenu { get; set; } = 0;
+    private BSCollapse NavbarCollapse;
+    private FormsModel formsModel = new FormsModel();
+    bool UserControlledIsOpen { get; set; } = false;
+    void onclick(MouseEventArgs e)
+    {
+        NavbarCollapse.Toggle();
+        Console.WriteLine("Navbar State->" + NavbarCollapse.IsOpen.ToString());
+    }
+    void OpenChanged(bool e)
+    {
+        Console.WriteLine("OpenChanged->" + e.ToString());
+    }
+
+    void UserControlledClick(MouseEventArgs e)
+    {
+        UserControlledIsOpen = !UserControlledIsOpen;
+        StateHasChanged();
+    }
+
+    public class FormsModel
+    {
+        public string Blank { get; set; }
+    }
+
+    private bool toggleMenuOnRedirect(bool isRedirect)
+    {
+        if (isRedirect)
+        {
+            NavbarCollapse.Toggle();
+            Console.WriteLine("Toogle Menu on Redirect!");
+            return false;
+        }
+        return true;
+    }
+
+    // NavMenu
+    public class MenuItem
+    {
+        public int id { get; set; }
+        public String name { get; set; }
+        public String RouteUrl { get; set; }
+        public int? parentId { get; set; }
+    }
+
+    private List<int> expendParentIds;
+    private List<MenuItem> menuItems = new List<MenuItem>();
+    private Dictionary<int, List<MenuItem>> subMenuDict;
+    private Dictionary<int, bool> openedDict = new Dictionary<int, bool>();
+
+    protected override void OnInitialized()
+    {
+        // Subscribe to the event
+        NavigationManager.LocationChanged += LocationChanged;
+
+        base.OnInitialized();
+        if (menuItems == null)
+            menuItems = new List<MenuItem>();
+        if (subMenuDict == null)
+            subMenuDict = new Dictionary<int, List<MenuItem>>();
+        if (expendParentIds == null)
+            expendParentIds = new List<int>();
+        menuItems = getMenuItems();
+        for (int i = 0; i < 18; i++)
+        {
+            openedDict.Add(i, false);
+        }
+    }
+
+    private void menuItemClicked(int parentId)
+    {
+        expendParentIds.Add(parentId);
+        openedDict[parentId] = true;
+    }
+    private bool isUserControlledIsOpen(int id)
+    {
+        return expendParentIds.Contains(id);
+    }
+
+    private void updateExpendParentIds(int index, int newParentId, int? itemParentId = null)
+    {
+        if (menuItems.FindAll(x => x.parentId == newParentId).Count > 0 || (itemParentId == null || itemParentId == 0))
+        {
+            expendParentIds.Insert(index, newParentId);
+            Console.WriteLine("updateExpendParentIds: " + index + " // " + newParentId + " // " + expendParentIds.Count);
+            if (expendParentIds.Count >= index + 2)
+                expendParentIds.RemoveRange(index + 1, (expendParentIds.Count - 1) - index);
+        }
+        // Hardcoded for FrontEndNavSubMenu
+        if (newParentId == 2)
+        {
+            frontEndNavSubMenuSelectedMenu = 2;
+        }
+        else if (newParentId == 3)
+        {
+            frontEndNavSubMenuSelectedMenu = 1;
+        }
+        else if (newParentId == 5)
+        {
+            frontEndNavSubMenuSelectedMenu = 3;
+        }
+        else
+        {
+            frontEndNavSubMenuSelectedMenu = 0;
+        }
+    }
+
+    private Boolean hasChild(int parentId)
+    {
+        return menuItems.FindAll(x => x.parentId == parentId).Count > 0;
+    }
+
+    private List<MenuItem> getChildMenuItemList(int parentId)
+    {
+        return menuItems.FindAll(x => x.parentId == parentId).ToList();
+    }
+
+    private void clearExpendParentIds()
+    {
+        //expendParentIds = new List<int>();
+    }
+
+    // This list should be get from DB
+    public List<MenuItem> getMenuItems()
+    {
+        // 1-99 Root
+        // 100-199 -> Leaf of Root 1
+        // 200-299 -> Leaf of Root 2
+        // NavMenu Root Item
+        menuItems.Add(new MenuItem { id = 1, name = "Home", parentId = null, RouteUrl = "/landing" });
+        menuItems.Add(new MenuItem { id = 3, name = "Licences", parentId = null, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 2, name = "Registration", parentId = null, RouteUrl = null });
+        //menuItems.Add(new MenuItem { id = 4, name = "About Us", parentId = null, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 5, name = "Information", parentId = null, RouteUrl = null });
+        // Registration Menu - Individual
+        menuItems.Add(new MenuItem { id = 2000, name = "Individual Account", parentId = 2, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 2001, name = "Individual", parentId = 2000, RouteUrl = null });
+        // Registration Menu - Corperate
+        menuItems.Add(new MenuItem { id = 2100, name = "Corperate Account", parentId = 2, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 2101, name = "Administrator", parentId = 2100, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 2102, name = "Authorised Examiner", parentId = 2100, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 2103, name = "AME", parentId = 2100, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 2104, name = "AMA", parentId = 2100, RouteUrl = null });
+        // Licence - Flight Crew (20)
+        menuItems.Add(new MenuItem { id = 3000, name = "Flight Crew", parentId = 3, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3010, name = "Aeroplanes", parentId = 3000, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3011, name = "Private Pilot's Licence", parentId = 3010, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3030, name = "PPL Ab-initio Issue / Conversion", parentId = 3011, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3031, name = "Flight Radiotelephony Operator's (Restricted) Licence (Initial / Renewal)", parentId = 3011, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3032, name = "AFI/FI Rating - Endorsement", parentId = 3011, RouteUrl = "/information" });
+
+        menuItems.Add(new MenuItem { id = 3012, name = "Prefessional Pilot's Licence", parentId = 3010, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3033, name = "MPL Ab-initio Issue", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3034, name = "CPL Conversion", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3035, name = "ATPL Conversion", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3036, name = "CPL Ab-initio Issue", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3037, name = "ATPL Upgrade", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3038, name = "ATPL/CPL/MPL Renewal", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3039, name = "ATPL/CPL/MPL Flight Test (Initial / Renewal)", parentId = 3012, RouteUrl = "/information" });
+
+        menuItems.Add(new MenuItem { id = 3013, name = "Rating / Endorsement / Certificate", parentId = 3010, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3040, name = "Language Proficiency Endorsement", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3041, name = "Validation of Licence", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3042, name = "Aircraft Rating Endorsement", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3043, name = "Instrument Rating Endorsement", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3044, name = "Change of Personal Particulars / Licence Remarks / Licence Reprint", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3045, name = "Licence Verification", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3046, name = "Conversion Terms (ATPL/CPL/AFI Rating)", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3047, name = "Certificate of Experience (Initial / Renewal)", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3048, name = "Other Licence Application", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3049, name = "Theoretical Knowledge Examination - Result Submission", parentId = 3013, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3050, name = "Theoretical Knowledge Examination - Booking", parentId = 3013, RouteUrl = "/information" });
+
+
+        menuItems.Add(new MenuItem { id = 3020, name = "Helicopters", parentId = 3000, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3021, name = "Private Pilot's Licence", parentId = 3020, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3051, name = "PPL Ab-initio Issue / Conversion", parentId = 3021, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3052, name = "Flight Radiotelephony Operator's (Restricted) Licence (Initial / Renewal)", parentId = 3021, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3053, name = "AFI/FI Rating - Endorsement", parentId = 3021, RouteUrl = "/information" });
+
+        menuItems.Add(new MenuItem { id = 3022, name = "Prefessional Pilot's Licence", parentId = 3020, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3054, name = "MPL Ab-initio Issue", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3055, name = "CPL Conversion", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3056, name = "ATPL Conversion", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3057, name = "CPL Ab-initio Issue", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3058, name = "ATPL Upgrade", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3059, name = "ATPL/CPL/MPL Renewal", parentId = 3012, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3060, name = "ATPL/CPL/MPL Flight Test (Initial / Renewal)", parentId = 3012, RouteUrl = "/information" });
+
+        menuItems.Add(new MenuItem { id = 3023, name = "Rating / Endorsement / Certificate", parentId = 3020, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3061, name = "Language Proficiency Endorsement", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3062, name = "Validation of Licence", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3063, name = "Aircraft Rating Endorsement", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3064, name = "Instrument Rating Endorsement", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3065, name = "Change of Personal Particulars / Licence Remarks / Licence Reprint", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3066, name = "Licence Verification", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3067, name = "Conversion Terms (ATPL/CPL/AFI Rating)", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3068, name = "Certificate of Experience (Initial / Renewal)", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3069, name = "Other Licence Application", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3070, name = "Theoretical Knowledge Examination - Result Submission", parentId = 3023, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3071, name = "Theoretical Knowledge Examination - Booking", parentId = 3023, RouteUrl = "/information" });
+
+        // Licence - Aircraft Maintenance (12)
+        menuItems.Add(new MenuItem { id = 3100, name = "Aircraft Maintenance", parentId = 3, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3101, name = "Issue of HKAR-66 Aircraft Maintenance Licence", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3102, name = "Apply for a HKAR-66 Aircraft Maintenance Licence based on Foreign issued Licence", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3103, name = "Renewal of HKAR-66 Aircraft Maintenance Licence", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3104, name = "Endorsement with Aircraft Type Rating", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3105, name = "Extension to include New Category or Sub-category", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3106, name = "Removal of Limitation", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3107, name = "Conversion from HKAR-AMEL to HKAR-66", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3108, name = "Examination", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3109, name = "Change the Personal Details on your Licence", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3110, name = "Request a Replacement Licence", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3111, name = "Foreign Licence Verification Request", parentId = 3100, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3112, name = "Request for HKCAD licence Verification Letter", parentId = 3100, RouteUrl = "/information" });
+        // Licence - Medical Certificate (6)
+        menuItems.Add(new MenuItem { id = 3200, name = "Medical Certificate", parentId = 3, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3210, name = "Initial application", parentId = 3200, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3211, name = "Initial application (Class 1)", parentId = 3210, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3212, name = "Initial application (Class 2)", parentId = 3210, RouteUrl = "/information" });
+
+        menuItems.Add(new MenuItem { id = 3220, name = "Application Renewal", parentId = 3200, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3221, name = "Application Renewal (Class 2)", parentId = 3220, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3222, name = "Application Renewal (Class 3)", parentId = 3220, RouteUrl = "/information" });
+
+        menuItems.Add(new MenuItem { id = 3230, name = "Notification of Unfitness and Medical Clearance", parentId = 3200, RouteUrl = null });
+        menuItems.Add(new MenuItem { id = 3231, name = "Illness (Class 3)", parentId = 3230, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3232, name = "Injury (Class 1)", parentId = 3230, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3233, name = "Pregnancy (Class 1)", parentId = 3230, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 3234, name = "Pregnancy (Class 2)", parentId = 3230, RouteUrl = "/information" });
+
+        // Information menu
+        menuItems.Add(new MenuItem { id = 5001, name = "Licence's information", parentId = 5, RouteUrl = "/information" });
+        menuItems.Add(new MenuItem { id = 5002, name = "News", parentId = 5, RouteUrl = "/latestNews" });
+        menuItems.Add(new MenuItem { id = 5003, name = "FAQ", parentId = 5, RouteUrl = "/frequentlyAskedQuestion" });
+        return menuItems;
+    }
+
+    void LocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        string navigationMethod = e.IsNavigationIntercepted ? "HTML" : "code";
+        System.Diagnostics.Debug.WriteLine($"Notified of navigation via {navigationMethod} to {e.Location}");
+        if (NavbarCollapse.IsOpen == true)
+            NavbarCollapse.Toggle();
+    }
+    void IDisposable.Dispose()
+    {
+        // Unsubscribe from the event when our component is disposed
+        NavigationManager.LocationChanged -= LocationChanged;
+    }
+}

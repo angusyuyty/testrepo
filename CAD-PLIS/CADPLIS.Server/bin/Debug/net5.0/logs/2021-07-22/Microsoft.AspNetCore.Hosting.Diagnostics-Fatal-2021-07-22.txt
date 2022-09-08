@@ -1,0 +1,3 @@
+2021-07-22 16:03:42.3858 | Application startup exception The requested service 'CADPLIS.Business.DataAccess.IPersistenceProviderContainer' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency. 
+ <StartAsync>d__31.MoveNext => HostingLoggerExtensions.ApplicationError => HostingLoggerExtensions.ApplicationError 
+

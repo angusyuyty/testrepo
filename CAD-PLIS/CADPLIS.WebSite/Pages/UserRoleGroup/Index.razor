@@ -1,0 +1,60 @@
+﻿@page "/UserRoleGroup/Index"
+
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <MatTextField ValueChanged="((int? userRoleGroupId)=>DoFilter(userRoleGroupId, UserId, RoleId) )" Label="User Group Id" />
+    <MatSelect Label="Pick a User Id" ValueChanged="((string userId)=>DoFilter(Id, userId, RoleId) )">
+        <MatOption TValue="string" Value=null></MatOption>
+        @foreach (var user in userAndRole.Users)
+        {
+            <MatOption TValue="string" Value="@user.UserId">@user.UserId</MatOption>
+        }
+    </MatSelect>
+    <MatSelect Label="Pick a Role Id" ValueChanged="((string roleId)=>DoFilter(Id, UserId, roleId) )">
+        <MatOption TValue="string" Value=null></MatOption>
+        @foreach (var role in userAndRole.RoleInfos)
+        {
+            <MatOption TValue="string" Value="@role.RoleId">@role.RoleId</MatOption>
+        }
+    </MatSelect>
+
+    <MatTable Items="@paginator.data" class="mat-elevation-z5" ShowPaging="false" AllowSelection="true" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" OnClick="@(_ => Add())" Raised="true"> New User Role Group </MatButton></th>
+            <th>User Role Group ID</th>
+            <th>User ID</th>
+            <th>Role ID</th>
+            <th>Group ID</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Last Updated By</th>
+            <th>Last Updated Date</th>
+        </MatTableHeader>
+        <MatTableRow>
+            <td>
+                <div style="width:155px;">
+                    <MatIconButton Icon="visibility" OnClick="@(()=>navigationManager.NavigateTo($"UserRoleGroup/detail/{context.UserId}/{context.RoleId}"))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="@(()=>navigationManager.NavigateTo($"UserRoleGroup/Edit/{context.Id}"))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(()=>DeleteGroup(context.Id))"></MatIconButton>
+                </div>
+            </td>
+            <td>@context.Id</td>
+            <td>@context.UserId</td>
+            <td>@context.RoleId</td>
+            <td>@context.GroupId</td>
+            <td>@context.CreatedBy</td>
+            <td>@context.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@context.UpdatedBy</td>
+            <td>@context.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+}
+
+

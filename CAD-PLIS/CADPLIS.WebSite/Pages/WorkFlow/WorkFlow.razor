@@ -1,0 +1,51 @@
+﻿@page "/WorkFlow/WorkFlow"
+
+@if (workflowData == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+
+    <h3>WorkFlow</h3>
+    <MatTable Items="@workflowData" AllowSelection="true" ShowPaging="false" PageSize="@PageSize" UseSortHeaderRow="true">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" Label="New WorkFlow" OnClick="@(() => Add())" Raised="true"></MatButton></th>
+            <th>Number</th>
+            <th>WorkFlowType</th>
+            <th class="tdlogcontent">State</th>
+            <th class="tdlogcontent">Name</th>
+            @*            <th>Author</th>
+        <th>Manager</th>*@
+            <th>Sum</th>
+            <th>Comment</th>
+        </MatTableHeader>
+        <MatTableRow Context="WorkFlowCon">
+            <td>
+                <div style="width:155px;">
+                    <MatIconButton Icon="edit" OnClick="@(() => Edit(WorkFlowCon.Id))"></MatIconButton>
+                </div>
+            </td>
+            <td>@WorkFlowCon.Number</td>
+            <td>@WorkFlowCon.SchemeCode</td>
+            <td>@WorkFlowCon.StateName</td>
+            <td>@WorkFlowCon.Name</td>
+            <td>@WorkFlowCon.Sum</td>
+            @*         <td> @WorkFlowCon.Author?.Name</td>
+        <td>@WorkFlowCon.Manager?.Name</td>*@
+            <td>@WorkFlowCon.Comment</td>
+
+        </MatTableRow>
+
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+
+}
+
+<style>
+    .tdlogcontent {
+        width: 20% !important
+    }
+</style>

@@ -1,0 +1,3 @@
+2021-08-06 17:12:58.6590 | Connection ID "17654110553787858967", Request ID "80000025-0003-f500-b63f-84710c7967bb": An unhandled exception was thrown by the application. The connection does not support MultipleActiveResultSets. 
+ AsyncMethodBuilderCore.Start => <FireOnCompleted>d__168.MoveNext => IISHttpContext.ReportApplicationError 
+

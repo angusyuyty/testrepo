@@ -1,0 +1,85 @@
+﻿@page "/Group/Edit/{Id:int}"
+@page "/Group/Add"
+<div>
+    <h3>@(Id!=default? "Group Edit": "Group Add")</h3>
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Group ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.GroupId" Required="true" Outlined="true"></MatTextField>
+                    <ValidationMessage For="()=>groupModel.GroupId" />
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Group Name</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.GroupDescription"  Outlined="true"></MatTextField>
+                </div>
+            </div>
+
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created By</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.CreatedBy" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.CreatedUserRoleId" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.CreatedTimeText" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated By </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.UpdatedBy" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated User Role </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.UpdatedUserRoleId" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated date </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@groupModel.UpdatedTimeText" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+
+
+        </div>
+
+    </EditForm>
+</div>
+<div class="btndiv">
+    <MatButton Raised="true" OnClick="@(() => SaveData())">Save</MatButton>
+    <MatButton Outlined="true" OnClick="@(() => Back())">Back</MatButton>
+</div>
+

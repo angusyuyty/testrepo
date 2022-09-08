@@ -1,0 +1,79 @@
+html, body {
+    margin: 0px;
+}
+
+app {
+    position: relative;
+    display: flex;
+ /*   min-width: 100vw;
+    min-height: 100vh;*/
+}
+
+.mdc-drawer-app-content {
+    padding: 0 12px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.mdc-drawer-app-content .mat-drawer-app-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mdc-paginator-container {
+    width: auto;
+}
+.login-container, .loading-container, .mdc-card {
+    border-radius: 0 !important;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19) !important;
+}
+
+    .login-container .mdc-card {
+        padding: 40px 30px;
+        width: 500px;
+    }
+
+    .login-container .mat-accordion {
+        width: 500px;
+    }
+
+.container-fluid .login-container {
+    display: block;
+    max-width: 500px;
+}
+
+.login-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    align-content: center;
+    margin: 5% auto 0;
+}
+
+.login-body {
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+    .login-body .mat-accordion .mat-expansion-panel__header {
+        flex-basis: 80%;
+    }
+
+    .login-body .mat-expansion-panel {
+        background-color: #f4f4f4 !important;
+    }
+
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.logo{
+    text-align:center;
+}
+.float-right{
+    float:right;
+}

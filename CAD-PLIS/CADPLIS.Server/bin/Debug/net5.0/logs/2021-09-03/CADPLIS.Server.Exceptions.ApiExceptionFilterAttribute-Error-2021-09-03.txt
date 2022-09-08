@@ -1,0 +1,10 @@
+2021-09-03 09:58:53.3642 | Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> RoleInfo
+System.Object -> CADPLIS.Domain.Roles.RoleInfo 
+2021-09-03 10:05:40.3206 | Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> RoleInfo
+System.Object -> CADPLIS.Domain.Roles.RoleInfo 

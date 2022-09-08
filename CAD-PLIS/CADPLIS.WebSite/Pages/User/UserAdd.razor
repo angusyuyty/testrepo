@@ -1,0 +1,57 @@
+﻿@using CADPLIS.Application.Contracts.Accounts
+
+<MatDialogTitle>New User</MatDialogTitle>
+<MatDialogContent>
+    <EditForm id="createUserForm" Model="@newUserViewModel" OnValidSubmit="@CreateUserAsync">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <fieldset>
+            <div class="form-group">
+                <MatTextField @bind-Value="@newUserViewModel.UserName" Label="UserName" Icon="person" IconTrailing="true" FullWidth="true" Required="true"></MatTextField>
+            </div>
+            <div class="form-group">
+                <MatTextField @bind-Value="@newUserViewModel.Email" Label="Email" Icon="mail_outline" IconTrailing="true" FullWidth="true" Required="true" Type="mail"></MatTextField>
+            </div>
+            <div class="form-group">
+                <MatTextField @bind-Value="@newUserViewModel.Password" Label="Password" Icon="lock_outline" IconTrailing="true" FullWidth="true" Required="true" Type="password"></MatTextField>
+            </div>
+            <div class="form-group">
+                <MatTextField @bind-Value="@newUserViewModel.ConfirmPassword" Label="Password Confirmation" Icon="lock_outline" IconTrailing="true" FullWidth="true" Required="true" Type="password"></MatTextField>
+            </div>
+            <div>
+                <MatCheckbox @bind-Value="@newUserViewModel.IsHead" Label="IsHead" Class="headcheck"></MatCheckbox>
+            </div>
+            <MatChipSet>
+                @foreach (var role in roleSelections.OrderBy(x => x.DisplayValue))
+                {
+                    <MatChip Label="@role.DisplayValue" LeadingIcon="@((role.Selected) ? "done" : "")" @onclick="@(()=>UpdateUserRole(role))" />}
+            </MatChipSet>
+            <div class="form-group">
+                Group
+                <MatTreeView TNode="GroupInfoDto"
+                             RootNode="@groupTree"
+                             @bind-SelectedNode="@SelectedParentNode"
+                             GetChildNodesCallback="@((n)=>n.Chilrens)" Class="gtree">
+                    <NodeTemplate Context="con">
+                        @con.GroupName
+                    </NodeTemplate>
+                </MatTreeView>
+            </div>
+        </fieldset>
+    </EditForm>
+</MatDialogContent>
+<MatDialogActions>
+    <MatButton OnClick="@Cancel">Cancel</MatButton>
+    <MatButton Type="submit" form="createUserForm">Create</MatButton>
+</MatDialogActions>
+<style>
+    .headcheck {
+        color: rgba(0,0,0,.6) !important;
+        font-size: 16px !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .gtree {
+    margin-top:-15px;
+    }
+</style>

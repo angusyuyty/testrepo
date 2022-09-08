@@ -1,0 +1,162 @@
+2021-07-22 13:58:59.7324 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 14:23:22.3101 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 14:23:52.8024 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 14:25:33.4041 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 14:29:45.8492 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 14:35:16.8250 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 14:38:17.0099 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:00:06.7982 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDataServiceProvider' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:00:53.4686 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDataServiceProvider' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:10:02.2294 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:10:10.0128 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:10:17.3592 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:10:21.7277 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:16:31.1844 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:16:40.6111 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:20:42.3873 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:20:49.3038 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:23:52.9581 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:24:00.1536 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:24:06.5567 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:29:36.7821 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:32:41.1580 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:32:48.1391 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:33:44.5611 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:33:51.3067 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:33:57.5807 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:35:03.0502 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:35:10.0927 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:35:17.0693 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:39:26.8501 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:39:34.3941 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:39:41.6995 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.INaveMenuRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:54:46.7873 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:56:37.0645 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:56:44.2283 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 15:56:48.9439 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:00:52.1870 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:04:38.7487 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:04:46.1161 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:08:50.5856 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:08:57.1713 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:09:05.8532 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:21:31.5795 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:25:25.7615 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:25:38.8154 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:29:31.8327 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 16:29:40.0993 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 17:15:03.0112 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 17:16:04.8630 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 17:20:41.0100 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 17:21:51.7339 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 18:05:54.9482 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 18:06:07.1281 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-22 18:07:07.2518 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.DataAccess.IDocumentRepository' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

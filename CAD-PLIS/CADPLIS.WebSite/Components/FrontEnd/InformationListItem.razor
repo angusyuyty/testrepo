@@ -1,0 +1,57 @@
+﻿<div @onclick="@OnClick" class="informationListItem mb-1 catHeaderItem @CssClass @isSelecteditem(Id, ParentId)">
+    @if (!ParentId.HasValue)
+    {
+        @if (Id == SelectedCatItemId)
+        {
+            <div class="catHeaderItemContent">
+                <span>@Title</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        }
+        else
+        {
+            <div class="catHeaderItemContent">
+                <span>@Title</span>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        }
+    }
+    else
+    {
+        <div>
+            <i class="fas fa-circle iconDropDown"></i>
+            <span>@Title</span>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+    [Parameter]
+    public int? Id { get; set; }
+    [Parameter]
+    public int? ParentId { get; set; }
+    [Parameter]
+    public String Title { get; set; }
+    [Parameter]
+    public int? SelectedCatItemId { get; set; }
+    [Parameter]
+    public int? SelectedItemId { get; set; }
+    [Parameter]
+    public String CssClass { get; set; }
+
+    public String isSelecteditem(int? id, int? parentId)
+    {
+        String finalCssClass = "";
+        if (parentId.HasValue)
+        {
+            finalCssClass += "informationListItemSelection ";
+        }
+        if (SelectedItemId == id || SelectedCatItemId == id)
+        {
+            finalCssClass += "selectedItem ";
+        }
+        return finalCssClass;
+    }
+}

@@ -1,0 +1,39 @@
+2021-09-28 16:18:39.1189 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 16:20:04.2053 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 16:21:04.1116 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 16:39:39.0666 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 16:39:57.1914 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:10:04.2222 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:11:28.7296 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:13:23.7084 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:15:29.7128 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:18:16.9771 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:20:30.4923 | An unhandled exception has occurred while executing the request. xxxxxxxxxxxxx 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-09-28 17:40:55.3621 | An unhandled exception has occurred while executing the request. xxx 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-09-28 17:41:53.4283 | An unhandled exception has occurred while executing the request. xxx 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+

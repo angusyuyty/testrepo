@@ -1,0 +1,2 @@
+2021-08-05 09:22:50.9096 | Failed to determine the https port for redirect. 
+2021-08-05 11:14:36.6785 | Failed to determine the https port for redirect. 

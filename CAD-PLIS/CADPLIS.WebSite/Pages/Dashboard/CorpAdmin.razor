@@ -1,0 +1,288 @@
+﻿@using CADPLIS.Application.Contracts.MCApplications
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <h1>Dashboard</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+
+
+            <div class="row">
+                <div class="col-xl-9">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-id-badge me-1"></i>
+                            Licenses
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-xl-4 col-md-6">
+
+                                    <div class="card border-success text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-success fw-bold">Valid</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="fas fa-exclamation-triangle text-success fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-success d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-success d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (@applicationCountmodel.ValidNum)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+                                <div class="col-xl-4 col-md-6">
+
+                                    <div class="card border-warning text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-warning fw-bold">Expire in 1 month</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="fas fa-exclamation-triangle text-warning fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-warning d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-warning d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (@applicationCountmodel.ExpireIn1MonthNum)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+
+                                <div class="col-xl-4 col-md-6">
+
+                                    <div class="card border-danger text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-danger fw-bold">Expired</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="fas fa-history text-danger fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-danger d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-danger d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (@applicationCountmodel.ExpiredNum)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+
+                                <div class="col-xl-4 col-md-6">
+
+                                    <div class="card border-secondary text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-secondary fw-bold">Suspended</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="fas fa-stop-circle text-secondary fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-secondary d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-secondary d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (@applicationCountmodel.SuspendedNum)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-users me-1"></i>
+                            Applicants
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card border-success text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-success fw-bold">Applicants</h5>
+                                                    <div class="fw-bold text-muted">@applicationCountmodel.ApplicantsNum</div>
+                                                </div>
+                                                <i class="fas fa-users text-success fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-success d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">Show more</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+
+                                    </div>
+                                    <!--/card-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-edit me-1"></i>
+                            Applications
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6">
+
+                                    <div class="card border-warning text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-warning fw-bold">Saved as Draft</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="fas fa-pencil-alt text-warning fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-warning d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-warning d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+
+                                <div class="col-xl-3 col-md-6">
+
+                                    <div class="card border-primary text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-primary fw-bold">Submitted</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="far fa-check-square text-primary fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-primary d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-primary d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+
+                                <div class="col-xl-3 col-md-6">
+
+                                    <div class="card border-success text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-success fw-bold">Approved</h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="far fa-check-square text-success fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-success d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-success d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+
+                                <div class="col-xl-3 col-md-6">
+
+                                    <div class="card border-info text-white mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="me-3">
+                                                    <h5 class="text-info fw-bold">Action Requied  </h5>
+                                                    <div class="fw-bold text-muted">2</div>
+                                                </div>
+                                                <i class="far fa-pause-circle text-info fa-2x"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-info d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">FCL (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                        <div class="card-footer bg-info d-flex align-items-center justify-content-between">
+                                            <a class="small text-white stretched-link fw-bold" href="#">MC (2)</a>
+                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <!--/card-->
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+</div>
+@*<style>
+    .mdc-drawer__content {
+        background-color: Brown !important;
+        background-image: none !important;
+    }
+</style>*@
+
+@code {
+    [Parameter]
+    public MCApplicationCountDto applicationCountmodel { get; set; } = new MCApplicationCountDto();
+
+}

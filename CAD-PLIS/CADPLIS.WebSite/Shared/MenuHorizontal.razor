@@ -1,0 +1,158 @@
+﻿@page "/Menu/MenuHorizontal"
+@inject HttpClient httpClient
+@using CADPLIS.Application.Contracts.NavMenus
+<h3>MenuHorizontal</h3>
+
+<div class="testmenu">
+    <MatNavMenu>
+        @foreach (var item in menuTree.Children)
+        {
+           
+                @*<MatNavItem Href="@item.RouteUrl"><MatIcon Icon="@item.Icon"></MatIcon>&nbsp; @item.MenuName</MatNavItem>*@
+        
+            <MatTreeView TNode="NavMenuDto"
+                         RootNode="@item"
+                         GetChildNodesCallback="@((n)=>n.Children)">
+                <NodeTemplate Context="con">
+                    <MatNavItem Href="@con.RouteUrl">@con.MenuName</MatNavItem>
+                </NodeTemplate>
+            </MatTreeView>
+            }
+            <!--<MatNavItem Href="/" NavLinkMatch="NavLinkMatch.All"><MatIcon Icon="home"></MatIcon>&nbsp; Home </MatNavItem>
+    <MatNavItem Href="counter"><MatIcon Icon="add"></MatIcon>&nbsp; Counter</MatNavItem>
+    <MatNavItem Href="fetchdata"><MatIcon Icon="list"></MatIcon>&nbsp; Fetch Data</MatNavItem>
+    <MatNavItem Href="upload"><MatIcon Icon="cloud_upload"></MatIcon>&nbsp; upload Data</MatNavItem>
+    <MatNavItem Href="Menu/navmenu"><MatIcon Icon="menu"></MatIcon>&nbsp; Nav Menu</MatNavItem>
+    <MatNavItem Href="Designer/Index" @attributes="@(new Dictionary<string, object> { { "target", "_bank" } })"><MatIcon Icon="flip"></MatIcon>&nbsp; Workflow Designer</MatNavItem>
+    <MatNavSubMenu Class="submenu-new">
+        <MatNavSubMenuHeader Title="UserManage">
+            <MatNavItem AllowSelection="false" Class="submenu-new">
+                <MatIcon Icon="folder" />&nbsp;User Manage
+            </MatNavItem>
+        </MatNavSubMenuHeader>
+        <div class="submenuitem-new">
+
+            <MatNavSubMenuList Class="submenu3-new">
+                <MatNavSubMenuHeader>
+                    <MatNavItem Href="User/UserInfo">&nbsp; User Maintenance</MatNavItem>
+                </MatNavSubMenuHeader>
+
+                <MatNavSubMenuList Class="submenuitem3-new">
+                    <MatNavItem>&nbsp;Level 3 Item </MatNavItem>
+                    <MatNavItem>&nbsp;Level 4 Item </MatNavItem>
+                </MatNavSubMenuList>
+            </MatNavSubMenuList>
+
+
+            <MatNavItem Href="User/UserRoleRelationshipsInfo">&nbsp; User Role Relationships</MatNavItem>
+
+
+        </div>
+
+    </MatNavSubMenu>
+
+    <MatNavSubMenu>
+        <MatNavSubMenuHeader Title="Role Manage">
+            <MatNavItem AllowSelection="false">
+                <MatIcon Icon="folder" />&nbsp;User Role Manage
+            </MatNavItem>
+        </MatNavSubMenuHeader>
+
+        <MatNavSubMenuList>
+            <MatNavItem Href="User/UserRolesInfo"><MatIcon Icon="list"></MatIcon>&nbsp; User Role Maintenance</MatNavItem>
+
+        </MatNavSubMenuList>-->
+            @*<MatNavSubMenuList>
+            <MatNavItem Href="User/RoleMenuRelationshipsInfo"><MatIcon Icon="list"></MatIcon>&nbsp; Role Menu Configuration</MatNavItem>
+
+        </MatNavSubMenuList>*@
+
+
+            <!--</MatNavSubMenu>-->
+
+</MatNavMenu>
+    </div>
+@code
+{
+    private NavMenuDto menuTree { get; set; } = new NavMenuDto();
+    public Error Error { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetTreeMenuList();
+    }
+    async Task GetTreeMenuList()
+    {
+        var result = await httpClient.GetFromJsonAsync<ApiResponse<NavMenuDto>>("/api/NavMenu/GetWithChild");
+        if (result.IsSuccessStatusCode)
+        {
+            menuTree = result.Result;
+        }
+        else
+        {
+            Error.ShowError(result.Message);
+        }
+    }
+
+
+}
+<style>
+    .testmenu .mat-tree {
+        float: left !important;
+        padding-left: 36px;
+    }
+/*    .testmenu .mdc-ripple-surface {
+        position: relative !important;
+    }*/
+    .testmenu .mdc-list-item {
+        padding-left: 0px !important;
+    }
+ 
+    .testmenu .mat-tree li ul {
+        padding-left: 20px !important;
+    }
+</style>
+@*<style>
+    .mdc-list-item--selected, .mdc-list-item--activated {
+        color: var(--mdc-theme-primary, #6200ee) !important;
+    }
+
+    .testmenu .mdc-nav-menu li {
+        float: left !important;
+    }
+
+    .testmenu .mdc-sub-menu-icon {
+        display: none !important;
+    }
+
+    .testmenu .mat-accordion .mat-expansion-panel.mat-expansion-panel--expanded {
+        margin-top: 0rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .testmenu .submenu-new {
+        position: relative !important;
+    }
+
+        .testmenu .submenu-new:hover .submenuitem-new {
+            display: block;
+        }
+
+    .testmenu .submenuitem-new {
+        position: absolute !important;
+        left: 0px !important;
+        top: 50px !important;
+        width: 250px;
+        display: none
+    }
+
+    .submenuitem3-new {
+        left: 0px !important;
+        top: 50px !important;
+        /*display: none*/
+    }
+
+    .submenu3-new:hover .submenuitem3-new {
+        display: block
+    }
+</style>*@

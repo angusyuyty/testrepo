@@ -1,0 +1,64 @@
+﻿@page "/account/profile"
+@inject HttpClient httpClient
+@using  CADPLIS.Application.Contracts.Accounts
+@using CADPLIS.WebSite.Notice
+@using CADPLIS.Application.Contracts.Users
+<h3>TwoFaValidate</h3>
+
+    <EditForm Model="@auserView">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+            <div class="form-group">
+                <p>
+                    Download a two-factor authenticator app like Microsoft Authenticator or Google Authenticator.
+                </p>
+                <p>Scan the QR Code or enter this key <kbd>@auserView.SetupCode</kbd> into your two factor authenticator app. Spaces and casing do not matter.</p>
+                <p><img src="@auserView.BarcodeImageUrl" /></p>
+            </div>
+            @*@if (!auserView.Is2FAEnabled??Convert.ToBoolean(auserView.Is2FAEnabled))
+            {
+            <p>
+                Once you have scanned the QR code or input the key above, your two factor authentication app will provide you
+                with a unique code. Turn on TwoFaValidate by entering and submitting the code in the confirmation box below.
+            </p>
+            <MatTextField @bind-Value="@auserView.ValidateCode" Label="code" Icon="person" IconTrailing="true" FullWidth="true" Required="true"></MatTextField>
+        <MatButton Label="OK" OnClick="@(() => SubmitData())"></MatButton>
+            }*@
+    </EditForm>
+
+@code {
+    UserDto auserView = new UserDto();
+    [CascadingParameter] public Error Error { get; set; }
+    [Inject] IViewNotifier viewNotifier { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var result = await httpClient.GetFromJsonAsync<ApiResponse<UserDto>>("/api/account/GetTwoFaCode");
+            if (result.IsSuccessStatusCode)
+            {
+                auserView = result.Result;
+            }
+            else
+            {
+                Error.ShowError(result.Message);
+            }
+        }
+        catch (Exception e)
+        {
+        }
+    }
+    private async Task SubmitData()
+    {
+        var result = await httpClient.PostJsonAsync<ApiResponse>($"/api/account/ValidateTwoFaCode", auserView);
+        if (result.IsSuccessStatusCode)
+        {
+            viewNotifier.Show("success", ViewNotifierType.Success, result.Message);
+        }
+        else
+        {
+            Error.ShowError(result.Message);
+        }
+    }
+}

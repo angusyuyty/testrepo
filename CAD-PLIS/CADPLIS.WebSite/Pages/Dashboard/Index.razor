@@ -1,0 +1,62 @@
+﻿@page "/Dashboard/Index"
+@using CADPLIS.Application.Contracts.MCApplications
+@using CADPLIS.Common.consts
+@inject HttpRepository httpRepository
+@inject IJSRuntime jsRuntime
+@inject AuthenticationStateProvider ApiAuthenticationProvider
+
+
+@if (roleId == RoleConsts.Applicant)
+{
+    <Applicant applicationCountmodel="@acdto"></Applicant>
+}
+else if (roleId == RoleConsts.AMA)
+{
+    <CorpUserAMA applicationCountmodel="@acdto"></CorpUserAMA>
+}
+else if (roleId == RoleConsts.AME || roleId == RoleConsts.AME_AMA)
+{
+    <CorpUserAME applicationCountmodel="@acdto"></CorpUserAME>
+}
+else if (roleId == RoleConsts.Administrator)
+{
+    <CorpAdmin applicationCountmodel="@acdto"></CorpAdmin>
+}
+else if (roleId == RoleConsts.ATCL_USER || roleId == RoleConsts.ATCL_APPROVER || roleId == RoleConsts.CATS || roleId == RoleConsts.ATMSO || roleId == RoleConsts.ATMD)
+{
+    <CorpAdmin applicationCountmodel="@acdto"></CorpAdmin>
+}
+@code {
+    [CascadingParameter] public Error Error { get; set; }
+    MCApplicationCountDto acdto = new MCApplicationCountDto();
+    public string roleId = "ADMINISTRATOR";
+    string apiurl = "";
+    protected override async Task OnInitializedAsync()
+    {
+        var apiauth = await ApiAuthenticationProvider.GetAuthenticationStateAsync();
+        LocalStorageHelper localStorageHelper = new LocalStorageHelper(jsRuntime);
+        string rolekey = "role" + apiauth.User.Identity.Name;
+        roleId = await localStorageHelper.GetLocalStorage(rolekey);
+        if (roleId == RoleConsts.Applicant)
+            apiurl = $"api/MCApplication/GetApplicantCount?roleId={roleId}";
+        else if (roleId == RoleConsts.AMA)
+            apiurl = $"api/MCApplication/GetAMACount?roleId={roleId}";
+        else if (roleId == RoleConsts.AME || roleId == RoleConsts.AME_AMA)
+            apiurl = $"api/MCApplication/GetAMECount?roleId={roleId}";
+        else if (roleId == RoleConsts.Administrator)
+            apiurl = $"api/MCApplication/GetAdministratorCount?roleId={roleId}";
+        if (apiurl != "")
+        {
+            await GetCount();
+        }
+    }
+
+    async Task GetCount()
+    {
+        var result = await httpRepository.GetJsonAsync<ApiResponse<MCApplicationCountDto>>(apiurl);
+        if (result.IsSuccessStatusCode)
+        {
+            acdto = result.Result;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+﻿@page "/role/detail/{Id:int}"
+
+
+<div>
+    <h3>Role Detail</h3>
+    <EditForm Model="@RoleInfoDto">
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Role ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@RoleInfoDto.RoleId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Role Name</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@RoleInfoDto.RoleDescription</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Is AME/AMA</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @(RoleInfoDto.isAMEAMA.HasValue? (RoleInfoDto.isAMEAMA==true?"YES":"NO"):"NO")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created By</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@RoleInfoDto.CreatedBy</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @RoleInfoDto.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated By </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @RoleInfoDto.UpdatedBy</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@RoleInfoDto.UpdatedUserRoleId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@RoleInfoDto.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</label>
+                </div>
+            </div>
+        </div>
+    </EditForm>
+
+    <div class="mat-layout-grid mat-layout-grid-align-center" style="max-width: 800px;">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <MatButton Outlined="true" OnClick="@(()=> { navigationManager.NavigateTo("Role/Index"); })">Back</MatButton>
+            </div>
+            <div class="mat-layout-grid-cell">
+            </div>
+        </div>
+    </div>
+</div>

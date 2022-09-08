@@ -1,0 +1,46 @@
+﻿@page "/Menu/Navmenu"
+@using Microsoft.AspNetCore.Authorization
+<h3>Menu Maintenance</h3>
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <MatSelect ValueChanged="((int type) =>  DoFilter(MenuName, type))" Label="MenuType">
+        <MatOption TValue="int" Value="0"></MatOption>
+        <MatOption TValue="int" Value="1">Front Menu</MatOption>
+        <MatOption TValue="int" Value="2">Back Menu</MatOption>
+    </MatSelect>
+    <MatTextField ValueChanged="((string menuName)=>DoFilter(menuName, MenuType) )" Label="MenuName"/>
+
+    <MatTable Items="@paginator.data" class="mat-elevation-z5" ShowPaging="false" AllowSelection="true" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" OnClick="@(_ => Add())" Raised="true"> New Menu </MatButton></th>
+            <th style="width:20%">MenuName</th>
+            <th>Icon</th>
+            <th>MenuType</th>
+            <th>OrderNo</th>
+            <th>RouteUrl</th>
+        </MatTableHeader>
+        <MatTableRow>
+            <td>
+                <div style="width:155px;">
+                    <MatIconButton Icon="visibility" OnClick="(e=>Detail(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="(e=>Edit(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(e=>DeleteBefore(context.Id))"></MatIconButton>
+                </div>
+            </td>
+            <td style="width:20%">@context.MenuName</td>
+            <td><MatIcon Icon="@context.Icon"></MatIcon></td>
+            <td>@(context.MenuType.HasValue?( context.MenuType==1? "Frontend" : "Backend"):"")</td>
+            <td>@context.OrderNo</td>
+            <td>@context.RouteUrl</td>
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+}
+
+

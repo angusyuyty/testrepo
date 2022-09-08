@@ -1,0 +1,40 @@
+{
+  "defaultAssembly": "CADPLIS.Business",
+  "components": [
+    {
+      "type": "CADPLIS.Business.EFDbcontext"
+    },
+    {
+      "type": "CADPLIS.Business.Implementation.DocumentRepository",
+      "services": [
+        {
+          "type": "CADPLIS.Business.DataAccess.IDocumentRepository, CADPLIS.Business"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.Business.Implementation.EmployeeRepository",
+      "services": [
+        {
+          "type": "CADPLIS.Business.DataAccess.IEmployeeRepository, CADPLIS.Business"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.Business.Implementation.SettingsProvider",
+      "services": [
+        {
+          "type": "CADPLIS.Business.DataAccess.ISettingsProvider, CADPLIS.Business"
+        }
+      ]
+    },
+    {
+      "type": "CADPLIS.Business.Implementation.PersistenceProviderContainer",
+      "services": [
+        {
+          "type": "CADPLIS.Business.DataAccess.IPersistenceProviderContainer, CADPLIS.Business"
+        }
+      ]
+    }
+  ]
+}

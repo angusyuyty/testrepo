@@ -1,0 +1,115 @@
+2021-07-26 09:35:10.3378 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 09:37:36.0539 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 09:40:34.1797 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 09:43:02.7162 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 09:44:21.8329 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 09:59:38.8596 | An unhandled exception has occurred while executing the request. Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 10:05:30.8583 | An unhandled exception has occurred while executing the request. Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 10:05:56.7506 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 10:07:50.3983 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 10:08:06.7385 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 10:08:15.6760 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 13:37:13.8272 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 13:38:27.4950 | An unhandled exception has occurred while executing the request. The entity type 'EmployeeRole' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 13:40:13.7323 | An unhandled exception has occurred while executing the request. The entity type 'EmployeeRole' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 13:44:05.3062 | An unhandled exception has occurred while executing the request. The entity type 'EmployeeRole' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 13:54:24.5834 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.EFDbcontext' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 13:54:44.4331 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.EFDbcontext' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:28:56.2057 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:30:08.9146 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:35:24.9616 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:39:01.8645 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:39:51.4480 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:39:56.5810 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:42:15.2080 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:42:20.3732 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:46:39.5200 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:48:10.9273 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.EFDbcontext' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:50:15.2856 | An unhandled exception has occurred while executing the request. A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 17:50:30.8852 | An unhandled exception has occurred while executing the request. Data is Null. This method or property cannot be called on Null values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 17:50:41.9705 | An unhandled exception has occurred while executing the request. Data is Null. This method or property cannot be called on Null values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 17:52:22.1776 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Business.EFDbcontext' while attempting to activate 'CADPLIS.Server.Controllers.NavMenuController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 18:00:40.1051 | An unhandled exception has occurred while executing the request. Unable to determine the relationship represented by navigation 'Document.Author' of type 'Employee'. Either manually configure the relationship, or ignore this property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-26 18:07:15.2442 | An unhandled exception has occurred while executing the request. Data is Null. This method or property cannot be called on Null values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 18:09:26.2883 | An unhandled exception has occurred while executing the request. Data is Null. This method or property cannot be called on Null values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 18:11:33.5931 | An unhandled exception has occurred while executing the request. Data is Null. This method or property cannot be called on Null values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 18:12:59.9247 | An unhandled exception has occurred while executing the request. Data is Null. This method or property cannot be called on Null values. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-26 18:15:03.0601 | An unhandled exception has occurred while executing the request. Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.Users.UserDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+

@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="D:\project\CAD-PLIS\CADPLIS.WebSite\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="D:\project\CAD-PLIS\CADPLIS.WebSite\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/MatBlazor" Path="C:\Users\xiong\.nuget\packages\matblazor\2.8.0\build\..\staticwebassets\" />
+</StaticWebAssets>

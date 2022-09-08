@@ -1,0 +1,44 @@
+2021-08-18 10:32:09.3777 | Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 256), @p3='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Employee] ([Id], [IsHead], [Name], [StructDivisionId])
+VALUES (@p0, @p1, @p2, @p3); 
+2021-08-18 10:32:09.7629 | Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 256), @p3='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Employee] ([Id], [IsHead], [Name], [StructDivisionId])
+VALUES (@p0, @p1, @p2, @p3); 
+2021-08-18 10:34:08.1659 | Failed executing DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 256), @p3='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Employee] ([Id], [IsHead], [Name], [StructDivisionId])
+VALUES (@p0, @p1, @p2, @p3); 
+2021-08-18 10:34:08.2379 | Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 256), @p3='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Employee] ([Id], [IsHead], [Name], [StructDivisionId])
+VALUES (@p0, @p1, @p2, @p3); 
+2021-08-18 10:39:25.0476 | Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 256), @p3='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Employee] ([Id], [IsHead], [Name], [StructDivisionId])
+VALUES (@p0, @p1, @p2, @p3); 
+2021-08-18 10:39:25.1645 | Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Boolean), @p2='?' (Size = 256), @p3='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Employee] ([Id], [IsHead], [Name], [StructDivisionId])
+VALUES (@p0, @p1, @p2, @p3); 
+2021-08-18 11:28:01.2504 | Failed executing DbCommand (3ms) [Parameters=[@p4='?' (DbType = Guid), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EmployeeRole] ([EmployeeId], [RoleId])
+VALUES (@p4, @p5); 
+2021-08-18 11:28:01.3512 | Failed executing DbCommand (1ms) [Parameters=[@p4='?' (DbType = Guid), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EmployeeRole] ([EmployeeId], [RoleId])
+VALUES (@p4, @p5); 
+2021-08-18 11:38:47.4118 | Failed executing DbCommand (3ms) [Parameters=[@p4='?' (DbType = Guid), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EmployeeRole] ([EmployeeId], [RoleId])
+VALUES (@p4, @p5); 
+2021-08-18 11:38:47.5310 | Failed executing DbCommand (1ms) [Parameters=[@p4='?' (DbType = Guid), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EmployeeRole] ([EmployeeId], [RoleId])
+VALUES (@p4, @p5); 
+2021-08-18 11:43:23.0414 | Failed executing DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [EmployeeRole] ([EmployeeId], [RoleId])
+VALUES (@p0, @p1); 

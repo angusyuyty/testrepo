@@ -1,0 +1,155 @@
+﻿@page "/WorkFlow/Edit/{Id:guid}"
+@page "/WorkFlow/Add"
+<div>
+    <h3>@(Id!=default? "WorkFlow Edit": "WorkFlow Add")</h3>
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">WorkFlowType</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatSelectValue @bind-Value="@workFlowViewModel.SchemeCode" Items="@WorkFlowTypes" ValueSelector="@(v => v.Value)" Class="selectdiv" Disabled=@(workFlowViewModel.Id!=default)>
+                        <ItemTemplate Context="itemcon">
+                            @itemcon?.Description
+                        </ItemTemplate>
+                    </MatSelectValue>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Name</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@workFlowViewModel.Name" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Manager</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatSelectValue @bind-Value="@workFlowViewModel.ManagerId" Items="@manager" ValueSelector="@(v => v.UserId)" Class="selectdiv">
+                        <ItemTemplate Context="itemcon">
+                            @itemcon?.UserName
+                        </ItemTemplate>
+                    </MatSelectValue>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Number</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@workFlowViewModel.Number" Disabled="true"  Outlined="true" Class="textdiv"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Sum</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@workFlowViewModel.Sum" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+                </div>
+            </div>
+
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Author</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@currentUser.UserName" Disabled="true" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">State</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@workFlowViewModel.State" Disabled="true" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Comment</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@workFlowViewModel.Comment" Outlined="true" TextArea="true" Class="textareadiv"></MatTextField>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </EditForm>
+</div>
+<div class="btndiv">
+    <MatButton OnClick="@(() => CreateWorkFlowAsync())" Raised="true">Save</MatButton>
+    <MatButton OnClick="@(() => Close())" Outlined="true">Back</MatButton>
+</div>
+
+@*<div class="dialogdiv">
+        <MatDialogTitle>Edit</MatDialogTitle>
+        <MatDialogContent>
+            <EditForm Model="@workFlowViewModel" id="updateWorkFlowForm" OnValidSubmit="@CreateWorkFlowAsync">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <p>
+                    <MatTextField @bind-Value="@workFlowViewModel.Name" Label="Name" Required="true"  Outlined="true" Class="textdiv"></MatTextField>
+                </p>
+                <p>
+
+                    <MatSelectValue Label="SelectManager" @bind-Value="@workFlowViewModel.ManagerId" Items="@manager" ValueSelector="@(v => v.Id)" Class="selectdiv">
+                        <ItemTemplate Context="itemcon">
+                            @itemcon?.UserName
+                        </ItemTemplate>
+                    </MatSelectValue>
+                </p>
+                <p>
+                    <MatTextField @bind-Value="@workFlowViewModel.Number" Label="Number" ReadOnly="true" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+                </p>
+
+                <p>
+                    <MatTextField @bind-Value="@workFlowViewModel.Sum" Label="Sum" Required="true" Outlined="true" Class="textdiv" ></MatTextField>
+                </p>
+                <p>
+                    <MatTextField @bind-Value="@currentUser.UserName" ReadOnly="true" Label="Author" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+                </p>
+                <p>
+                    <MatTextField @bind-Value="@workFlowViewModel.State" Label="State" ReadOnly="true" Required="true" Outlined="true" Class="textdiv"></MatTextField>
+                </p>
+                <p>
+                    <MatTextField @bind-Value="@workFlowViewModel.Comment" Label="Comment" Outlined="true" TextArea="true" Class="textareadiv"></MatTextField>
+
+                </p>
+
+            </EditForm>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton Type="submit" form="updateWorkFlowForm">Save</MatButton>
+            <MatButton OnClick="@CancelChanges">Cancel</MatButton>
+        </MatDialogActions>
+    </div>
+    <style>
+        .dialogdiv {
+        width:500px;
+        }
+        .textdiv {
+            width: 100%;
+            height:50px;
+        }
+        .textareadiv {
+            width:100%;
+            height:100px;
+        }
+        .selectdiv {
+            width: 100%;
+            height: 50px;
+            margin-bottom:8px;
+        }
+
+    </style>*@

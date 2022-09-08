@@ -1,0 +1,190 @@
+﻿<section id="personalInformationForm">
+    <div class="row formHeader my-3">
+        <p>
+            Please enter your personal information
+        </p>
+    </div>
+    <EditForm Model="model">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="surnameInput">Surname*</label>
+                    <input type="text" class="form-control" id="surnameInput" placeholder="Surname" @bind-value="model.Surname" @onfocusout="validation">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="givenNameInput">Given Name*</label>
+                    <input type="text" class="form-control" id="givenNameInput" placeholder="Given Name" @bind-value="model.GivenName" @onfocusout="validation">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="middleNameInput">Middle Name</label>
+                    <input type="text" class="form-control" id="middleNameInput" placeholder="Middle Name" @bind-value="model.MiddleName" @onfocusout="validation">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="chiNameInput">Name in Chinese(if any)</label>
+                    <input type="text" class="form-control" id="chiNameInput" placeholder="Name in Chinese" @bind-value="model.ChiName" @onfocusout="validation">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="titleInput">Title*</label>
+                    <DropDownListInput Type="Title"></DropDownListInput>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <div class="row">
+                        <label for="genderInput">Gender* @model.Gender</label>
+                    </div>
+                    <RadioButtonInput Type="Gender" Class="flex-row"></RadioButtonInput>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="dobInput">Date of Birth*</label>
+                    <input type="datetime" class="form-control" id="dobInput" placeholder="Date of Birth" @bind="model.Dob" @bind:format="yyyy-MM-dd">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="contactNumInput">Contact Number*</label>
+                    <div id="contactNumDdlInput">
+                        <DropDownListInput Type="CountryCode"></DropDownListInput>
+                        <input type="number" class="form-control" id="contactNumInput" placeholder="Contact Number" @bind-value="model.ContactNum">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="mobildNumInput">Mobild Number*</label>
+                    <div id="mobildNumDdlInput">
+                        <DropDownListInput Type="CountryCode"></DropDownListInput>
+                        <input type="number" class="form-control" id="mobildNumInput" placeholder="Mobild Number" @bind-value="model.MobileNum">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>Resident of Hong Kong*</label>
+                    <RadioButtonInput Type="YN" Class="flex-row"></RadioButtonInput>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="hkidInput">HKID*</label>
+                    <input type="text" class="form-control" id="hkidInput" placeholder="HKID" @bind-value="model.Hkid" />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="proofHkidInput">Proof of HKID*</label>
+                    @*<input type="file" class="form-control" id="proofHkidInput" placeholder="HKID.pdf" />*@
+                    @*<InputFile OnChange="@LoadFiles" multiple />*@
+                    @*<InputFile OnChange="@UploadHkidProof" />*@
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="passportInput">Passport Number*</label>
+                    <input type="text" class="form-control" id="passportInput" placeholder="Passport Number" @bind-value="model.PassportNumber" />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="proofPassportInput">Proof of passport document*</label>
+                    @*<input type="file" class="form-control" id="proofPassportInput" placeholder="Upload" />*@
+                    @*<InputFile OnChange="@UploadPassportProof" />*@
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="authorityInput">Issuing authority*</label>
+                    <DropDownListInput Type="IssuingAuthority"></DropDownListInput>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="signatureInput">Proof of HKID*/Signature</label>
+                    @*<input type="file" id="signatureInput" placeholder="officalsignature.jpg" />*@
+                    @*<InputFile OnChange="@UploadSignature" />*@
+                    <small>Only accept file with size.....</small>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="nextBtnDiv">
+            <div class="col-6">
+                <button type="button" class="btn btn-outline-secondary w-100" @onclick="OnPrevBtnClicked">Previous</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary w-100 @(isValid ? "" : "disabled")" @onclick="OnNextBtnClicked" id="nextBtn">Next</button>
+            </div>
+        </div>
+    </EditForm>
+</section>
+
+<style>
+    #contactNumDdlInput, #mobildNumDdlInput {
+        display: flex;
+    }
+</style>
+
+@code {
+    private bool isValid { get; set; } = false;
+    private PersonalInformationFormModel model { get; set; } = new PersonalInformationFormModel();
+
+    private void validation()
+    {
+        isValid = false;
+
+
+        //if (!String.IsNullOrEmpty(Surname) && !String.IsNullOrEmpty(GivenName) && !String.IsNullOrEmpty(MiddleName) && !String.IsNullOrEmpty(ChiName) && !String.IsNullOrEmpty(Title) && !String.IsNullOrEmpty(Gender)
+        //    && !String.IsNullOrEmpty(Dob) && ContactNumCountryCode != 0 && ContactNum != 0 && MobileNumCountryCode != 0 && MobileNum != 0 && !String.IsNullOrEmpty(ResHk) && !String.IsNullOrEmpty(Hkid)
+        //    && !String.IsNullOrEmpty(PassportNumber) && !String.IsNullOrEmpty(IssuingAuthority))
+        if (!String.IsNullOrEmpty(model.Surname) && !String.IsNullOrEmpty(model.GivenName))
+        {
+            isValid = true;
+        }
+    }
+
+    private void OnPrevBtnClicked()
+    {
+        //OnPrevActionClicked?.Invoke();
+    }
+
+    private void OnNextBtnClicked()
+    {
+        validation();
+        if (isValid)
+        {
+            //OnNextActionClicked?.Invoke();
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+}

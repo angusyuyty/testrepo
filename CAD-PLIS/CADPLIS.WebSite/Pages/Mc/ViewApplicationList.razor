@@ -1,0 +1,123 @@
+﻿@page "/Mc/list"
+@page "/Mc/applicantList"
+@page "/Mc/listAME"
+@page "/Mc/listAMA"
+@inject NavigationManager NavigationManager
+@using CADPLIS.Domain.CodeLists
+
+<section id="viewApplicationList">
+    <div id="applicationList">
+        <div class="header row" id="header">
+            <h5>Application list</h5>
+        </div>
+        @if (isSearchEnable)
+        {
+            <div class="row">
+                <div class="col-12">
+                    <label>Searcing Area</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    @*<label>Application No</label>*@
+                    <MatTextField @bind-Value="@searchApplication.ApplicationNo" Label="Application No"></MatTextField>
+                </div>
+                <div class="col-3">
+                    @*<label>Application Status</label>*@
+                    <MatSelect Label="Application Status" @bind-Value="@searchApplication.ApplicationStatus">
+                        <MatOptionString></MatOptionString>
+                        @foreach (DropDownList opt in applicationStatusOpts)
+                            {
+                            <MatOptionString Value="@opt.Value">@opt.Description</MatOptionString>
+                            }
+                    </MatSelect>
+                </div>
+                <div class="col-3">
+                    @*<label>Applicant ID / Passport / BR No</label>*@
+                    <MatTextField @bind-Value="@searchApplication.ApplicantUserId" Label="Applicant ID / Passport / BR No"></MatTextField>
+                </div>
+                <div class="col-3">
+                    @*<label>Application Type</label>*@
+                    <MatTextField @bind-Value="@searchApplication.ApplicationType" Label="Application Type"></MatTextField>
+                </div>
+            </div>
+        }
+        <div class="row">
+            <MatTable Items="@applications">
+                <MatTableHeader>
+                    @foreach (String headerName in headers)
+                    {
+                        <th>@headerName</th>
+                    }
+                </MatTableHeader>
+                <MatTableRow>
+                    <td>@context.ApplicationNo</td>
+                    <td>MC</td>
+                    <td>@context.ApplicationType</td>
+                    <td>Applicant Name</td>
+                    <td>@context.ApplicantUserId</td>
+                    <td>Application Date</td>
+                    <td>Examination Date Time</td>
+                    <td>@context.ApplicationStatus</td>
+                    <td><MatButton Label="View"></MatButton></td>
+                    <td><MatButton Label="Modify"></MatButton></td>
+                    <td><MatButton Label="Cancel"></MatButton></td>
+                </MatTableRow>
+            </MatTable>
+        </div>
+    </div>
+    <div id="createNewApplication" class="row">
+        <div class="row">
+            <h5>Create a new booking for medical certificate</h5>
+        </div>
+        <div class="row">
+            <label class="w-auto">Please click here if you want to have a new booking</label>
+            <MatButton Class="btn btn-primary w-auto" Label="New booking" @onclick="() => { NewBooking(); }" Raised="true"></MatButton>
+        </div>
+    </div>
+</section>
+
+@code {
+    private List<MCApplication> applications { get; set; } = null;
+    private List<String> headers { get; set; } = new List<string>();
+    private Boolean isSearchEnable { get; set; } = false;
+    private MCApplication searchApplication { get; set; } = new MCApplication();
+
+    private List<DropDownList> applicationStatusOpts { get; set; } = new List<DropDownList>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (headers == null) headers = new List<String>();
+        headers.Add("Application No");
+        headers.Add("Application Area");
+        headers.Add("Application Type");
+        headers.Add("Applicant Name");
+        headers.Add("Applicant User ID");
+        headers.Add("Application Date");
+        headers.Add("Examination Date Time");
+        headers.Add("Status");
+        headers.Add("View application");
+        headers.Add("Modify application");
+        headers.Add("View application");
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("## OnParametersSetAsync ViewApplicationList: " + NavigationManager.Uri);
+        if (NavigationManager.Uri.Contains("applicantList"))
+        {
+            isSearchEnable = true;
+        }
+        else
+        {
+            isSearchEnable = false;
+        }
+        return base.OnParametersSetAsync();
+    }
+
+    private void NewBooking()
+    {
+        NavigationManager.NavigateTo("/Mc/initial");
+    }
+}

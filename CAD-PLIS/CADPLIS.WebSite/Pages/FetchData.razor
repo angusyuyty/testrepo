@@ -1,0 +1,79 @@
+﻿@page "/fetchdata"
+@using Microsoft.Extensions.Logging
+@inject HttpClient httpClient
+@inject IMatDialogService MatDialogService
+@inject NavigationManager navi
+@inject ILogger<FetchData> logger
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (forecasts == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{<MatButton OnClick="@(_ => OpenDialogFromService())">Open</MatButton>
+    <MatTable Items="@forecasts" class="mat-elevation-z5" ShowPaging="false">
+        <MatTableHeader>
+            <th>Date</th>
+            <th>Temp.&nbsp;(C)</th>
+            <th>Temp.&nbsp;(F)</th>
+            <th>Summary</th>
+        </MatTableHeader>
+        <MatTableRow>
+            <td>@context.Date.ToShortDateString()</td>
+            <td>@context.TemperatureC</td>
+            <td>@context.TemperatureF</td>
+            <td>@context.Summary</td>
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="100" PageSize="@pageSize" Page="@OnPage"></MatPaginator>
+    </div>
+}
+@code {
+    private WeatherForecast[] forecasts;
+
+  
+    protected override async Task OnInitializedAsync()
+    {
+        HttpClient httpClient = new HttpClient { BaseAddress = new Uri(navi.BaseUri) };
+        await Task.Delay(1000);
+        
+    forecasts = await httpClient.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+
+    }
+
+    async Task OpenDialogFromService()
+    {
+        await MatDialogService.OpenAsync(typeof(DemoDialogItem),
+            new MatDialogOptions() {
+                Attributes=new Dictionary<string, object>() { { "action", "edit" } }
+            });
+        //await MatDialogService.AlertAsync("Test alert message");
+    }
+
+
+    public class WeatherForecast
+    {
+        public DateTime Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+
+    int pageSize = 25;
+    int pageIndex = 0;
+
+    void OnPage(MatPaginatorPageEvent e)
+    {
+        pageSize = e.PageSize;
+        pageIndex = e.PageIndex;
+        forecasts = new WeatherForecast[] { forecasts.FirstOrDefault() };
+    }
+
+}

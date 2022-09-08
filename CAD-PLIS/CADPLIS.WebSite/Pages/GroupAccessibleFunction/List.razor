@@ -1,0 +1,60 @@
+﻿@page "/GroupAccessibleFunction/List"
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <h3>Group Accessible Function Maintenance</h3>
+    <div>
+
+        <MatSelect @bind-Value="@gId" Label="Group ID" Class="searchinput">
+            <MatOptionString Value="0">Please Select</MatOptionString>
+            @foreach (var item in groupList)
+                {
+        <MatOptionString Value="@item.GroupId">@item.GroupId </MatOptionString>
+                }
+        </MatSelect>
+        <MatTextField @bind-Value="@gname" Label="Group Name" Class="searchinput"></MatTextField>
+        <MatButton Icon="search" Label="Search" OnClick="@(() => Search())"></MatButton>
+    </div>
+    <MatTable Items="@paginator.data" Class="mat-elevation-z5" Striped="true" ShowPaging="false" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" Label="New Group Function" OnClick="@(() => Add())" Raised="true"></MatButton></th>
+            <th>Group ID</th>
+            <th>Group Name</th>
+            <th>Function ID</th>
+            <th>Function Type</th>
+            <th>Function Name</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Last Updated By</th>
+            <th>Last Updated Date</th>
+
+        </MatTableHeader>
+        <MatTableRow>
+            <td>
+                <div style="width:100%;">
+                    <MatIconButton Icon="visibility" OnClick="@(()=>View(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="@(() => Edit(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(() => Delete(context.Id))"></MatIconButton>
+                </div>
+            </td>
+            <td>@context.GroupId</td>
+            <td>@context.GroupName</td>
+            <td>@context.FunctionId</td>
+            <td>@context.FunctionType</td>
+            <td>@context.FunctionName</td>
+            <td>@context.CreatedBy</td>
+            <td>@context.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@context.UpdatedBy</td>
+            <td>@context.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+    <div>
+    </div>
+}

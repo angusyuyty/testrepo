@@ -1,0 +1,62 @@
+﻿@page "/User/UserRole/UserRoleList"
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+<h3>User Role Maintenance</h3>
+<div>
+    <MatSelect @bind-Value="@userId" Label="User ID" Class="searchinput">
+        <MatOptionString Value="0">Please Select</MatOptionString>
+        @foreach (var item in userList)
+            {
+            <MatOptionString Value="@item.UserId">@item.UserId </MatOptionString>
+            }
+    </MatSelect>
+
+    <MatButton Icon="search" Label="Search" OnClick="@(() => Search())"></MatButton>
+
+
+</div>
+    <MatTable Items="@paginator.data" Class="mat-elevation-z5" Striped="true" ShowPaging="false" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" Label="New User Role" OnClick="@(() => Add())" Raised="true"></MatButton></th>
+            <th>User Role ID</th>
+            <th>User ID</th>
+            <th>Role ID</th>
+            <th>Role Name</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Last Updated By</th>
+            <th>Last Updated Date</th>
+
+        </MatTableHeader>
+        <MatTableRow Context="UserRow">
+            <td>
+                <div style="width:100%;">
+                    <MatIconButton Icon="visibility" OnClick="@(()=>View(UserRow.UserRoleId))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="@(() => Edit(UserRow.UserRoleId))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(() => Delete(UserRow.UserRoleId))"></MatIconButton>
+                </div>
+            </td>
+            <td>@UserRow.UserRoleId</td>
+            <td>@UserRow.UserId</td>
+            <td>@UserRow.RoleId</td>
+            <td>@UserRow.RoleName</td>
+            <td>@UserRow.CreatedBy</td>
+            <td>@UserRow.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@UserRow.UpdatedBy</td>
+            <td>@UserRow.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+    <div>
+    </div>
+}
+@code {
+
+}

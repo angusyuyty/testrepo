@@ -1,0 +1,11 @@
+2021-09-06 15:45:05.7743 | Failed executing DbCommand (5ms) [Parameters=[@__p_3='?' (DbType = Int32), @__p_4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [p].[user_role_group_id], [p].[CreatedBy], [p].[CreatedTime], [p].[CreatedUserRoleId], [p].[group_id], [p].[UpdatedBy], [p].[UpdatedTime], [p].[UpdatedUserRoleId], [p].[user_role_id]
+FROM [PLIS_USER_ROLE_GROUP] AS [p]
+WHERE 0 = 1
+ORDER BY (SELECT 1)
+OFFSET @__p_3 ROWS FETCH NEXT @__p_4 ROWS ONLY 
+2021-09-06 15:53:01.9137 | Failed executing DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [p].[user_role_group_id], [p].[CreatedBy], [p].[CreatedTime], [p].[CreatedUserRoleId], [p].[group_id], [p].[UpdatedBy], [p].[UpdatedTime], [p].[UpdatedUserRoleId], [p].[user_role_id]
+FROM [PLIS_USER_ROLE_GROUP] AS [p]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 

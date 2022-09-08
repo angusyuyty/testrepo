@@ -1,0 +1,26 @@
+﻿@if (!String.IsNullOrEmpty(BackgroundImageUrl))
+{
+    <div class="col-12 col-lg-3 col-xl-3 d-none d-lg-flex d-xl-flex @(!String.IsNullOrEmpty(ImageHeight) ? "imgHeight" : "")" id="imgHolder">
+        &nbsp;
+    </div>
+
+    <style>
+    #imgHolder {
+        background-image: url(@BackgroundImageUrl);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+        .imgHeight {
+            height: @ImageHeight;
+        }
+    </style>
+}
+
+@code {
+    [Parameter]
+    public String BackgroundImageUrl { get; set; } = "";
+    [Parameter]
+    public String ImageHeight { get; set; } = "120vh";
+}

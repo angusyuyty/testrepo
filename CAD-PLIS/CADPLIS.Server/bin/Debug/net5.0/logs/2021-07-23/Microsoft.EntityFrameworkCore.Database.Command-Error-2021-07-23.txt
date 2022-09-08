@@ -1,0 +1,4 @@
+2021-07-23 14:59:58.9801 | Failed executing DbCommand (9ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [n].[Id], [n].[CreatedBy], [n].[CreatedTime], [n].[Icon], [n].[IsDeleted], [n].[MenuName], [n].[OrderNo], [n].[ParentId], [n].[Permission], [n].[RouteUrl], [n].[UpdatedBy], [n].[UpdatedTime]
+FROM [NavMenus] AS [n]
+WHERE ([n].[Id] = @__id_0) AND ([n].[IsDeleted] <> CAST(1 AS bit)) 

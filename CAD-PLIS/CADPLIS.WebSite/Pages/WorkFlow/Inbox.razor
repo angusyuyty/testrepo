@@ -1,0 +1,59 @@
+﻿@page "/WorkFlow/Inbox"
+
+
+@if (paginator.data == null )
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+
+    <h3>Inbox</h3>
+    <MatTable Items="@paginator.data" AllowSelection="true" ShowPaging="false" PageSize="@PageSize" UseSortHeaderRow="true">
+        <MatTableHeader>
+            <th>Number</th>
+            <th>WorkFlowType</th>
+            <th class="tdlogcontent">State</th>
+            <th class="tdlogcontent">Name</th>
+            <th class="tdlogcontent">Comment</th>
+            <th>Author</th>
+            <th>Manager</th>
+            <th>Sum</th>
+            <th>Adding date</th>
+            <th>Available commands</th>
+        </MatTableHeader>
+        <MatTableRow Context="WorkFlowCon">
+            <td>@WorkFlowCon.Number</td>
+            <td>@WorkFlowCon.SchemeCode</td>
+            <td>@WorkFlowCon.StateName</td>
+            <td>@WorkFlowCon.Name</td>
+            <td>@WorkFlowCon.Comment</td>
+            <td>@WorkFlowCon.AuthorName</td>
+            <td>@WorkFlowCon.ManagerName</td>
+            <td>@WorkFlowCon.Sum</td>
+            <td>@WorkFlowCon.AddingDate?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>
+                @if (WorkFlowCon.AvailableCommands != null)
+                    {
+                    @foreach (var item in WorkFlowCon.AvailableCommands)
+                        {
+
+                        <div><MatButton Label="@item.Name" OnClick="@(() => ExecuteCommand(WorkFlowCon.Id,item.Name))"></MatButton> </div>
+                        }
+                    }
+            </td>
+
+        </MatTableRow>
+
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+
+}
+
+<style>
+    .tdlogcontent {
+        width: 30% !important
+    }
+</style>

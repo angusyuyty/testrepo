@@ -1,0 +1,206 @@
+﻿@page "/User/UserInfo"
+@using Microsoft.AspNetCore.Components.Authorization
+@using CADPLIS.Domain
+@using CADPLIS.Common
+@using CADPLIS.WebSite.Notice
+@using CADPLIS.Application.Contracts.Users
+@using CADPLIS.Domain.CodeLists
+@inject IMatDialogService MatDialogService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager navigationManager
+@inject HttpRepository httpRepository
+
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <h3>User Maintenance</h3>
+    <div>
+        <MatTextField @bind-Value="@userId" Label="User ID" Class="searchinput"></MatTextField>
+        <MatTextField @bind-Value="@uId" Label="User Account ID" Class="searchinput"></MatTextField>
+        <MatTextField @bind-Value="@email" Label="Email" Class="searchinput"></MatTextField>
+        <MatButton Icon="search" Label="Search" OnClick="@(() => Search())"></MatButton>
+
+
+    </div>
+    <MatTable Items="@paginator.data" Class="mat-elevation-z5" Striped="true" ShowPaging="false" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" Label="New User" OnClick="@(() => AddUser())" Raised="true"></MatButton></th>
+            <th>User ID</th>
+            <th>User Account ID</th>
+            <th>Email</th>
+            <th>User Type</th>
+            <th>2FA Enabled</th>
+            <th>Active Status</th>
+            <th>Created Date</th>
+            <th>Last Updated Date</th>
+
+        </MatTableHeader>
+        <MatTableRow Context="UserRow">
+            <td>
+                <div style="width:155px;">
+                    <MatIconButton Icon="visibility" OnClick="@(()=>View(UserRow.Id))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="@(() => Edit(UserRow.Id))"></MatIconButton>
+                </div>
+            </td>
+            <td>@UserRow.UserId</td>
+            <td>@UserRow.UId</td>
+            <td>@UserRow.Email</td>
+            <td>
+                @(!string.IsNullOrEmpty(UserRow.UserType)?dicUserType[UserRow.UserType]:"")
+            </td>
+            <td>
+                @(UserRow.Is2FAEnabled.HasValue? (UserRow.Is2FAEnabled==true?"YES":"NO"):"")
+            </td>
+            <td>
+                @(!string.IsNullOrEmpty( UserRow.RecState)?dciState[UserRow.RecState] :"")
+            </td>
+            <td>@UserRow.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@UserRow.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+    <div>
+    </div>
+}
+
+@code
+{
+    Dictionary<string, string> dicUserType = new Dictionary<string, string>();
+    Dictionary<string, string> dciState = new Dictionary<string, string>();
+
+    private Paginator<UserDto> paginator = new();
+    private int PageSize { get; set; } = 10;
+    private int PageIndex { get; set; } = 0;
+    private int PageCount { get; set; }
+    private string userId { get; set; }
+    private int? uId;
+    private string email { get; set; }
+
+    [CascadingParameter] public Error Error { get; set; }
+    [Parameter] public int Id { get; set; }
+    [Inject] IViewNotifier viewNotifier { get; set; }
+    [Parameter] public string action { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUserList();
+        await SetUserType();
+        await SetUserStatus();
+
+    }
+
+    async Task GetUserList()
+    {
+        //httpClient.DefaultRequestHeaders.Add("currentRole", "admin");
+        var url = $"api/User/GetPageUsers/pageSize/{PageSize}/pageIndex/{PageIndex}?userId={userId}&uId={uId}&email={email}";
+        var result = await httpRepository.GetJsonAsync<ApiResponse<Paginator<UserDto>>>(url);
+        if (result.IsSuccessStatusCode)
+        {
+            paginator = result.Result;
+            PageCount = paginator.pageCount;
+        }
+    }
+
+    async Task OnPage(MatPaginatorPageEvent e)
+    {
+        PageSize = e.PageSize;
+        PageIndex = e.PageIndex;
+        await GetUserList();
+    }
+
+    void Edit(int id)
+    {
+        Id = id;
+        action = "edit";
+        navigationManager.NavigateTo($"/User/Edit/{Id}");
+    }
+    void AddUser()
+    {
+        navigationManager.NavigateTo($"/User/Add");
+    }
+    void View(int id)
+    {
+        Id = id;
+        navigationManager.NavigateTo($"/User/UserView/{Id}");
+    }
+
+    async Task ChangePwd(Guid id)
+    {
+        var result = await MatDialogService.OpenAsync(typeof(ChangePassword),
+                new MatDialogOptions()
+                    {
+                        Attributes = new Dictionary<string, object>() {
+                        { "UserId", id },
+                            }
+                    });
+        var isSuccess = result.ToString().Equals("True");
+        if (isSuccess)
+        {
+            await GetUserList();
+        }
+    }
+
+    async Task Search()
+    {
+        await GetUserList();
+    }
+
+    async Task DeleteUser(Guid id)
+    {
+        var boolDelete = await MatDialogService.ConfirmAsync("Are you sure to delete this?");
+        if (boolDelete)
+        {
+            var result = await httpRepository.DeleteAsync<ApiResponse>($"/api/Account/DeleteUser/{id}");
+            if (result.IsSuccessStatusCode)
+            {
+                viewNotifier.Show("success", ViewNotifierType.Success, result.Message);
+                await GetUserList();
+            }
+            else
+            {
+                Error.ShowError(result.Message);
+            }
+
+        }
+    }
+
+    async Task SetUserType()
+    {
+        var rsp = await GetListByType("UserType");
+        var userTypes = rsp.Result;
+        foreach (var item in userTypes)
+        {
+            dicUserType.Add(item.Value, item.Description);
+        }
+    }
+    async Task SetUserStatus()
+    {
+        var rsp = await GetListByType("ActivationStatus");
+        var userTypes = rsp.Result;
+        foreach (var item in userTypes)
+        {
+            dciState.Add(item.Value, item.Description);
+        }
+    }
+
+
+    async Task<ApiResponse<List<DropDownList>>> GetListByType(string type)
+    {
+        string url = $"api/CodeList/GetListByType/{type}";
+        var result = await httpRepository.GetJsonAsync<ApiResponse<List<DropDownList>>>(url);
+        if (result.IsSuccessStatusCode)
+        {
+            return result;
+        }
+        return null;
+    }
+}
+
+
+

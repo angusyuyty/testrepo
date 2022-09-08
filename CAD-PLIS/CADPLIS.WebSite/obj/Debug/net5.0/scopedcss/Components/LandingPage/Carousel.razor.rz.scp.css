@@ -1,0 +1,54 @@
+body[b-x506zf84ei] {
+}
+
+#carouseTitle[b-x506zf84ei] {
+    /*color: #35496E;
+    white-space: pre-wrap;*/
+    /*width: 441px;
+    height: 51px;
+    margin: 0 24px 16px 25px;*/
+    font-family: 'Roboto', sans-serif;
+    /*font-family: Poppins;*/
+    font-size: 36px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #35496e;
+}
+
+#carouseSubtitle[b-x506zf84ei] {
+    /*width: 490px;
+    height: 56px;
+    margin: 16px 0 0;*/
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #2e4161;
+    /*color: #394B69;
+    white-space: pre-wrap;*/
+}
+
+.carouselBody[b-x506zf84ei] {
+    text-align: left;
+}
+
+/*.shutterstock_626787275 {
+    width: 593px;
+    height: 395px;
+    margin: 0 0 0 1px;
+}*/
+
+.carousel-cell p[b-x506zf84ei], .carousel-cell a[b-x506zf84ei], .carousel-cell footer[b-x506zf84ei] {
+    text-align: left;
+}
+
+.flickity-slider .carousel-cell:not(:first-child)[b-x506zf84ei] {
+    height: 100%;
+}

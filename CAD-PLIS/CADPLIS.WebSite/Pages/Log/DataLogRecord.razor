@@ -1,0 +1,66 @@
+﻿@page "/Log/DataLogRecord"
+
+@if (logList == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <h3>DataLogRecord</h3>
+    <MatTable Items="@logList" AllowSelection="true" ShowPaging="false" PageSize="@pageSize" UseSortHeaderRow="true">
+        <MatTableHeader>
+            <th>logoperator</th>
+            <th class="thtime">OperationTime</th>
+            <th class="tdlogcontent">OperationContent</th>
+        </MatTableHeader>
+        <MatTableRow>
+            <td>@context.LogOperator</td>
+
+            <td>@context.CreateTime</td>
+            <td>
+                <MatAccordion Multi="true">
+                    @foreach (var citem in context.LogChildrens)
+                        {
+                        <MatExpansionPanel>
+                            <MatExpansionPanelSummary>
+                                <MatExpansionPanelHeader>@citem</MatExpansionPanelHeader>
+                            </MatExpansionPanelSummary>
+                            <MatExpansionPanelDetails>
+                                @foreach (var item in context.ContentChildrens.Where(u => u.LogContent == citem))
+                                    {
+
+                                <p>FieldName:@item.FieldName &nbsp; OriginalValue: @item.OriginalValue &nbsp;  CurrentValue: @item.CurrentValue</p>
+                                    }
+                            </MatExpansionPanelDetails>
+                        </MatExpansionPanel>
+
+                        }
+                    </MatAccordion>
+            </td>
+
+           
+        </MatTableRow>
+
+    </MatTable>
+    <div>
+        <MatPaginator Length="@pageCount" PageSize="@pageSize" Page="@OnPage"></MatPaginator>
+    </div>
+
+}
+
+
+
+@code {
+
+}
+<style>
+    .tdlogcontent {
+        width: 80% !important
+    }
+    .mat-expansion-panel__header {
+        flex-basis:100%!important;
+    }
+    .thtime {
+    width:20% !important;
+    }
+</style>

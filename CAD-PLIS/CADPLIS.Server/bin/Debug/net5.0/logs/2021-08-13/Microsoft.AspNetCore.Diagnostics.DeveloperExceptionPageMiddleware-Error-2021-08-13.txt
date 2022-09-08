@@ -1,0 +1,45 @@
+2021-08-13 11:33:37.9664 | An unhandled exception has occurred while executing the request. ${roleDto.Name} already exists  
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-13 11:48:08.3024 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 11:49:29.3460 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 11:50:35.9034 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 11:52:03.2323 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 11:53:19.1427 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 14:44:20.7091 | An unhandled exception has occurred while executing the request. Ambiguous HTTP method for action - CADPLIS.Server.Controllers.AccountController.GetUsers (CADPLIS.Server). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0 
+ HostingApplication.ProcessRequestAsync => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-13 16:00:48.3776 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Roles.IUserRoleRelationshipsAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserRoleRelationshipsController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-13 16:12:08.0261 | An unhandled exception has occurred while executing the request. Ambiguous HTTP method for action - CADPLIS.Server.Controllers.AccountController.GetAllRoles (CADPLIS.Server). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-13 16:12:20.9100 | An unhandled exception has occurred while executing the request. Ambiguous HTTP method for action - CADPLIS.Server.Controllers.AccountController.GetAllRoles (CADPLIS.Server). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-13 16:12:50.4784 | An unhandled exception has occurred while executing the request. Ambiguous HTTP method for action - CADPLIS.Server.Controllers.AccountController.GetAllRoles (CADPLIS.Server). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-13 16:44:29.0755 | An unhandled exception has occurred while executing the request. There is already an open DataReader associated with this Connection which must be closed first. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 16:44:38.1345 | An unhandled exception has occurred while executing the request. There is already an open DataReader associated with this Connection which must be closed first. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 16:45:37.8725 | An unhandled exception has occurred while executing the request. There is already an open DataReader associated with this Connection which must be closed first. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-13 16:46:06.7624 | An unhandled exception has occurred while executing the request. There is already an open DataReader associated with this Connection which must be closed first. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+

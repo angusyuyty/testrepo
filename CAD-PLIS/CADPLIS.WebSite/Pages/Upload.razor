@@ -1,0 +1,40 @@
+﻿@page "/upload"
+@using Microsoft.Extensions.Logging;
+@inject HttpClient httpClient
+@using CADPLIS.Application.Contracts.Files
+@inject ILogger<Upload> logger;
+<MatFileUpload OnChange="@FilesReady" Label="Drop a single file here or Browse" AllowMultiple="true"></MatFileUpload>
+@code{
+    async Task FilesReady(IMatFileUploadEntry[] files)
+    {
+        List<FileData> fileDatas = new List<FileData>();
+        foreach (var file in files)
+        {
+            using (var stream = new MemoryStream())
+            {
+                await file.WriteToStreamAsync(stream);
+                stream.Seek(0, SeekOrigin.Begin);
+
+                var fileData = new FileData
+                {
+                    Data = stream.ToArray(),
+                    FileName = file.Name,
+                    FileType = file.Type,
+                    Size = file.Size
+                };
+                fileDatas.Add(fileData);
+            }
+        }
+
+        try
+        {
+            await httpClient.PostAsJsonAsync("/api/file/upload", fileDatas);
+            await InvokeAsync(StateHasChanged);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex.ToString());
+        }
+    }
+}
+

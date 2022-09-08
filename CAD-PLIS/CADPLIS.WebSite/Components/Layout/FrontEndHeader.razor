@@ -1,0 +1,222 @@
+﻿@*@implements IDisposable*@
+@inject NavigationManager NavigationManager
+<!-- Desktop Menu -->
+<div id="frontNavMenu" style=" position: relative;" class="d-none d-md-none d-lg-block d-xl-block" @onmouseleave="() => { frontEndNavSubMenuSelectedMenu = 0; }">
+    <div id="rootMenu" class="row">
+        <a class="navbar-brand col-3" href="/landing">
+            <img src="/images/CAD_Icon.png" class="navbar-brand-img" alt="CAD-PLIS Icon">
+        </a>
+        @if (NavigationManager.Uri.Contains("/createAccount"))
+        {
+            <BSButton Color="Color.Primary" @onclick="@onToggle" id="returnBtn">
+                <NavMenuRightButton IconImgUrl="/images/ExitForm.svg" IconText="Cancel registration"></NavMenuRightButton>
+            </BSButton>
+            @*<NavMenuRightButton IconImgUrl="/images/ExitForm.svg" IconText="Cancel registration" Url="/landing"></NavMenuRightButton>*@
+        }
+        else
+        {
+            <NavMenuRightButton IconImgUrl="/images/return.svg" IconText="Return PLIS" Url="/landing"></NavMenuRightButton>
+            @*<BSButton Color="Color.Primary" @onclick="@onToggle" id="returnBtn"><NavMenuRightButton IconImgUrl="/images/return.svg" IconText="Return PLIS"></NavMenuRightButton></BSButton>*@
+        }
+    </div>
+</div>
+
+<!-- Mobile -->
+<div class="d-block d-md-block d-lg-none">
+    <BSNavbar IsExpand="true" IsDark="false" Color="Color.Light" Class="w-100">
+        <BSNavbarBrand Href="/landing   " Class="col-3">
+            <BSImage src="/images/CAD_logo.gif" alt="CAD Icon" Class="w-100" />
+        </BSNavbarBrand>
+        <BSNavbarToggler @onclick="onclick" />
+        <BSCollapse @ref="NavbarCollapse" IsNavbar="true" IsOpenChanged="OpenChanged">
+        </BSCollapse>
+    </BSNavbar>
+</div>
+
+<!-- Popup -->
+<BSModal @ref="VerticallyCentered" IsCentered="true" Size="Size.Medium">
+    <BSModalHeader OnClick="@onToggle">Attention</BSModalHeader>
+    <BSModalBody><p>Are you sure to leave the current process?</p></BSModalBody>
+    <BSModalFooter>
+        <button class="btn btn-outline-secondary" @onclick="() => { onButtonToggle(true); }">Yes</button>
+        <button class="btn btn-primary" @onclick="() => { onButtonToggle(false); }">No</button>
+    </BSModalFooter>
+</BSModal>
+
+<style>
+    #rootMenu {
+        justify-content: space-between;
+        align-items: self-end;
+    }
+
+        #rootMenu .navbar-brand-img {
+            width: auto;
+            height: 100%;
+        }
+
+        #rootMenu a {
+            color: #A8A8A8 !important;
+            text-align: center;
+        }
+
+    .navbar-brand .returnPlisImg {
+        height: 4vh !important;
+    }
+
+    #rootMenuList {
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .subMenu {
+        flex-direction: column;
+    }
+
+    .subMenuList {
+        flex-direction: column;
+    }
+
+    .nav-item, .nav-link, .nav-item a, .nav-item span, .nav-item i, .nav-link i {
+        font-family: 'Roboto', sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000 !important;
+    }
+
+    .subMenu {
+        max-width: 50%;
+    }
+
+    #subMenuDiv {
+        position: absolute;
+        z-index: 10;
+        background-color: #FFF;
+        color: #969696;
+    }
+
+    .rootItem {
+        align-self: flex-end;
+    }
+
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    #returnBtn {
+        background-color: transparent;
+        border-color: transparent;
+        width: auto;
+    }
+
+        #returnBtn:focus {
+            outline: 0 !important;
+            box-shadow: none !important;
+        }
+
+        #returnBtn #loginList {
+            justify-content: flex-start;
+        }
+
+    .modal-header {
+        border: none;
+        /*color: #4D4D4D;*/
+    }
+
+    .modal-body {
+        color: #595959;
+    }
+
+    .modal-footer {
+        justify-content: center;
+        border: none;
+    }
+
+        .modal-footer button {
+            width: 45%;
+        }
+
+            .modal-footer button.btn-primary {
+                background-color: #79ADCE;
+            }
+
+                .modal-footer button.btn-primary:hover {
+                    background-color: #0d6efd;
+                }
+</style>
+
+@code {
+    private bool isLogin { get; set; } = true;
+    private int frontEndNavSubMenuSelectedMenu { get; set; } = 0;
+    private BSCollapse NavbarCollapse;
+    private FormsModel formsModel = new FormsModel();
+    bool UserControlledIsOpen { get; set; } = false;
+    BSModal VerticallyCentered;
+
+    void onToggle(MouseEventArgs e)
+    {
+        VerticallyCentered.Toggle();
+    }
+
+    public void onButtonToggle(bool isRedirect)
+    {
+        VerticallyCentered.Toggle();
+        if (isRedirect)
+        {
+            NavigationManager.NavigateTo("/landing");
+        }
+    }
+
+    void onclick(MouseEventArgs e)
+    {
+        NavbarCollapse.Toggle();
+        Console.WriteLine("Navbar State->" + NavbarCollapse.IsOpen.ToString());
+    }
+    void OpenChanged(bool e)
+    {
+        Console.WriteLine("OpenChanged->" + e.ToString());
+    }
+
+    void UserControlledClick(MouseEventArgs e)
+    {
+        UserControlledIsOpen = !UserControlledIsOpen;
+        StateHasChanged();
+    }
+
+    public class FormsModel
+    {
+        public string Blank { get; set; }
+    }
+
+    private bool toggleMenuOnRedirect(bool isRedirect)
+    {
+        if (isRedirect)
+        {
+            NavbarCollapse.Toggle();
+            Console.WriteLine("Toogle Menu on Redirect!");
+            return false;
+        }
+        return true;
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        if (NavigationManager.Uri.Contains("/createAccount"))
+        {
+            isLogin = false;
+        }
+        else
+        {
+            isLogin = true;
+        }
+    }
+}

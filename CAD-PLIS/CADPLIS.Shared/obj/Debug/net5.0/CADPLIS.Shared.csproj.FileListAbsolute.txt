@@ -1,0 +1,12 @@
+D:\project\CAD-PLIS\CADPLIS.Shared\bin\Debug\net5.0\CADPLIS.Shared.deps.json
+D:\project\CAD-PLIS\CADPLIS.Shared\bin\Debug\net5.0\CADPLIS.Shared.dll
+D:\project\CAD-PLIS\CADPLIS.Shared\bin\Debug\net5.0\ref\CADPLIS.Shared.dll
+D:\project\CAD-PLIS\CADPLIS.Shared\bin\Debug\net5.0\CADPLIS.Shared.pdb
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.csproj.AssemblyReference.cache
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.AssemblyInfoInputs.cache
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.AssemblyInfo.cs
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.csproj.CoreCompileInputs.cache
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.dll
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\ref\CADPLIS.Shared.dll
+D:\project\CAD-PLIS\CADPLIS.Shared\obj\Debug\net5.0\CADPLIS.Shared.pdb

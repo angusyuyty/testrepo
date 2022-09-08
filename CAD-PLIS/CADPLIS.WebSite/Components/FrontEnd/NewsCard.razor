@@ -1,0 +1,58 @@
+﻿<div class="newsCard row border m-4 shadow rounded p-0">
+    <div class="col-12 col-lg-4 col-xl-4 pl-0 pr-0">
+        <BSImage src="@imgSrc" Class="w-100"></BSImage>
+    </div>
+    <div class="col-12 col-lg-8 col-xl-8 row my-4 ml-2 newsContent">
+        <h4 class="newsCardTitle">@title</h4>
+        @if (!String.IsNullOrEmpty(description))
+        {
+            <p class="descriptionPara">
+                <BSLabel>@description</BSLabel>
+            </p>
+        }
+        @if (link != null)
+        {
+            <NavLink class="newsLink" href="@link.Item2">@link.Item1</NavLink>
+        }
+    </div>
+</div>
+
+<style>
+    .newsCard {
+        background-color: #FFF;
+    }
+
+        .newsCard a {
+            color: #3A57E8 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+        }
+
+        .newsCard .newsContent {
+            font-weight: bold;
+        }
+
+        .newsCard .newsCardTitle {
+            color: #2E4161 !important;
+        }
+
+        .newsCard .descriptionPara {
+            color: #707070;
+        }
+
+        .newsCard .newsLink, .newsCard .newsLink a {
+            color: #424242 !important;
+            text-decoration: underline !important;
+        }
+</style>
+
+@code {
+    [Parameter]
+    public String imgSrc { get; set; }
+    [Parameter]
+    public String title { get; set; }
+    [Parameter]
+    public String description { get; set; }
+    [Parameter]
+    public Tuple<String, String> link { get; set; }
+}

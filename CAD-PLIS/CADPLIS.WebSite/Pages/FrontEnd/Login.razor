@@ -1,0 +1,225 @@
+﻿@page "/frontLogin"
+@layout FrontEndAccountLayout
+
+<section id="loginSection" class="mb-5 pb-5">
+    <div Class="row mr-4 loginSectionRow mx-5 justify-content-center">
+        @*<div id="loginForm" Class="row col-12 col-lg-5 col-xl-5 align-content-start">*@
+        <AccountContentForm>
+            <BSRow Class="my-4">
+                <h3 class="contentHeader">Login As</h3>
+            </BSRow>
+            <div class="row mr-3">
+                <BSTabGroup>
+                    <BSTabList Class="pr-0">
+                        <BSTab Id="personalTab" Class="w-50">
+                            <BSTabLabel Class="w-50 tabLabel py-3">Personal Account</BSTabLabel>
+                            <BSTabContent>
+                                <div class="border containerForm p-5">
+                                    <div class="inputDescLabel">
+                                        <span>Please enter you login ID</span>
+                                        <a href="/forgotLoginId">Forgot login ID?</a>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input class="form-control" />
+                                    </div>
+                                    <div class="inputDescLabel">
+                                        <span>Please enter you password</span>
+                                        <a href="/forgotPassword">Forgot password?</a>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input class="form-control" />
+                                    </div>
+                                    <div class="inputDescLabel">
+                                        <span>Verification Code</span>
+                                        <a @onclick="refreshCaptcha">Refresh</a>
+                                    </div>
+                                    <div class="mb-4" id="captchaInputDiv">
+                                        <input class="form-control col-8" />
+                                        <img alt="VerificationCode" src="images/CaptchaDummyImage.png" class="col-4" />
+                                    </div>
+                                    <div class="mb-4 px-3">
+                                        <BSButton Class="loginBtn w-100" ButtonType="ButtonType.Button">Login</BSButton>
+                                    </div>
+                                    <div class="mb-4 inputDescLabel" id="registerLinkDiv">
+                                        <span>Not registered yet?&nbsp;<a href="/createAccount">Create an Personal Account</a></span>
+                                    </div>
+                                    <HrTextLine Text="OR"></HrTextLine>
+                                    <div class="mb-4 px-3 iamsmartLoginSection">
+                                        <BSButton Class="w-100 iamSmartLoginBtn" ButtonType="ButtonType.Button">Login with "IAM Smart"</BSButton>
+                                    </div>
+                                    <div class="iamsmartLoginSection">
+                                        <a href="/frontLogin">Register for iAM Smart</a>
+                                    </div>
+                                    <div class="iamsmartLoginSection">
+                                        <a href="/frontLogin">What is iAMSMART?</a>
+                                    </div>
+                                </div>
+                            </BSTabContent>
+                        </BSTab>
+                        <BSTab Id="corporateTab" Class="w-50">
+                            <BSTabLabel Class="w-50 tabLabel py-3">Corporate Account</BSTabLabel>
+                            <BSTabContent>
+                                <div class="border containerForm p-5">
+                                    <div class="inputDescLabel">
+                                        <span>Please enter you login ID</span>
+                                        <a href="/forgot">Forgot login ID?</a>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input class="form-control" />
+                                    </div>
+                                    <div class="inputDescLabel">
+                                        <span>Please enter you password</span>
+                                        <a href="/forgot">Forgot password?</a>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input class="form-control" />
+                                    </div>
+                                    <div class="inputDescLabel">
+                                        <span>Verification Code</span>
+                                        <a>Refresh</a>
+                                    </div>
+                                    <div class="mb-4" id="captchaInputDiv">
+                                        <input class="form-control col-8" />
+                                        <img alt="VerificationCode" src="images/CaptchaDummyImage.png" class="col-4" />
+                                    </div>
+                                    <div class="mb-4 px-3">
+                                        <BSButton Class="loginBtn w-100" ButtonType="ButtonType.Button">Login</BSButton>
+                                    </div>
+                                    <div class="mb-4 inputDescLabel" id="registerLinkDiv">
+                                        <span>Not registered yet?&nbsp;<a href="/createAccount">Create an Personal Account</a></span>
+                                    </div>
+                                </div>
+                            </BSTabContent>
+                        </BSTab>
+                    </BSTabList>
+                    <BSTabSelectedContent></BSTabSelectedContent>
+                </BSTabGroup>
+            </div>
+        </AccountContentForm>
+        @*</div>*@
+        @*<BSCol id="loginBannerImg" Class="col-12 col-xl-2 col-lg-2 d-none d-lg-flex d-xl-flex">
+                &nbsp;
+            </BSCol>*@
+        <AccountBannerImageHolder BackgroundImageUrl="/images/Img_007.jpeg" ImageHeight="100vh"></AccountBannerImageHolder>
+    </div>
+</section>
+<style>
+    #loginSection {
+        height: 100%;
+    }
+
+    #loginSectionRow {
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    /*#loginSectionRow #loginForm {
+            align-content: flex-start;
+        }*/
+
+    /*#loginBannerImg {
+        background-image: url(/images/Img_007.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }*/
+
+    .containerForm {
+        background-color: #F7FBFD;
+    }
+
+    .selectedTab {
+        background-color: #67748E;
+        color: #FFFFFF;
+    }
+
+    .tab {
+        background-color: #F7FBFD;
+        color: #AAB0BE;
+    }
+
+    .tabLabel {
+        background-color: #FFF;
+        color: #758098;
+        text-align: center;
+        border: 1px solid #dee2e6 !important;
+        border-radius: 0.25rem !important;
+    }
+
+        .tabLabel.active {
+            background-color: #67748E !important;
+            color: #FFF !important;
+            text-decoration: underline;
+        }
+
+    .loginBtn {
+        background-color: #2E4161;
+    }
+
+        .loginBtn:hover {
+            background-color: #122aa5;
+        }
+
+    /*.inputDescLabel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+        .inputDescLabel span {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .inputDescLabel a {
+            color: #424242 !important;
+            font-size: small;
+        }
+
+        .inputDescLabel#registerLinkDiv span {
+            font-size: small;
+        }
+
+        .inputDescLabel#registerLinkDiv a {
+            color: #1F40E5 !important;
+            text-decoration: underline;
+        }*/
+
+    .iamSmartLoginBtn {
+        background-color: #225950;
+    }
+
+        .iamSmartLoginBtn:hover {
+            background-color: #2f8f7f;
+        }
+
+    .iamsmartLoginSection a {
+        color: #225950;
+        font-size: smaller;
+        font-weight: bold;
+    }
+
+    #captchaInputDiv {
+        display: flex;
+        align-items: center;
+    }
+
+    .hrWithText {
+        border-bottom: 1px solid black;
+        text-align: center
+    }
+
+        .hrWithText span {
+        }
+</style>
+
+@code {
+    private String loginId { get; set; }
+    private String password { get; set; }
+    private String verificationCode { get; set; }
+
+    private void refreshCaptcha()
+    {
+
+    }
+}

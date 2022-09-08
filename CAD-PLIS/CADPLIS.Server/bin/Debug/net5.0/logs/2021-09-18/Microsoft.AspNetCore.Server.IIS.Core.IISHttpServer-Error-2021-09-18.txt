@@ -1,0 +1,3 @@
+2021-09-18 09:31:45.7279 | Connection ID "17365880186226081856", Request ID "80000041-0005-f100-b63f-84710c7967bb": An unhandled exception was thrown by the application. The operation was canceled. 
+ AsyncMethodBuilderCore.Start => <ProcessRequestAsync>d__2.MoveNext => IISHttpContext.ReportApplicationError 
+

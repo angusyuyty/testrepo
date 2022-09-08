@@ -1,0 +1,86 @@
+2021-08-06 16:00:20.7597 | Failed executing DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AuditInfo] (
+    [Id] nvarchar(36) NOT NULL,
+    [Operator] nvarchar(36) NOT NULL,
+    [Controller] nvarchar(36) NULL,
+    [ActionName] nvarchar(36) NULL,
+    [Method] nvarchar(18) NULL,
+    [RequestArguments] nvarchar(max) NULL,
+    [IpAddress] nvarchar(36) NULL,
+    [Browser] nvarchar(256) NULL,
+    [ExecuteTime] int NOT NULL,
+    [ErrorMsg] nvarchar(512) NULL,
+    CONSTRAINT [PK_AuditInfo] PRIMARY KEY ([Id])
+); 
+2021-08-06 16:01:49.0390 | Failed executing DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AuditInfo] (
+    [Id] nvarchar(36) NOT NULL,
+    [Operator] nvarchar(36) NOT NULL,
+    [Controller] nvarchar(36) NULL,
+    [ActionName] nvarchar(36) NULL,
+    [Method] nvarchar(18) NULL,
+    [RequestArguments] nvarchar(max) NULL,
+    [IpAddress] nvarchar(36) NULL,
+    [Browser] nvarchar(256) NULL,
+    [ExecuteTime] int NOT NULL,
+    [ErrorMsg] nvarchar(512) NULL,
+    CONSTRAINT [PK_AuditInfo] PRIMARY KEY ([Id])
+); 
+2021-08-06 16:03:55.3533 | Failed executing DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AuditInfo] (
+    [Id] nvarchar(36) NOT NULL,
+    [Operator] nvarchar(36) NOT NULL,
+    [Controller] nvarchar(36) NULL,
+    [ActionName] nvarchar(36) NULL,
+    [Method] nvarchar(18) NULL,
+    [RequestArguments] nvarchar(max) NULL,
+    [IpAddress] nvarchar(36) NULL,
+    [Browser] nvarchar(256) NULL,
+    [ExecuteTime] int NOT NULL,
+    [ErrorMsg] nvarchar(512) NULL,
+    CONSTRAINT [PK_AuditInfo] PRIMARY KEY ([Id])
+); 
+2021-08-06 16:04:31.7477 | Failed executing DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AuditInfo] (
+    [Id] nvarchar(36) NOT NULL,
+    [Operator] nvarchar(36) NOT NULL,
+    [Controller] nvarchar(36) NULL,
+    [ActionName] nvarchar(36) NULL,
+    [Method] nvarchar(18) NULL,
+    [RequestArguments] nvarchar(max) NULL,
+    [IpAddress] nvarchar(36) NULL,
+    [Browser] nvarchar(256) NULL,
+    [ExecuteTime] int NOT NULL,
+    [ErrorMsg] nvarchar(512) NULL,
+    CONSTRAINT [PK_AuditInfo] PRIMARY KEY ([Id])
+); 
+2021-08-06 16:09:48.8038 | Failed executing DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AuditInfo] (
+    [Id] nvarchar(36) NOT NULL,
+    [Operator] nvarchar(36) NOT NULL,
+    [Controller] nvarchar(36) NULL,
+    [ActionName] nvarchar(36) NULL,
+    [Method] nvarchar(18) NULL,
+    [RequestArguments] nvarchar(max) NULL,
+    [IpAddress] nvarchar(36) NULL,
+    [Browser] nvarchar(256) NULL,
+    [ExecuteTime] int NOT NULL,
+    [ErrorMsg] nvarchar(512) NULL,
+    CONSTRAINT [PK_AuditInfo] PRIMARY KEY ([Id])
+); 
+2021-08-06 16:11:13.9286 | Failed executing DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [NavMenu] (
+    [Id] nvarchar(36) NOT NULL,
+    [MenuName] nvarchar(36) NOT NULL,
+    [ParentId] nvarchar(36) NULL,
+    [OrderNo] int NOT NULL,
+    [Icon] nvarchar(36) NULL,
+    [RouteUrl] nvarchar(64) NULL,
+    [Permission] nvarchar(36) NULL,
+    [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit),
+    [CreatedBy] nvarchar(max) NULL,
+    [CreatedTime] datetime2 NOT NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [UpdatedTime] datetime2 NULL,
+    CONSTRAINT [PK_NavMenu] PRIMARY KEY ([Id])
+); 

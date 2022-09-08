@@ -1,0 +1,815 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Server\\CADPLIS.Server.csproj": {}
+  },
+  "projects": {
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj",
+        "projectName": "CADPLIS.Application.Contracts",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "WorkflowEngine.NETCore-Core": {
+              "target": "Package",
+              "version": "[5.1.3, )"
+            },
+            "WorkflowEngine.NETCore-FilesPlugin": {
+              "target": "Package",
+              "version": "[5.1.3, )"
+            },
+            "WorkflowEngine.NETCore-ProviderForMSSQL": {
+              "target": "Package",
+              "version": "[5.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application\\CADPLIS.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application\\CADPLIS.Application.csproj",
+        "projectName": "CADPLIS.Application",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application\\CADPLIS.Application.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.90, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj",
+        "projectName": "CADPLIS.Common",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain.Shared\\CADPLIS.Domain.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain.Shared\\CADPLIS.Domain.Shared.csproj",
+        "projectName": "CADPLIS.Domain.Shared",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain.Shared\\CADPLIS.Domain.Shared.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj",
+        "projectName": "CADPLIS.Domain",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain.Shared\\CADPLIS.Domain.Shared.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain.Shared\\CADPLIS.Domain.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj",
+        "projectName": "CADPLIS.EntityFrameworkCore",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.90, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "WorkflowEngine.NETCore-Core": {
+              "target": "Package",
+              "version": "[5.1.3, )"
+            },
+            "WorkflowEngine.NETCore-FilesPlugin": {
+              "target": "Package",
+              "version": "[5.1.3, )"
+            },
+            "WorkflowEngine.NETCore-ProviderForMSSQL": {
+              "target": "Package",
+              "version": "[5.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Server\\CADPLIS.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Server\\CADPLIS.Server.csproj",
+        "projectName": "CADPLIS.Server",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Server\\CADPLIS.Server.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application\\CADPLIS.Application.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application\\CADPLIS.Application.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.EntityFrameworkCore\\CADPLIS.EntityFrameworkCore.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.WebSite\\CADPLIS.WebSite.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.WebSite\\CADPLIS.WebSite.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Autofac.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[4.5.3.3, )"
+            },
+            "GoogleAuthenticator": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "MatBlazor": {
+              "target": "Package",
+              "version": "[2.9.0-develop-042, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.10, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.13.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.WebSite\\CADPLIS.WebSite.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.WebSite\\CADPLIS.WebSite.csproj",
+        "projectName": "CADPLIS.WebSite",
+        "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.WebSite\\CADPLIS.WebSite.csproj",
+        "packagesPath": "C:\\Users\\angus\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.WebSite\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\angus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Application.Contracts\\CADPLIS.Application.Contracts.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Common\\CADPLIS.Common.csproj"
+              },
+              "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj": {
+                "projectPath": "C:\\Project\\CAD\\SourceCode\\CADPLIS2021_bak\\CAD-PLIS\\CADPLIS.Domain\\CADPLIS.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "BlazorStrap": {
+              "target": "Package",
+              "version": "[1.5.1, )"
+            },
+            "BlazorStrap.Extensions.TreeView": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.1.5, )"
+            },
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "MatBlazor": {
+              "target": "Package",
+              "version": "[2.9.0-develop-042, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.AspNetCore.CookiePolicy": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.1, )"
+            },
+            "Microsoft.Orleans.Core": {
+              "target": "Package",
+              "version": "[3.4.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Toolbelt.Blazor.HttpClientInterceptor": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
+              "version": "[5.0.8, 5.0.8]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

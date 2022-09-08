@@ -1,0 +1,16 @@
+2021-08-12 17:55:20.4888 | Failed executing DbCommand (14ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [LogRecord] ([Id], [CreateTime], [LogContent], [LogOperator], [OperationAction], [OperationTable])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 
+2021-08-12 17:59:14.4340 | Failed executing DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [LogRecord] ([Id], [CreateTime], [LogContent], [LogOperator], [OperationAction], [OperationTable])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 
+2021-08-12 18:02:24.8591 | Failed executing DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [LogRecord] ([Id], [CreateTime], [LogContent], [LogOperator], [OperationAction], [OperationTable])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 
+2021-08-12 18:15:14.2071 | Failed executing DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [LogRecord] ([Id], [CreateTime], [LogContent], [LogOperator], [OperationAction], [OperationTable])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 

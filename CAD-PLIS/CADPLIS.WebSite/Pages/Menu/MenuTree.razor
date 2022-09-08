@@ -1,0 +1,45 @@
+﻿@inject HttpClient httpClient
+@using CADPLIS.Application.Contracts.NavMenus
+<MatDialogTitle Class="dialogTitle">
+    <div class="titleDiv">menuTree</div>
+    <div @onclick="@(_=>CloseDialog())" class="closeDiv">
+        <MatIcon Icon="@MatIconNames.Close"></MatIcon>
+    </div>
+</MatDialogTitle>
+
+<MatDialogContent Class="content">
+    <MatTreeView TNode="NavMenuDto"
+                 RootNode="@menuTree"
+                 GetChildNodesCallback="@((n)=>n.Children)">
+        <NodeTemplate>
+            @context.MenuName
+        </NodeTemplate>
+    </MatTreeView>
+</MatDialogContent>
+<MatDialogActions>
+    <MatButton OnClick="@(_ => CloseDialog())">Close</MatButton>
+</MatDialogActions>
+
+
+@code {
+
+    private NavMenuDto menuTree { get; set; } = new NavMenuDto();
+    [CascadingParameter]
+    public MatDialogReference DialogReference { get; set; }
+
+    string getChildUrl = "/api/NavMenu/GetWithChild";
+
+    async Task GetTreeMenuList()
+    {
+        var rep = await httpClient.GetFromJsonAsync<ApiResponse<NavMenuDto>>(getChildUrl);
+        menuTree = rep.Result;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await GetTreeMenuList();
+    }
+    void CloseDialog()
+    {
+        DialogReference.Close("close");
+    }
+}

@@ -1,0 +1,1 @@
+2021-09-10 16:24:47.3412 | Unable to resolve service for type 'CADPLIS.Application.Contracts.IBaseAppService`1[CADPLIS.Domain.Roles.RoleInfo]' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 

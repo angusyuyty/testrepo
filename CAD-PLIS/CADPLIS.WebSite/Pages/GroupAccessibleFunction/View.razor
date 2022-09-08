@@ -1,0 +1,47 @@
+﻿@page "/GroupAccessibleFunction/View/{Id:int}"
+<div>
+    <h3>Group Accessible Function Detail</h3>
+
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                    <label class="label">Group ID</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+                    <label class="label">@gfModel.GroupId</label>
+                </div>
+
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                    <label class="label">Group Name</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+                    <label class="label">@gfModel.GroupName</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                    <label class="label">Function Type/Function Name</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+
+                    @foreach (var item in functionList.Where(f => f.Selected))
+                    {
+                         <label class="label">@item.DisplayValue</label><br />
+                    }
+
+
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+
+            <MatButton OnClick="@(() => Close())" Outlined="true">Back</MatButton>
+        </div>
+    </div>
+</div>

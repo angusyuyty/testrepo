@@ -1,0 +1,127 @@
+﻿@page "/Mc/initial"
+@page "/Mc/initialAME"
+@page "/Mc/initialAMA"
+@page "/Mc/confirm"
+@inject NavigationManager NavigationManager
+
+<section id="initialApplicationSection">
+    <div id="inputForm">
+        <div class="row m-3">
+            <h2 class="@(IsConfirmBooking ? "d-none" : "")">New booking</h2>
+            <h2 class="@(IsConfirmBooking ? "" : "d-none")">Confirm booking</h2>
+        </div>
+        <div class="row m-3">
+            <div class="col-3">
+                <label>Applicant User ID</label>
+            </div>
+            <div class="col-7">
+                <MatTextField @bind-Value="@ApplicantUserId" Disabled="true"></MatTextField>
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-3">
+                <label>Application Type</label>
+            </div>
+            <div class="col-7">
+                <MatTextField @bind-Value="@ApplicationType" Disabled="true"></MatTextField>
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-3">
+                <label>Please select name of AME</label>
+            </div>
+            <div class="col-7">
+                <MatTextField @bind-Value="@NameOfAme" Disabled="@(IsConfirmBooking ? true : false)"></MatTextField>
+            </div>
+        </div>
+        <div class="row m-3 @(IsConfirmBooking ? "d-none" : "")">
+            <div class="col-3">
+                <label>Attachment of medical record (PDF/JPG)</label>
+            </div>
+            <div class="col-7">
+                <MatFileUpload OnChange="@FilesReady" Label="Drop a single file here or Browse"></MatFileUpload>
+            </div>
+        </div>
+        <div class="row m-3">
+            <MatTable Items="Attachements">
+                <MatTableHeader>
+                    <th>Attachment Type</th>
+                    <th>Attachment description</th>
+                    <th>Attachment file</th>
+                    <th>Document Effective Date</th>
+                    <th colspan="2"></th>
+                </MatTableHeader>
+                <MatTableRow>
+                    <td>@context.AttachmentType</td>
+                    <td>@context.AttachmentDescription</td>
+                    <td>@context.AttachmentFileLoc</td>
+                    <td>@context.DocEffectiveDate</td>
+                    <td><MatButton Label="View"></MatButton></td>
+                    <td><MatButton Label="Remove" OnClick="@(() => { Attachements.Remove(context); })" Disabled="@(IsConfirmBooking ? true : false)"></MatButton></td>
+                </MatTableRow>
+            </MatTable>
+        </div>
+        <div class="row m-3 @(IsConfirmBooking ? "" : "d-none")">
+            <div class="col-3">
+                <label>Date of examination</label>
+            </div>
+            <div class="col-7">
+                <MatTextField @bind-Value="ExaminationDate" Format="dd/MM/yyyy"></MatTextField>
+            </div>
+        </div>
+        <div class="row m-3 @(IsConfirmBooking ? "" : "d-none")">
+            <div class="col-3">
+                <label>Time of examination</label>
+            </div>
+            <div class="col-7">
+                <MatTextField @bind-Value="ExaminationDate" Format="hh:mm"></MatTextField>
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <MatButton Class="btn btn-success" Label="Confirm"></MatButton>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private Boolean IsConfirmBooking { get; set; }
+    private MCApplication Application { get; set; }
+    private int ApplicantUserId { get; set; }
+    private String ApplicationType { get; set; }
+    private String NameOfAme { get; set; }
+    private DateTime ExaminationDate { get; set; }
+    private MCAttachment NewAttachment { get; set; }
+    private List<MCAttachment> Attachements { get; set; } = new List<MCAttachment>();
+
+    protected override Task OnParametersSetAsync()
+    {
+        Console.WriteLine("## OnParametersSetAsync ViewApplicationList: " + NavigationManager.Uri);
+        if (NavigationManager.Uri.Contains("/confirm"))
+        {
+            IsConfirmBooking = true;
+        }
+        else
+        {
+            IsConfirmBooking = false;
+        }
+        return base.OnParametersSetAsync();
+    }
+
+    void FilesReady(IMatFileUploadEntry[] files)
+    {
+        Console.WriteLine("## FilesReady: " + files.Length);
+        foreach (var file in files)
+        {
+            MCAttachment newMcAttachment = new MCAttachment();
+            newMcAttachment.AttachmentDescription = file.Name;
+            newMcAttachment.AttachmentType = file.Type;
+            newMcAttachment.LastUploadDatetime = DateTime.Now;
+            newMcAttachment.AttachmentFileLoc = file.Name;
+
+            Attachements.Add(newMcAttachment);
+            //list.Add($"Name: {file.Name} - Size: {file.Size}");
+        }
+    }
+}

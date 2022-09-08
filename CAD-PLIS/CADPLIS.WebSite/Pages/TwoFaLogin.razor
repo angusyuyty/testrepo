@@ -1,0 +1,70 @@
+﻿@page "/TwoFaLogin"
+@layout UserLayout
+
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+@inject IViewNotifier viewNotifier
+@using CADPLIS.Application.Contracts.Accounts
+@using CADPLIS.WebSite.Notice
+
+
+<h3>TwoFaLogin</h3>
+<MatCard>
+    <div class="logo">
+        <a href="/" title="CADPLIS HOME"><img src="https://blazor-server.quarella.net/_content/BlazorBoilerplate.Theme.Material/images/logo.svg" style="width:100px;" title="Blazer Boilerplate Home" alt="Blazer Boilerplate" /></a>
+        <br>
+        <h4>Log in</h4>
+    </div>
+    <EditForm Model="@userdto" OnValidSubmit="@SubmitLogin">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <fieldset>
+            <div class="form-group">
+                <MatTextField @bind-Value="@userdto.ValidateCode" Label="TwoFactorCode" Icon="person" IconTrailing="true" FullWidth="true" Required="true"></MatTextField>
+            </div>
+
+            <div class="form-group" style="margin-top:12px">
+                <MatButton class="float-right" Type="submit" Raised="true" tabindex="3">Login</MatButton>
+
+            </div>
+        </fieldset>
+    </EditForm>
+</MatCard>
+@code {
+    ApplicationUserDto userdto { get; set; } = new ApplicationUserDto() { };
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await httpClient.GetFromJsonAsync<ApiResponse<ApplicationUserDto>>("/api/Account/GetTempUser");
+        if (result.IsSuccessStatusCode)
+        {
+            userdto = result.Result;
+        }
+        await Task.CompletedTask;
+    }
+
+    async Task SubmitLogin()
+    {
+        try
+        {
+            var resp = await httpClient.PostJsonAsync<ApiResponse>("/api/Account/ValidateTwoFaCode", userdto);
+            if (resp.IsSuccessStatusCode)
+            {
+                StateHasChanged();
+                navigationManager.NavigateTo("/");
+            }
+            else
+            {
+                viewNotifier.Show("login faild!", ViewNotifierType.Error, "error");
+                return;
+                //Error.ProcessError(new Exception("login faild!"));
+                //return;
+            }
+
+
+        }
+        catch (Exception ex)
+        {
+            viewNotifier.Show("login faild!", ViewNotifierType.Error, "error");
+        }
+    }
+}

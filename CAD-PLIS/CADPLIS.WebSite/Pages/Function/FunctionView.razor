@@ -1,0 +1,102 @@
+﻿@page "/Function/View/{Id:int}"
+<div>
+    <h3>Function Detail</h3>
+    <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Function ID</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.FunctionId</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Function Type</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.FunctionType</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Function Name</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.FunctionDescription</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Display Sequence No</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.DisplaySequence</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Is System Function</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.SystemFunction</label>
+            </div>
+        </div>
+
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Created By</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.CreatedBy</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Created User Role</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.CreatedUserRoleId</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Created date</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Last updated By </label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.UpdatedBy</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Last updated User Role </label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.UpdatedUserRoleId</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Last updated date </label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@functionModel.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</label>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="btndiv">
+    <MatButton Outlined="true" OnClick="@(() => Back())">Back</MatButton>
+</div>
+

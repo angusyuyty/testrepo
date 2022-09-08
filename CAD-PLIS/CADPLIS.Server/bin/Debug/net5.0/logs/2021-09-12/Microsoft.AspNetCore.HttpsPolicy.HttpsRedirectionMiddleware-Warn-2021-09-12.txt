@@ -1,0 +1,7 @@
+2021-09-12 07:47:29.9647 | Failed to determine the https port for redirect. 
+2021-09-12 08:50:46.5799 | Failed to determine the https port for redirect. 
+2021-09-12 16:10:19.1934 | Failed to determine the https port for redirect. 
+2021-09-12 17:01:05.8872 | Failed to determine the https port for redirect. 
+2021-09-12 17:13:55.2503 | Failed to determine the https port for redirect. 
+2021-09-12 20:51:22.2459 | Failed to determine the https port for redirect. 
+2021-09-12 21:04:35.4781 | Failed to determine the https port for redirect. 

@@ -1,0 +1,98 @@
+2021-07-23 09:18:33.9519 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:39:57.9588 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:47:49.1646 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:47:59.9086 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:50:19.4713 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:50:31.3530 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:50:35.6284 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:51:51.1660 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:54:29.9976 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 09:56:08.2850 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:02:03.9805 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:05:17.5111 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:09:44.2846 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:23:12.3560 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:28:50.9851 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:30:54.3769 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 10:59:23.3205 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 11:01:04.2113 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 11:03:18.8907 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Common.CacheManager.ICacheService' while attempting to activate 'CADPLIS.Server.Controllers.ValuesController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 11:08:01.3909 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 11:08:08.9162 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Server.services.IAuditLogService' while attempting to activate 'CADPLIS.Server.AuditLogActionFilter'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-07-23 17:14:42.6887 | An unhandled exception has occurred while executing the request. Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.NavMenus.NavMenuDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-23 17:15:36.9894 | An unhandled exception has occurred while executing the request. Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.NavMenus.NavMenuDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-23 17:15:59.4390 | An unhandled exception has occurred while executing the request. Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.NavMenus.NavMenuDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-23 17:16:03.4475 | An unhandled exception has occurred while executing the request. Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.NavMenus.NavMenuDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-07-23 17:17:12.3366 | An unhandled exception has occurred while executing the request. Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.NavMenus.NavMenuDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+

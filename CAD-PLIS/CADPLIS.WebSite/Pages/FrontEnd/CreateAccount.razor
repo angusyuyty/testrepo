@@ -1,0 +1,85 @@
+﻿@layout FrontEndAccountLayout
+@page "/createAccount"
+
+<section id="createAccountSection">
+    <div class="row justify-content-center" id="createAccountRow">
+        <AccountContentForm>
+            <div class="p-5">
+                <div class="my-5">
+                    <h3 class="contentHeader">Create personal account</h3>
+                </div>
+                <div class="my-5 contentSubHeader">
+                    <p>Please enter the your email to register your account</p>
+                </div>
+                <div class="my-3">
+                    <label class="inputDescLabel mx-1 font-weight-bold inputLabel">Email</label>
+                    <input class="form-control" @bind-value="email" />
+                </div>
+                <div class="my-3">
+                    <label class="inputDescLabel mx-1 font-weight-bold inputLabel">Re-enter email</label>
+                    <input class="form-control" @bind-value="reEmail" />
+                </div>
+                <div class="my-3 inputDescLabel">
+                    <BSButton @onclick="@onToggle" Class="@getSendBtnCss()" ButtonType="ButtonType.Button">Send verification email</BSButton>
+                </div>
+                <div class="my-3 inputDescLabel">
+                    <span>For any enquiry for verification problem. <a>Contact us.</a></span>
+                </div>
+                <HrTextLine Text="OR"></HrTextLine>
+                <div class="my-3 inputDescLabel">
+                    <span>Already have an Account? <a href="/frontLogin">Login here</a></span>
+                </div>
+            </div>
+        </AccountContentForm>
+        <AccountBannerImageHolder BackgroundImageUrl="/images/Img_002.jpeg"></AccountBannerImageHolder>
+    </div>
+</section>
+<BSModal @ref="VerticallyCentered" IsCentered="true" Size="Size.Small">
+    <BSModalHeader OnClick="@onToggle">Information</BSModalHeader>
+    <BSModalBody><p>Please check email to continue create personal account.</p></BSModalBody>
+    <BSModalFooter>
+        <BSButton Color="Color.Primary" @onclick="@onToggle">OK</BSButton>
+    </BSModalFooter>
+</BSModal>
+
+<style>
+    #createAccountSection #createRow {
+        justify-content: space-around;
+    }
+
+        #createAccountSection #createRow .inputLabel {
+            color: #435471;
+            font-size: medium;
+        }
+
+    .inputDescLabel, .inputDescLabel span {
+        font-size: smaller;
+        font-weight: bold;
+    }
+
+        .inputDescLabel a {
+            color: #1F40E5 !important;
+            text-decoration: underline;
+        }
+</style>
+@code {
+    private String email { get; set; }
+    private String reEmail { get; set; }
+
+    BSModal VerticallyCentered;
+
+    void onToggle(MouseEventArgs e)
+    {
+        VerticallyCentered.Toggle();
+    }
+
+    private String getSendBtnCss()
+    {
+        Console.WriteLine("## getSendBtnCss: " + String.IsNullOrEmpty(email) + " // " + email + " // " + String.IsNullOrEmpty(reEmail) + " // " + reEmail);
+        if (!String.IsNullOrEmpty(email) && !String.IsNullOrEmpty(reEmail))
+        {
+            return "w-100 confirmBtn";
+        }
+        return "w-100 disabled confirmBtn";
+    }
+}

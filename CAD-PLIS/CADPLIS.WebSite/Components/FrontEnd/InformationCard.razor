@@ -1,0 +1,39 @@
+﻿<div class="informationCard row border m-4 shadow rounded">
+    <div class="col-12 col-lg-4 col-xl-4 pl-0 pr-0">
+        <BSImage src="@imgSrc" Class="w-100"></BSImage>
+    </div>
+    <div class="col-12 col-lg-8 col-xl-8 row my-4 ml-2">
+        <h4 class="informationCardTitle">@title</h4>
+        <ul class="nav flex-column">
+            @foreach (Tuple<String, String> tuple in links)
+            {
+            <li class="nav-item">
+                <NavLink href="@tuple.Item2">@tuple.Item1</NavLink>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<style>
+    .informationCard {
+        background-color: #FFF;
+    }
+        .informationCard a {
+            color: #3A57E8 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+        }
+        .informationCard .informationCardTitle {
+            color: #2F4262 !important;
+        }
+</style>
+
+@code {
+    [Parameter]
+    public String imgSrc { get; set; }
+    [Parameter]
+    public String title { get; set; }
+    [Parameter]
+    public List<Tuple<String, String>> links { get; set; }
+}

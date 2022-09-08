@@ -1,0 +1,50 @@
+﻿@page "/User/UserRole/Edit/{Id:int}"
+@page "/User/UserRole/Add"
+<div>
+    <h3>User Role Detail</h3>
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">User  ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+
+                    <MatSelectValue Value="@userRoleModel.UserId"
+                                    ValueExpression="@( () => userRoleModel.UserId )" ValueChanged="((string usid) =>  DisplayRole(usid))" Items="@userList" ValueSelector="@(v => v.UserId)" Class="selectdiv">
+                        <ItemTemplate Context="itemcon">
+                            @itemcon?.UserId
+                        </ItemTemplate>
+                    </MatSelectValue>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Role</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+                    <MatChipSet>
+                        @foreach (var role in roleList)
+                        {
+                            <MatChip Label="@role.DisplayValue" LeadingIcon="@((role.Selected) ? "done" : "")" @onclick="@(()=>UpdateUserRole(role))" />
+                        }
+                    </MatChipSet>
+                </div>
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+<div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <MatButton OnClick="@(() => SaveData())" Raised="true">Save</MatButton>
+            <MatButton OnClick="@(() => Close())" Outlined="true">Back</MatButton>
+        </div>
+    </div>
+</div>
+@code {
+
+}

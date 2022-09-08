@@ -1,0 +1,8 @@
+2021-07-26 09:59:38.7066 | Failed executing DbCommand (30,119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[Id], [n].[CreatedBy], [n].[CreatedTime], [n].[Icon], [n].[IsDeleted], [n].[MenuName], [n].[OrderNo], [n].[ParentId], [n].[Permission], [n].[RouteUrl], [n].[UpdatedBy], [n].[UpdatedTime]
+FROM [NavMenu] AS [n]
+WHERE [n].[IsDeleted] <> CAST(1 AS bit) 
+2021-07-26 10:05:30.7786 | Failed executing DbCommand (30,009ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[Id], [n].[CreatedBy], [n].[CreatedTime], [n].[Icon], [n].[IsDeleted], [n].[MenuName], [n].[OrderNo], [n].[ParentId], [n].[Permission], [n].[RouteUrl], [n].[UpdatedBy], [n].[UpdatedTime]
+FROM [NavMenu] AS [n]
+WHERE [n].[IsDeleted] <> CAST(1 AS bit) 

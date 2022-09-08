@@ -1,0 +1,30 @@
+2021-08-03 10:24:50.5338 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:24:50.5338 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-03 10:25:05.0210 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:25:05.0210 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:26:21.7890 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:26:21.7890 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:26:29.7061 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:26:29.7061 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:39:28.7074 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-03 10:39:45.0907 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Users.IUserAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

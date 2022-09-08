@@ -1,0 +1,14 @@
+2021-09-29 14:15:40.1945 | An exception occurred while iterating over the results of a query for context type 'CADPLIS.EntityFrameworkCore.EntityFrameworkCore.PlisDbcontext'.
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at lambda_method664(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Unable to cast object of type 'System.String' to type 'System.Int32'. 
+ <MoveNextAsync>d__14.MoveNext => CoreLoggerExtensions.QueryIterationFailed => EventDefinition`3.Log 
+
+2021-09-29 14:15:52.5057 | An exception occurred while iterating over the results of a query for context type 'CADPLIS.EntityFrameworkCore.EntityFrameworkCore.PlisDbcontext'.
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at lambda_method664(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Unable to cast object of type 'System.String' to type 'System.Int32'. 
+ <MoveNextAsync>d__14.MoveNext => CoreLoggerExtensions.QueryIterationFailed => EventDefinition`3.Log 
+

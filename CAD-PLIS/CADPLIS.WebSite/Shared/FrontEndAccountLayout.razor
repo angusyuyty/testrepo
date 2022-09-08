@@ -1,0 +1,50 @@
+﻿@inherits LayoutComponentBase
+@inject IBootstrapCss BootstrapCss
+@using CADPLIS.WebSite.Components.Layout
+@*<header></header>*@
+<BSContainer Class="w-100 m-0 appContainer">
+    <BSRow>
+        <FrontEndHeader></FrontEndHeader>
+    </BSRow>
+    <BSRow id="bodyRow">
+        @Body
+    </BSRow>
+</BSContainer>
+<style>
+    #bodyRow {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .appContainer {
+        max-width: none;
+    }
+</style>
+
+@code {
+    private bool isServerSide = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await BootstrapCss.SetBootstrapCss();
+            //await BootstrapCss.SetBootstrapCSS("4.5.0");
+        }
+        catch (Exception)
+        {
+            isServerSide = true;
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstrun)
+    {
+        if (isServerSide && firstrun)
+        {
+            System.Diagnostics.Debug.WriteLine("test");
+            await BootstrapCss.SetBootstrapCss();
+            //await BootstrapCss.SetBootstrapCSS("4.5.0");
+        }
+    }
+}

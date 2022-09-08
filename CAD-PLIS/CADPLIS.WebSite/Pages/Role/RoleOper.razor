@@ -1,0 +1,98 @@
+﻿@page "/Role/Add"
+@page "/Role/Edit/{Id:int}"
+
+<h3>@(Id!=default?"Role Edit":"Role Add")</h3>
+
+<EditForm EditContext="@editContext">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mat-layout-grid mat-layout-grid-align-left">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Role ID</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@roleInfoDto.RoleId" Outlined="true"></MatTextField>
+            </div>
+        </div>
+
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Role Name</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@roleInfoDto.RoleDescription" Outlined="true"></MatTextField>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell  mat-layout-grid-cell-span-2">
+                <label class="label">Is AME/AMA</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatCheckbox @bind-Value="@roleInfoDto.isAMEAMA"></MatCheckbox>
+            </div>
+        </div>
+
+        @if (Id != default(int))
+        {
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Created By</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                    <MatTextField @bind-Value="@roleInfoDto.CreatedBy" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Created User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                    <MatTextField @bind-Value="@roleInfoDto.CreatedUserRoleId" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Created date</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                    <MatTextField @bind-Value="@roleInfoDto.CreatedTimeText" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Last updated By</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                    <MatTextField @bind-Value="@roleInfoDto.UpdatedBy" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Last updated User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                    <MatTextField @bind-Value="@roleInfoDto.UpdatedUserRoleId" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                    <label class="label">Last updated date</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                    <MatTextField @bind-Value="@roleInfoDto.UpdatedTimeText" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="mat-layout-grid mat-layout-grid-align-center" style="max-width: 800px;">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <MatButton Raised="true" OnClick="(()=>SaveData())">Save</MatButton>
+                <MatButton Outlined="true" OnClick="@(()=> { NavManager.NavigateTo("Role/Index"); })">Back</MatButton>
+            </div>
+            <div class="mat-layout-grid-cell">
+            </div>
+            </div>
+        </div>
+</EditForm>

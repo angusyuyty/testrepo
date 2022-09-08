@@ -1,0 +1,12 @@
+2021-09-26 15:47:35.4158 | Application startup exception A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) 
+ <StartAsync>d__31.MoveNext => HostingLoggerExtensions.ApplicationError => HostingLoggerExtensions.ApplicationError 
+
+2021-09-26 15:52:08.9825 | Application startup exception A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SNI_PN11, error: 26 - Error Locating Server/Instance Specified) 
+ <StartAsync>d__31.MoveNext => HostingLoggerExtensions.ApplicationError => HostingLoggerExtensions.ApplicationError 
+
+2021-09-26 15:55:17.7949 | Application startup exception A connection was successfully established with the server, but then an error occurred during the login process. (provider: Shared Memory Provider, error: 0 - 管道的另一端上无任何进程。) 
+ <StartAsync>d__31.MoveNext => HostingLoggerExtensions.ApplicationError => HostingLoggerExtensions.ApplicationError 
+
+2021-09-26 15:56:06.4786 | Application startup exception 用户 'sa' 登录失败。 
+ <StartAsync>d__31.MoveNext => HostingLoggerExtensions.ApplicationError => HostingLoggerExtensions.ApplicationError 
+

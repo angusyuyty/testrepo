@@ -1,0 +1,319 @@
+﻿@page "/frequentlyAskedQuestion"
+@using CADPLIS.WebSite.Components
+@using CADPLIS.WebSite.Components.FrontEnd
+@using CADPLIS.WebSite.Components.LandingPage
+
+<section id="faqSection">
+    <!-- Banner -->
+    <Banner bannerImgUrl="/images/shutterstock_171507251.jpg" bannerTitle="@bannerTitle"></Banner>
+    <!-- Breadcrumbs Home / FAQ -->
+    <BSBreadcrumb Class="m-5 bg-none">
+        <BSBreadcrumbItem>Home</BSBreadcrumbItem>
+        <BSBreadcrumbItem IsActive="true" Class="currentPage">FAQ</BSBreadcrumbItem>
+    </BSBreadcrumb>
+    <!-- FAQ Cat -->
+    <BSRow Class="categoryRow mb-5 mx-5">
+        @foreach (Tuple<int, String> category in categories)
+        {
+            <button class="col-12 col-lg-2 col-xl-2 mx-3 outlineBtn shadow border btn-outline-primary @isSelectedCategory(selectedCategoryId == category.Item1)" @onclick="() => { setSelectedCategoryId(category.Item1); }">@category.Item2</button>
+        }
+    </BSRow>
+    <!-- Search Box -->
+    <div class="row m-5 mx-0 mx-lg-5 mx-xl-5" id="faqSearchBar">
+        <div class="col-12 col-lg-5 col-xl-5">
+            <div class="input-group p-1" id="searchBarInputGroup">
+                <div class="input-group-append d-none d-lg-flex d-xl-flex" style="vertical-align: middle; align-self: center; padding: 10px;">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input id="categorySearchStr" placeholder="Ask a question" class="form-control mr-2" @bind-value="categorySearchStr" type="text" />
+                <div class="input-group-append d-none d-lg-flex d-xl-flex">
+                    <button class="btn btn-outline-primary btnSearch" type="button" @onclick="search">Search</button>
+                </div>
+                <div class="input-group-append d-flex d-lg-none d-xl-none">
+                    <button class="btn btn-outline-primary btnSearch" type="button" @onclick="search"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-outline-primary btnClear" type="button" @onclick="search"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cat Loop -->
+    <div class="accordion">
+        <BSCollapseGroup>
+            @foreach (Tuple<int, String> categorySection in categoriesSections)
+            {
+                <BSCollapseItem @key="@categorySection.Item1">
+                    <BSCard CardType="CardType.Card" Class="@getBsCard(toggledSectionIds.Contains(categorySection.Item1))">
+                        <BSCard CardType="CardType.Header" @onclick="() => toggleSection(categorySection.Item1)" Class="@getBsCardHeader(toggledSectionIds.Contains(categorySection.Item1))">
+                            <BSCollapseToggle Class="catToggleBtn bscollToggle" IsLink="true" ShownClass="shownCard">
+                                @if (toggledSectionIds.Contains(categorySection.Item1))
+                                {
+                                    <div class="catToggleBtn w-100">
+                                        <span>@categorySection.Item2</span>
+                                        <i class="fas fa-minus"></i>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="catToggleBtn w-100">
+                                        <span>@categorySection.Item2</span>
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                }
+                            </BSCollapseToggle>
+                        </BSCard>
+                        <BSCollapse>
+                            <BSCard CardType="CardType.Body" Class="p-4 px-5">
+                                <h4 class="subHeader">
+                                    1. How can I apply for an Air operator's Certificate?
+                                </h4>
+                                <div class="content">
+                                    <p>
+                                        An aircraft registered in Hong Kong may not fly for the purpose of public transport unless the operator holds an Air Operators Certificate (AOC) granted by Director-General of Civil Aviation. For the grant of an AOC the Director-General of Civil Aviation will take into consideration of the applicant's previous conduct and experience, his equipment, organisation, staffing, maintenance and other arrangements. Details of the requirements leading to the grant of the AOC are contained in the publication CAD 360, "AOC - Requirements Document".
+                                    </p>
+                                </div>
+                            </BSCard>
+                        </BSCollapse>
+                    </BSCard>
+                </BSCollapseItem>
+            }
+        </BSCollapseGroup>
+    </div>
+</section>
+
+<style>
+    .bg-none {
+        background-color: transparent !important;
+    }
+
+    .currentPage {
+        text-decoration: underline !important;
+    }
+
+    .catToggleBtn {
+        display: flex;
+        justify-content: space-between;
+        padding: .75rem 1.25rem;
+        color: #35496E;
+        align-items: center;
+    }
+
+        .catToggleBtn, .catToggleBtn span, .catToggleBtn i, .catToggleBtn a, .catToggleBtn:hover, .catToggleBtn span:hover, .catToggleBtn i:hover, .catToggleBtn a:hover {
+            color: #35496E;
+            text-decoration: none;
+            font-size: 3vh;
+            font-weight: bold;
+        }
+
+            .catToggleBtn[aria-expanded="true"], .catToggleBtn[aria-expanded="true"] a, .catToggleBtn[aria-expanded="true"] span, .catToggleBtn[aria-expanded="true"] svg {
+                border-color: #FD6C4B !important;
+                color: #FD6C4B !important;
+            }
+
+    .accordion .card {
+        margin-bottom: 5vh;
+    }
+
+        .accordion .card .card-header {
+            background-color: transparent;
+        }
+
+        .accordion .card.bsCard .card-header {
+            border-bottom: none;
+        }
+
+    .shownCard[aria-expanded="true"] {
+        border-bottom: solid 1px #FD6C4B !important;
+    }
+
+    #faqSection #bannerContainer #jumbotronContent p:nth-child(2) {
+        font-size: 1vw;
+    }
+
+    .outlineBtn {
+        border-color: transparent;
+        color: #C1C1C1 !important;
+        height: 7vh;
+    }
+
+        .outlineBtn:hover {
+            border-color: #FD6C4B !important;
+            color: #FD6C4B !important;
+            background-color: transparent !important;
+        }
+
+        .outlineBtn.active {
+            border-color: #FD6C4B !important;
+            color: #FD6C4B !important;
+            background-color: transparent !important;
+        }
+
+    .categoryCol {
+        height: 8vh;
+        align-items: center;
+    }
+
+        .categoryCol.active {
+            border-color: #FD6C4B !important;
+            color: #FD6C4B !important;
+            background-color: #FFF !important;
+            font-weight: bold;
+        }
+
+    .categoryRow {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-left: 8vw !important;
+        margin-right: 8vw !important;
+    }
+
+    .bsCard {
+        border: solid 1px #FD6C4B !important;
+    }
+
+    .bsCardHeader {
+        margin-bottom: 0px !important;
+    }
+
+    .accordion > .card > .card-header {
+        margin-bottom: 0px;
+    }
+
+    .btnSearch, .btnClear {
+        background-color: #FD6C4B;
+        color: #FFF;
+        font-size: large;
+        font-weight: bold;
+    }
+
+        .btnSearch:focus, .btnClear:focus, .btnSearch:active, .btnClear:active, .btnSearch:hover, .btnClear:hover {
+            background-color: #c74c30 !important;
+        }
+
+    #faqSearchBar {
+        justify-content: center;
+    }
+
+    #searchBarInputGroup {
+        background-color: #FFF;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border: 1px solid #ced4da;
+        align-items: center;
+    }
+
+    #categorySearchStr {
+        border: 0px;
+        background-color: transparent;
+    }
+        /* placeholder CSS START */
+        #categorySearchStr::-webkit-input-placeholder {
+            font-family: 'Roboto', sans-serif;
+            color: #C6C6C6;
+            font-size: larger;
+        }
+
+        #categorySearchStr:-ms-input-placeholder {
+            font-family: 'Roboto', sans-serif;
+            color: #C6C6C6;
+            font-size: larger;
+        }
+
+        #categorySearchStr:-moz-placeholder {
+            font-family: 'Roboto', sans-serif;
+            color: #C6C6C6;
+            font-size: larger;
+        }
+
+        #categorySearchStr::-moz-placeholder {
+            font-family: 'Roboto', sans-serif;
+            color: #C6C6C6;
+            font-size: larger;
+        }
+    /* placeholder CSS END */
+
+    .subHeader {
+        color: #67748E;
+    }
+
+    .content p {
+        color: #717D95;
+    }
+
+    @@media only screen and (max-width: 970px) {
+        #faqSection #bannerContainer #jumbotronContent p:nth-child(2) {
+            font-size: 5vw;
+        }
+    }
+</style>
+
+@code {
+    private List<String> bannerTitle = new List<string> { "Frequently asked questions", "General information that you may wish to obtain from our department. Please click the relevant area to see if the information here can meet your need. If you have further enquiry, you are welcome to contact us." };
+    public List<Tuple<int, String>> categories = new List<Tuple<int, String>>();
+    private String categorySearchStr;
+    private List<Tuple<int, String>> categoriesSections { get; set; } = new List<Tuple<int, String>>();
+    private List<int> toggledSectionIds { get; set; } = new List<int>();
+    private int selectedCategoryId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        categories.Add(new Tuple<int, string>(0, "All Questions"));
+        categories.Add(new Tuple<int, string>(1, "Pilot requirement"));
+        categories.Add(new Tuple<int, string>(2, "Aviation Licencing"));
+        categories.Add(new Tuple<int, string>(3, "Pilot Examination"));
+
+        categoriesSections.Add(new Tuple<int, String>(1, "Air Operator's Certificates"));
+        categoriesSections.Add(new Tuple<int, String>(2, "Aircraft Maintenance Licence"));
+        categoriesSections.Add(new Tuple<int, String>(3, "Pilot Licencing"));
+        categoriesSections.Add(new Tuple<int, String>(4, "Aerodrome Licence"));
+    }
+
+    private void toggleSection(int id)
+    {
+        bool isOpened = toggledSectionIds.Contains(id);
+        toggledSectionIds = new List<int>();
+        if (!isOpened)
+        {
+            toggledSectionIds.Add(id);
+        }
+    }
+
+    public void selectCategory(int categoryId)
+    {
+        selectedCategoryId = categoryId;
+    }
+
+    private String isSelectedCategory(bool isSelected)
+    {
+        if (isSelected)
+            return "categoryCol active";
+        return "categoryCol";
+    }
+
+    private void search()
+    {
+
+    }
+
+    private void setSelectedCategoryId(int id)
+    {
+        selectedCategoryId = id;
+    }
+
+    private String getBsCard(bool isOpened)
+    {
+        if (isOpened)
+            return "bsCard";
+        else
+            return "";
+    }
+
+    private String getBsCardHeader(bool isOpened)
+    {
+        if (isOpened)
+            return "bsCardHeader";
+        else
+            return "";
+    }
+}

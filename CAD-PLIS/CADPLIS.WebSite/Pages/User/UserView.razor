@@ -1,0 +1,142 @@
+﻿@page "/User/UserView/{Id:int}"
+<div>
+    <h3>User Detail</h3>
+    <EditForm Model="@currentUser">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Account User  ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.UId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.UserId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User Name</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.UserName</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Password expiry date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @currentUser.PasswordExpiryDate?.ToString("yyyy-MM-dd")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Email</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @currentUser.Email</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User Type</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">  @(!string.IsNullOrEmpty(currentUser.UserType)?dicUserType[currentUser.UserType]:"")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">2FA Enabled</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @(currentUser.Is2FAEnabled.HasValue? (currentUser.Is2FAEnabled==true?"YES":"NO"):"")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">corp_admin</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @currentUser.CorpAdmin</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Activation Status</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label"> @(!string.IsNullOrEmpty(currentUser.RecState)?dciState[currentUser.RecState] :"")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created By</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.CreatedBy</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.CreatedUserRoleId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated By </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.UpdatedBy</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated User Role </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.UpdatedUserRoleId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated date </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@currentUser.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</label>
+                </div>
+            </div>
+        </div>
+
+    </EditForm>
+</div>
+<div class="mat-layout-grid mat-layout-grid-align-center" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <MatButton Outlined="true" OnClick="@(()=> { navigationManager.NavigateTo("user/userinfo"); })">Back</MatButton>
+        </div>
+        <div class="mat-layout-grid-cell">
+        </div>
+    </div>
+</div>
+
+

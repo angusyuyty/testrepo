@@ -1,0 +1,157 @@
+﻿@page "/importantNotice"
+@layout FrontEndAccountLayout
+@inject NavigationManager NavigationManager
+
+<section id="importantNotice">
+    <div class="row mb-5" id="containerRow">
+        <div class="col-12 col-lg-7 col-xl-7 m-2 mr-lg-5 mr-xl-5 mb-lg-5 mb-xl-5">
+            <h3 class="my-5">Important Notice</h3>
+            <hr />
+            <div class="my-4">
+                Personal Data Collection Statement
+            </div>
+            <div>
+                <h4 class="noticeHeader">
+                    1. Purposes of Collection
+                </h4>
+                <div class="noticeContent mx-5">
+                    <p class="mb-3">
+                        The personal data provided by means of this form, includeing all the supporting documents included in the application, will be used by Civil Avuation Department for the following purposes:
+                    </p>
+                    <p class="mb-3">
+                        a. Processing of your application in this form;
+                        <br />
+                        b. Carrting out relevant provisions of the Civil Aviation Ordinance (Chapter 448) and its subsidiary Orders / Regulations;
+                        <br />
+                        c. Assisting in the enforcement of any other Ordinances and Regulations by other Government Bureaus and Departments;
+                        <br />
+                        d. For communication purposes between Civil Aviation Department and yourself;
+                        <br />
+                        e. For validation and verification of authenticity of your supporting documents in association with the application;
+                        <br />
+                        f. For statistics and research purposes on the condition that the resulting statustics or results will not be made available in a form which will identify the data subjects.
+                        <br />
+                        It is obligatory for you to supply the personal data as required in this form. If you fail to supply the required data, we may not be able to process your application.
+                    </p>
+                </div>
+                <h4 class="noticeHeader">
+                    2. Classes of Transferees
+                </h4>
+                <div class="noticeContent mx-5">
+                    <p class="mb-3">
+                        The personal data you provided by means of this form may be disclosed to:
+                    </p>
+                    <p class="mb-3">
+                        a. Other Government Bureaus and Departments for the purposes mentioned in paragraph 1 above;
+                        <br />
+                        b. Other Contracting States of the International Civil Aviation Organisation and Civil Aviation Authorities for the purpose mentioned in paragraph 1 above;
+                        <br />
+                        c. Other organisations or agencies for execution of their duties as required bby Civil Aviation Department.
+                    </p>
+                </div>
+                <h4 class="noticeHeader">
+                    3. Access to Personal Data
+                </h4>
+                <div class="noticeContent mx-5">
+                    <p class="mb-3">
+                        You have a right of access and correction with respect to personal data as provided for in Sections 18 and 22 and Principle 6 of Schedule 1 of the Personal Data (Privacy) Ordinance. Your right of access includes the right to obtain a copy of your personal data provided by this form.
+                    </p>
+                </div>
+                <h4 class="noticeHeader">
+                    4. Enquiries
+                </h4>
+                <div class="noticeContent mx-5">
+                    <p class="mb-3">
+                        Enquiries concerning the personal data collected by means of this form, includeing the making of access and correction , should be addressed to:
+                        <br />
+                    </p>
+                    <p class="mb-3">
+                        Personnel Licensing Office
+                        <br />
+                        Flight Standards and Airworthiness Division Civil Aviation Department Headquarters
+                        <br />
+                        1 Tung Fai Road
+                        <br />
+                        Hong Kong International Airport
+                        <br />
+                        Lantau, Hong Kong
+                        <br />
+                    </p>
+                    <p class="mb-3">
+                        (Attn.: Personnel Licensing Officer)
+                    </p>
+                </div>
+                <h4 class="noticeHeader">
+                    Anti-bribery Reminder
+                </h4>
+                <div class="noticeContent mx-5">
+                    <p class="mb-3">
+                        Anyone, while having dealings of any kind with the Civil Abuation Department (CAD), sould not offer advantage to the CAD officers, or else he may commit an offence under section 4(1) and/or section 8 of the Prevention of Bribery Ordinance (Chapter 201 of Laws of Hong Kong), and be liable to a maximum penalty of a fine of $5000,000 and imprisonment for 7 years.
+                    </p>
+                </div>
+                <hr />
+                <div id="confirmationDiv">
+                    <div id="chkConfirmation">
+                        <EditForm Model="ConfirmCkb">
+                            <InputCheckbox @bind-Value="ConfirmCkb" />
+                            I confirm that I am of eligible age, and I have read and I accept the above notice, <a>Terms &Aacute; Conditions</a> and <a>Personal Data (Privacy) Policy;</a> and I understand and shall comply with the <a>Insuranace Requirements</a>.
+                        </EditForm>
+                    </div>
+                    <button type="button" class="btn btn-primary w-100 @(ConfirmCkb ? "" : "disabled")" @onclick="btnAgreeOnClicked" id="agreeBtn">I agree and proceed</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 d-none d-lg-flex d-xl-flex" id="imgHolder">
+            &nbsp;
+        </div>
+    </div>
+</section>
+
+<style>
+    #containerRow {
+        justify-content: center;
+    }
+
+        #containerRow h3 {
+            color: #2E4161;
+            font-weight: bold;
+        }
+
+    .noticeHeader {
+        font-size: medium;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .noticeContent {
+        font-size: small;
+    }
+
+    #imgHolder {
+        background-image: url(images/Img_003.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #agreeBtn {
+        background-color: #2E4161;
+    }
+
+        #agreeBtn:hover {
+            background-color: #0000f0;
+        }
+
+        #agreeBtn.disabled {
+            border-color: transparent;
+        }
+</style>
+
+@code {
+    public Boolean ConfirmCkb;
+
+    private void btnAgreeOnClicked()
+    {
+        NavigationManager.NavigateTo("/createPersonalAccount");
+    }
+}

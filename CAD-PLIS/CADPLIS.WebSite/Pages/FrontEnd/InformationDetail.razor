@@ -1,0 +1,237 @@
+﻿@page "/informationDetail"
+@inject NavigationManager NavManager
+@using CADPLIS.WebSite.Components
+@using CADPLIS.WebSite.Components.FrontEnd
+@using CADPLIS.WebSite.Components.LandingPage
+@using CADPLIS.WebSite.Extension
+
+<section id="informationDetailSection">
+    <!-- Banner Image -->
+    <BSRow id="bannerImage">
+        &nbsp;
+    </BSRow>
+    <!-- Breadcrumbs Home / Information / Details -->
+    <BSBreadcrumb Class="m-5 bg-none">
+        <BSBreadcrumbItem>Home</BSBreadcrumbItem>
+        <BSBreadcrumbItem>Information</BSBreadcrumbItem>
+        <BSBreadcrumbItem IsActive="true" Class="currentPage text-de">Details</BSBreadcrumbItem>
+    </BSBreadcrumb>
+    <!-- Main Content Row -->
+    <BSRow Class="w-100 p-4">
+        <!-- Information List Col -->
+        <BSCol id="informationListCol" Class="col-12 col-lg-4 col-xl-4 mr-4">
+            <div class="border rounded h-100 bg-white">
+                @foreach (Tuple<int, int?, String> information in GetRootMenuList())
+                {
+                    <InformationListItem OnClick="() => SetInformationDetailId(information.Item1, information.Item2)" Id="@information.Item1" ParentId="@information.Item2" Title="@information.Item3" SelectedCatItemId="@selectedCatId" SelectedItemId="@selectedItemId" CssClass="p-3">
+
+                    </InformationListItem>
+                    @if (selectedCatId.HasValue && information.Item1 == selectedCatId)
+                    {
+                        @foreach (Tuple<int, int?, String> informationItem in GetDetailMenuItemList(selectedCatId.Value))
+                        {
+                            <InformationListItem OnClick="() => SetInformationDetailId(informationItem.Item1, informationItem.Item2)" Id="@informationItem.Item1" ParentId="@informationItem.Item2" Title="@informationItem.Item3" SelectedCatItemId="@selectedCatId" SelectedItemId="@selectedItemId" CssClass="p-2">
+
+                            </InformationListItem>
+                        }
+                    }
+                }
+            </div>
+        </BSCol>
+        <!-- Information Detail Col -->
+        <BSCol id="informationDetailCol" Class="col-12 col-lg-7 col-xl-7 p-5">
+            @if (selectedItemId != null)
+            {
+                InformationDetailObject infoObj = GetInformationDetail();
+                <BSRow id="informationHeader" Class="m-3">
+                    <span>@infoObj.title</span>
+                </BSRow>
+                <BSRow id="informationContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium lectus et aliquam dignissim. Vestibulum efficitur dapibus mauris, non lacinia erat dictum sit amet. Donec luctus augue id velit imperdiet, eget eleifend est accumsan. Ut ullamcorper dignissim cursus. Curabitur ut leo velit. Fusce hendrerit lacus in pellentesque venenatis. Donec sollicitudin, tellus volutpat rutrum posuere, tortor sapien tempor erat, sed tempus diam lectus vel ligula. Sed quis lorem nec massa lobortis lobortis at ac arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean vulputate suscipit libero, quis iaculis nibh pharetra nec. Donec dapibus ornare consequat. Ut eleifend feugiat dui, eu condimentum urna sagittis nec. Nunc euismod a magna eget vulputate. Nulla quis purus a urna porta sollicitudin a id dolor.
+                    </p>
+                    <p>
+                        Etiam tempus lobortis lacus, a porttitor sapien mattis eu. Quisque pharetra maximus erat, id placerat leo. Aliquam fermentum, lorem id fringilla tincidunt, dolor odio cursus ex, semper vulputate sem augue et lectus. Praesent vehicula urna vel est porta, quis vulputate sem pulvinar. Quisque leo eros, malesuada id arcu non, blandit tempus leo. Phasellus ex lectus, fringilla sit amet dignissim sit amet, aliquam id nibh. Duis pellentesque bibendum ipsum. Sed pellentesque pellentesque nulla at tempus. Integer a leo sem. Etiam suscipit mi eu arcu malesuada, vel sodales diam fermentum. Nullam bibendum, tellus nec ullamcorper iaculis, orci ipsum faucibus nisl, sit amet tincidunt dolor nulla nec urna. Quisque tincidunt nisl non ex ullamcorper, at volutpat augue ultrices. Sed nulla ante, vehicula ut eleifend id, posuere ut felis. Pellentesque nec elit congue, posuere eros ut, elementum tellus.
+                    </p>
+                    <p>
+                        Quisque rhoncus hendrerit odio, nec tincidunt felis luctus ac. Cras pharetra vel ligula ac vehicula. Fusce fringilla eu erat id pulvinar. Proin condimentum elit vitae dui suscipit consequat. Cras a maximus nisi. Vivamus tristique neque at dapibus volutpat. Maecenas tempor urna in metus interdum, sed euismod ipsum mattis.
+                    </p>
+                    <p>
+                        Fusce eget lobortis lacus, non lobortis leo. Sed dolor tortor, fermentum id feugiat in, ornare vitae nisi. Donec mattis vel orci molestie ultrices. Ut eu aliquam mi. Donec fermentum auctor sapien, vitae faucibus tortor lacinia egestas. Nullam ultrices consequat rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In aliquam enim a augue tristique maximus. Donec vel ultricies neque. Cras vehicula, tellus at consequat varius, urna libero lobortis est, ac pulvinar elit velit eu nisi. Aenean tempus ipsum lectus, id sagittis velit pellentesque sollicitudin. Curabitur nec hendrerit mi. Nam placerat ornare dignissim.
+                    </p>
+                    <p>
+                        Phasellus tortor mi, facilisis et arcu non, condimentum convallis orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam pellentesque, dolor id pretium cursus, nunc risus lobortis massa, a volutpat lorem mauris sed nulla. Nunc et dui porttitor, dictum massa eget, finibus purus. Donec quis nisl mauris. Vivamus vitae ultricies nunc. Ut bibendum magna ut justo mollis hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean vel hendrerit sapien, non ultrices felis. Integer quis nisi sapien. Phasellus magna est, feugiat egestas porta vitae, molestie at massa. Etiam scelerisque massa quis tortor sodales aliquam. Praesent venenatis purus quis urna varius sodales.
+                    </p>
+                </BSRow>
+            }
+        </BSCol>
+    </BSRow>
+</section>
+
+<style>
+    #pilotLicenceInformationSection {
+    }
+
+    .bg-none {
+        background-color: transparent !important;
+    }
+
+    .currentPage {
+        text-decoration: underline !important;
+    }
+    /*
+
+    #informationListCol .informationListItem {
+        background-color: #D9E8FF;
+        color: #2E4161;
+        font-weight: bold;
+    }
+
+    #informationListCol .informationListItemSelection {
+        background-color: #F6F6F6;
+        color: #7E899E;
+    }
+
+        #informationListCol .informationListItemSelection.selectedItem {
+            background-color: #FFFFFF;
+            color: #595959;
+        }
+
+    #informationListCol .selectedItem {
+        background-color: #2E4161;
+        color: #F6F6F6;
+        font-weight: bold;
+    }
+
+    #informationListCol .catHeaderItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        #informationListCol .catHeaderItem .catHeaderItemContent {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    */
+    #informationDetailCol {
+        background-color: #FFFFFF;
+    }
+
+        #informationDetailCol #informationHeader {
+            color: #2E4161;
+            text-align: center;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        #informationDetailCol #informationSubHeader {
+            color: #7C7C7C;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+        #informationDetailCol #informationContent {
+            color: #7C7C7C;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+    #informationDetailSection #bannerImage {
+        height: 45vh;
+        background-image: url(/images/Img_005.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .iconDropDown {
+        font-size: x-small;
+        vertical-align: middle;
+    }
+</style>
+
+@code {
+    public class InformationDetailObject
+    {
+        public int id { get; set; }
+        public String title { get; set; }
+        public String description { get; set; }
+    }
+    private int selectedInformationId = 0;
+    // id, parentId, title
+    public List<Tuple<int, int?, String>> informationList { get; set; } = new List<Tuple<int, int?, string>>();
+    public List<InformationDetailObject> InformationDetailList { get; set; } = new List<InformationDetailObject>();
+    private int? selectedCatId { get; set; }
+    private int? selectedItemId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        informationList.Add(new Tuple<int, int?, String>(1, null, "Aeroplanes"));
+        informationList.Add(new Tuple<int, int?, String>(2, 1, "Private Pilot's Licence"));
+        informationList.Add(new Tuple<int, int?, String>(3, 1, "Professional Pilot's Licence"));
+        informationList.Add(new Tuple<int, int?, String>(4, null, "Helicopters"));
+        informationList.Add(new Tuple<int, int?, String>(5, 4, "Private Pilot's Licence"));
+        informationList.Add(new Tuple<int, int?, String>(6, 4, "Professional Pilot's Licence"));
+        informationList.Add(new Tuple<int, int?, String>(7, null, "Medical requirements"));
+        informationList.Add(new Tuple<int, int?, String>(8, 7, "Medical requirements Detail"));
+        informationList.Add(new Tuple<int, int?, String>(9, null, "Examinations"));
+        informationList.Add(new Tuple<int, int?, String>(10, 9, "Examinations Detail"));
+        informationList.Add(new Tuple<int, int?, String>(11, null, "Instructors and Examiners"));
+        informationList.Add(new Tuple<int, int?, String>(12, 11, "Instructors and Examiners Detail"));
+
+
+        InformationDetailList.Add(new InformationDetailObject { id = 1, title = null, description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 2, title = "Private Pilot's Licence", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 3, title = "Professional Pilot's Licence", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 4, title = null, description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 5, title = "Private Pilot's Licence", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 6, title = "Professional Pilot's Licence", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 7, title = null, description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 8, title = "Medical requirements Detail", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 9, title = null, description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 10, title = "Examinations Detail", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 11, title = null, description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+        InformationDetailList.Add(new InformationDetailObject { id = 12, title = "Instructors and Examiners Detail", description = "Where does it come from? Contrary to popular belief, Lorem lpsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin workds, consectetur, from a Lorem lpsum passage, and going throught the cites of the word in classical literature, discovered the undoubtable source. Lorem lpsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem lpsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." });
+
+        NavigationManagerExtensions.TryGetQueryString<int>(NavManager, "i", out selectedInformationId);
+    }
+
+    public List<Tuple<int, int?, String>> GetRootMenuList()
+    {
+        return informationList.FindAll(x => x.Item2 == null);
+    }
+
+    public List<Tuple<int, int?, String>> GetDetailMenuItemList(int rootItemId)
+    {
+        return informationList.FindAll(x => x.Item2.HasValue && x.Item2.Value == rootItemId);
+    }
+
+    private void SetInformationDetailId(int id, int? parentId)
+    {
+        if (!parentId.HasValue)
+        {
+            if (selectedCatId == id)
+            {
+                selectedCatId = null;
+            }
+            else
+            {
+                selectedCatId = id;
+            }
+        }
+        else
+        {
+            selectedItemId = id;
+        }
+    }
+
+    private InformationDetailObject GetInformationDetail()
+    {
+        return InformationDetailList.Find(x => x.id == selectedItemId);
+    }
+}

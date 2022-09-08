@@ -1,0 +1,118 @@
+.span1 {
+  font-size: medium;
+}
+
+.span2 {
+  font-size: medium;
+}
+
+.span3 {
+  font-size: medium;
+}
+
+.table3 {
+  border-left: .23rem solid #1cc88a;
+}
+
+.table1 {
+  border-left: .23rem solid indigo;
+}
+
+.text-blue-123 {
+  color: #36b9cc;
+}
+
+.text-blue-456 {
+  color: #36b9cc;
+}
+
+.text-blue-789 {
+  color: #36b9cc;
+}
+
+.header-font-size {
+  font-size: small;
+}
+
+.sidebar-brand-text-bottom1 {
+  margin-bottom: 10rem;
+}
+
+.dropdown-toggle-text {
+  font-size: 0.85rem;
+  margin-left: 1.2rem;
+}
+
+.fas.fa-user111 {
+  margin-right: 0.5rem;
+}
+
+.span-sortby {
+  float: right;
+  margin-top: 0.7rem;
+}
+
+.btn.btn-primary.dropdown-toggle.col-md2 {
+  margin-top: 0.2rem;
+  float: left;
+}
+
+.btn.btn-primary.dropdown-toggle.col-md-5 {
+  margin-top: 0.2rem;
+  margin-left: 0.5rem;
+}
+
+.col-md-5 {
+  margin-left: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.span-show {
+  margin-top: 0.5rem;
+}
+
+.card-2 {
+  margin-top: 0.8rem;
+  margin-left: 1.2rem;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+}
+
+.btn.btn-primary.browse1 {
+  float: left;
+}
+
+.btn.btn-light {
+  float: right;
+}
+
+.btn.btn-light {
+  float: left;
+}
+
+.btn.btn-primary.span-sign {
+  margin-top: 0.7rem;
+}
+
+.div-atmd {
+  margin-top: 2rem;
+}
+
+.coc-table {
+  margin-left: 1.5rem;
+}
+
+.table-responsive-coc {
+  margin-left: 2rem;
+}
+
+.div-table {
+  margin-left: 1.2rem;
+}
+
+.div-performance {
+  padding-top: 2px;
+}
+

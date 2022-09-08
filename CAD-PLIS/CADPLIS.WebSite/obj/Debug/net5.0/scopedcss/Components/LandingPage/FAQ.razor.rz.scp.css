@@ -1,0 +1,25 @@
+#faqTitle[b-w7ztm2zbql] {
+    font-weight: bold;
+}
+
+#faqSubTitle[b-w7ztm2zbql] {
+}
+
+#faqSection[b-w7ztm2zbql] {
+    /*display: inline-flex;*/
+}
+
+.faqSection[b-w7ztm2zbql] {
+    display: inline-flex;
+    text-align: left;
+    color: #2E4161;
+}
+
+
+#faqBannerImg[b-w7ztm2zbql] {
+    background-image: url(/images/shutterstock_631299092.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fNJMqyTQOQABlKT5u2UN/oO3h5ilQfN1Uw1TLBFtnypA9tiHIgnVCZL8PJ/KI1vLzcyY2JdhX+0LMMb9Krd4rA==",
+  "success": true,
+  "projectFilePath": "D:\\project\\CAD-PLIS\\CADPLIS.Shared\\CADPLIS.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xiong\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\xiong\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\xiong\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

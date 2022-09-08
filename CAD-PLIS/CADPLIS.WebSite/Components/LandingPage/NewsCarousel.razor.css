@@ -1,0 +1,57 @@
+﻿.news-carousel {
+    padding: 0px 10vw;
+}
+
+/* smaller, dark, rounded square */
+#newsCarousel .flickity-button {
+    background: #333 !important;
+}
+
+    #newsCarousel .flickity-button:hover {
+        background: #F90 !important;
+    }
+
+#newsCarousel .flickity-prev-next-button {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 5px !important;
+}
+/* icon color */
+#newsCarousel .flickity-button-icon {
+    fill: white !important;
+}
+/* position outside */
+#newsCarousel .flickity-prev-next-button.previous {
+    left: -40px !important;
+}
+
+#newsCarousel .flickity-prev-next-button.next {
+    right: -40px !important;
+}
+
+.newsCarouselHeader, .newsCarouselBody {
+    text-align: left;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    color: #fff;
+}
+
+    .newsCarouselBody a {
+        color: #fff !important;
+        text-decoration: underline;
+    }
+
+.newsCarouselContent {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    /*Grey background for visible text*/
+    z-index: 2;
+}

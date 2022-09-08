@@ -1,0 +1,15 @@
+﻿@using CADPLIS.Domain.CodeLists;
+
+<div class="row d-flex @Class">
+    @foreach (DropDownList opt in ddlOpts)
+    {
+        <BSFormGroup IsCheck="@(!String.IsNullOrEmpty(DefaultSelectedValue) && DefaultSelectedValue == opt.Value ? true : false)" Class="w-auto">
+            <BSBasicInput InputType="InputType.Radio" Id="@("opt"+opt.Value)" RadioValue="@opt.Value" @bind-Value="selectedValue" @onchange="@(async () => { await OnSelectedValue(opt.Value); })"></BSBasicInput>
+            <BSLabel For="@("opt"+opt.Value)">@opt.Description</BSLabel>
+        </BSFormGroup>
+    }
+</div>
+
+@code {
+
+}

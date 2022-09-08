@@ -1,0 +1,40 @@
+﻿@page "/role/index"
+<h3>Role Maintenance</h3>
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <MatTextField ValueChanged="((string roleId)=>DoFilter(roleId, RoleName) )" Label="Role Id" />
+    <MatTextField ValueChanged="((string roleName)=>DoFilter(RoleId, roleName) )" Label="Role Name" />
+    <MatTable Items="@paginator.data" class="mat-elevation-z5" ShowPaging="false" AllowSelection="true" PageSize="@PageSize">
+        <MatTableHeader>
+            <th><MatButton Icon="playlist_add" OnClick="@(_ => Add())" Raised="true"> New Role </MatButton></th>
+            <th>Role ID</th>
+            <th>Role Name</th>
+            <th>Created By</th>
+            <th class="tableth">Created Date</th>
+            <th>Last Updated By</th>
+        </MatTableHeader>
+        <MatTableRow>
+            <td>
+                <div style="width:155px;">
+                    <MatIconButton Icon="visibility" OnClick="(e=>Detail(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="edit" OnClick="(e=>Edit(context.Id))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(e=>DeleteBefore(context.Id))"></MatIconButton>
+                </div>
+            </td>
+            <td>@context.RoleId</td>
+            <td>@context.RoleDescription</td>
+            <td>@context.CreatedBy</td>
+            <td>@context.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@context.UpdatedBy</td>
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+}
+
+

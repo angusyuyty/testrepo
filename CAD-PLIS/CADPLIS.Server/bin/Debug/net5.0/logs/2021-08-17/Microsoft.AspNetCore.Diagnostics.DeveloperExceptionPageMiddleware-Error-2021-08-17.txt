@@ -1,0 +1,115 @@
+2021-08-17 08:45:18.3938 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:45:30.9852 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:45:35.1080 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:46:01.8956 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:46:53.5962 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:47:15.1694 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:47:29.2893 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 08:48:39.1564 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 09:45:05.1310 | An unhandled exception has occurred while executing the request. The AuthorizationPolicy named: 'User.Update' was not found. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:00:05.9296 | An unhandled exception has occurred while executing the request. Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> GroupInfo
+System.Object -> CADPLIS.Domain.Identity.GroupInfo 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:00:24.4384 | An unhandled exception has occurred while executing the request. Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> GroupInfo
+System.Object -> CADPLIS.Domain.Identity.GroupInfo 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:01:35.5711 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:01:55.0383 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:18:59.5585 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<GroupInfo>.Find' was of type 'string', which does not match the property type of 'Guid'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:19:24.5222 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<GroupInfo>.Find' was of type 'string', which does not match the property type of 'Guid'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 15:50:36.4511 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 16:40:23.4693 | An unhandled exception has occurred while executing the request. 列名 'GroupId' 无效。
+列名 'IsHead' 无效。 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 16:40:38.5430 | An unhandled exception has occurred while executing the request. 列名 'GroupId' 无效。
+列名 'IsHead' 无效。 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 17:51:56.8885 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ HostingApplication.ProcessRequestAsync => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 17:51:59.6360 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:52:10.8841 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:54:12.9176 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:55:24.6626 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ HostingApplication.ProcessRequestAsync => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 17:55:32.6698 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:56:03.3909 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:57:20.0830 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 17:57:23.3270 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:58:37.4770 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ HostingApplication.ProcessRequestAsync => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-17 17:58:39.9518 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:58:58.9595 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:59:01.2027 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:59:02.3349 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:59:12.5608 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 17:59:27.6338 | An unhandled exception has occurred while executing the request. Collection was modified; enumeration operation may not execute. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-17 18:05:35.6293 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+

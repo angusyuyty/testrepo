@@ -1,0 +1,196 @@
+﻿<section id="residentialAddressForm">
+    <div class="row formHeader my-3">
+        <p>
+            Please enter corresponding address
+        </p>
+    </div>
+    <EditForm Model="model">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>Residential Address*</label>
+                    <input type="text" class="form-control m-1" id="firstLineResAddress" @bind-value="model.ResAddressFirstLine" />
+                    <input type="text" class="form-control m-1" id="secondLineResAddress" @bind-value="model.ResAddressSecondLine" />
+                    <input type="text" class="form-control m-1" id="thirdLineResAddress" @bind-value="model.ResAddressThirdLine" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Country*</label>
+                    <!--<BSDropdown>
+                        <BSDropdownToggle>Dropdown</BSDropdownToggle>
+                        <BSDropdownMenu>
+                            @foreach (String countryStr in countryList)
+                            {
+                                <BSDropdownItem Href="javascript:void(0);" />@countryStr
+                            }-->
+                            @*<BSDropdownItem Href="javascript:void(0);">HKSAR</BSDropdownItem>
+                                <BSDropdownItem Href="javascript:void(0);">China</BSDropdownItem>
+                                <BSDropdownItem Href="javascript:void(0);">USA</BSDropdownItem>*@
+                        <!--</BSDropdownMenu>
+                    </BSDropdown>-->
+                </div>
+            </div>
+            <div class="col-6">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="resAddressProof">Proof of residential address*</label>
+                    @*<input type="file" class="form-control" id="resAddressProof" placeholder="residential address.jpg">*@
+                    @*<InputFile OnChange="@UploadResAddressProof" />*@
+                    @*<FileUploadInput></FileUploadInput>*@
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>Postal Address*</label>
+                    <input type="checkbox" placeholder="Same as residential address" />
+                    <input type="text" class="form-control m-1" id="firstLinePostalAddress" @bind-value="model.PostalAddressFirstLine" />
+                    <input type="text" class="form-control m-1" id="secondLinePostalAddress" @bind-value="model.PostalAddressSecondLine" />
+                    <input type="text" class="form-control m-1" id="thirdLinePostalAddress" @bind-value="model.PostalAddressThirdLine" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Country</label>
+
+                    <!--<BSDropdown>
+                        <BSDropdownToggle>Dropdown</BSDropdownToggle>
+                        <BSDropdownMenu>
+                            @foreach (String countryStr in countryList)
+                            {
+                                <BSDropdownItem Href="javascript:void(0);" />@countryStr
+                            }-->
+                            @*<BSDropdownItem Href="javascript:void(0);">HKSAR</BSDropdownItem>
+                                <BSDropdownItem Href="javascript:void(0);">China</BSDropdownItem>
+                                <BSDropdownItem Href="javascript:void(0);">USA</BSDropdownItem>*@
+                        <!--</BSDropdownMenu>
+                    </BSDropdown>-->
+                </div>
+            </div>
+            <div class="col-6">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="resAddressProof">Proof of postal address</label>
+                    @*<input type="file" class="form-control" id="postalAddressProof" placeholder="Upload">*@
+                    @*<InputFile OnChange="@UploadPostalAddressProof" />*@
+                    @*<FileUploadInput></FileUploadInput>*@
+                </div>
+            </div>
+        </div>
+        <div class="row" id="nextBtnDiv">
+            <div class="col-6">
+                <button type="button" class="btn btn-outline-secondary w-100" @onclick="OnPrevBtnClicked">Previous</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary w-100 @(isValid ? "" : "disabled")" @onclick="OnNextBtnClicked" id="nextBtn">Next</button>
+            </div>
+        </div>
+    </EditForm>
+</section>
+
+<style>
+</style>
+
+@code {
+    //[Parameter]
+    //public Action OnPrevActionClicked { get; set; }
+    //[Parameter]
+    //public Action OnNextActionClicked { get; set; }
+    private bool isValid { get; set; } = false;
+    private List<String> countryList = new List<String>();
+    private ResidentialAddressFormModel model { get; set; } = new ResidentialAddressFormModel();
+
+    #region Dummy Data
+    private void initdummyData()
+    {
+        countryList = new List<string>();
+        countryList.Add("China");
+        countryList.Add("UK");
+        countryList.Add("USA");
+        countryList.Add("HKSAR");
+    }
+    #endregion Dummy Data
+
+    private void validation()
+    {
+        isValid = false;
+        //if (!String.IsNullOrEmpty(LoginId) && !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(RePassword) && Password == RePassword)
+        if (1 == 1)
+        {
+            isValid = true;
+        }
+    }
+
+    private void OnPrevBtnClicked()
+    {
+        //OnPrevActionClicked?.Invoke();
+    }
+
+    private void OnNextBtnClicked()
+    {
+        validation();
+        if (isValid)
+        {
+            //OnNextActionClicked?.Invoke();
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        initdummyData();
+    }
+
+    //#region Setting
+    //private List<IBrowserFile> loadedFiles = new();
+    //private long maxFileSize = 1024 * 15;
+    //private int maxAllowedFiles = 3;
+    //private bool isLoading;
+    //#endregion Setting
+
+    //private async Task UploadResAddressProof(InputFileChangeEventArgs e)
+    //{
+    //    isLoading = true;
+    //    loadedFiles.Clear();
+
+    //    foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+    //    {
+    //        try
+    //        {
+    //            loadedFiles.Add(file);
+
+    //            var trustedFileNameForFileStorage = Path.GetRandomFileName();
+    //            //var path = Path.Combine(Environment.ContentRootPath,
+    //            //        Environment.EnvironmentName, "unsafe_uploads",
+    //            //        trustedFileNameForFileStorage);
+    //            var path = trustedFileNameForFileStorage;
+
+    //            await using FileStream fs = new(path, FileMode.Create);
+    //            await file.OpenReadStream(maxFileSize).CopyToAsync(fs);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            //Logger.LogError("File: {Filename} Error: {Error}", file.Name, ex.Message);
+    //            Console.WriteLine("File: {Filename} Error: {Error}", file.Name, ex.Message);
+    //        }
+    //    }
+    //    isLoading = false;
+    //}
+
+    //private async Task UploadPostalAddressProof(InputFileChangeEventArgs e)
+    //{
+    //    // TODO: set handler
+    //    await UploadResAddressProof(e);
+    //}
+}

@@ -1,0 +1,132 @@
+﻿@page "/Group/Index"
+
+@using CADPLIS.Application.Contracts.Accounts
+@using CADPLIS.WebSite.Notice
+@inject HttpClient httpClient
+@inject IMatDialogService MatDialogService
+
+<h3>Group</h3>
+<MatTable Items="@pageData" Class="mat-elevation-z5" Striped="true" ShowPaging="false">
+    <MatTableHeader>
+        <th><MatButton Icon="person_add" Label="New Group" OnClick="@(() => AddGroup())"></MatButton></th>
+        <th>GroupName</th>
+
+    </MatTableHeader>
+    <MatTableRow Context="Group">
+        <td>
+            <div style="width:155px;">
+                <MatIconButton Icon="edit" OnClick="(()=>EditGroup(Group.Id))"></MatIconButton>
+                <MatIconButton Icon="delete" OnClick="(()=>DeleteGroup(Group.Id.Value))"></MatIconButton>
+            </div>
+        </td>
+        <td><div style="width:130px;">@Group.GroupName</div></td>
+
+    </MatTableRow>
+</MatTable>
+<div>
+    <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+</div>
+
+@code {
+
+
+    Paginator<GroupInfoDto> groups = new();
+    List<GroupInfoDto> pageData = new();
+
+    [Inject] IViewNotifier viewNotifier { get; set; }
+    private int PageSize { get; set; } = 10;
+    private int PageIndex { get; set; } = 0;
+    private int PageCount { get; set; }
+    [CascadingParameter] public Error Error { get; set; }
+
+    [Parameter]public Guid? Id { get; set; }
+
+    string deleteUrl = "api/Account/DeleteGroup/{0}";
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetGroupList();
+    }
+
+    async Task GetGroupList()
+    {
+        string urlList = $"api/Account/GetPageGroups/pageSize/{PageSize}/pageIndex/{PageIndex}";
+        var result = await httpClient.GetFromJsonAsync<ApiResponse<Paginator<GroupInfoDto>>>(urlList);
+        if (result.IsSuccessStatusCode)
+        {
+            groups = result.Result;
+            pageData = groups.data;
+            PageCount = groups.pageCount;
+
+        }
+        else
+        {
+            Error.ShowError(result.Message);
+        }
+    }
+
+    async Task AddGroup()
+    {
+        await OpenDialogFromService("add");
+    }
+
+    async Task EditGroup(Guid? id)
+    {
+        Id = id;
+        await OpenDialogFromService("edit");
+    }
+
+
+    async Task OpenDialogFromService(string action)
+    {
+        var result = await MatDialogService.OpenAsync(typeof(EditGroup),
+            new MatDialogOptions()
+            {
+                Attributes = new Dictionary<string, object>() {
+                    { "Id", Id },
+                    { "action",action}
+                        }
+            });
+        var isSuccess = result.ToString().Equals("True");
+        if (isSuccess)
+        {
+            await GetGroupList();
+        }
+    }
+
+    async Task OnPage(MatPaginatorPageEvent e)
+    {
+        PageSize = e.PageSize;
+        PageIndex = e.PageIndex;
+        await GetGroupList();
+    }
+
+
+    async Task DeleteGroup(Guid id)
+    {
+        var boolDelete = await MatDialogService.ConfirmAsync("sure  delete this?");
+        if (boolDelete)
+        {
+            try
+            {
+                var result = await httpClient.DeleteAsync<ApiResponse>(string.Format(deleteUrl, id));
+                if (result.IsSuccessStatusCode)
+                {
+                    viewNotifier.Show("success", ViewNotifierType.Success, result.Message);
+                    await GetGroupList();
+                }
+                else
+                {
+                    Error.ShowError(result.Message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Error.ProcessError(ex);
+            }
+        }
+    }
+}

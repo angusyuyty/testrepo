@@ -1,0 +1,45 @@
+2021-08-02 11:37:40.3752 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 11:37:52.6257 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 11:41:36.0679 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 11:41:57.8934 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 11:42:08.1023 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 11:43:13.1386 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 15:27:14.6211 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 15:28:30.4621 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 15:31:13.4813 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 15:32:11.2548 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 15:37:11.4070 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 15:39:49.4775 | An unhandled exception has occurred while executing the request. Attempted to divide by zero. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 16:54:14.3816 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Server.WorkContext. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 16:54:33.8175 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Server.WorkContext. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-02 16:55:46.4452 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Server.WorkContext. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

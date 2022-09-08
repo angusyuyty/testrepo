@@ -1,0 +1,22 @@
+2021-09-22 11:24:00.1926 | An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+2021-09-22 13:48:36.6554 | An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+2021-09-22 13:57:39.6420 | 列名 'Point' 无效。 
+2021-09-22 16:05:13.2335 | An error occurred while updating the entries. See the inner exception for details. 
+2021-09-22 16:07:33.2626 | An error occurred while updating the entries. See the inner exception for details. 
+2021-09-22 16:09:08.9510 | An error occurred while updating the entries. See the inner exception for details. 
+2021-09-22 16:09:53.6603 | One or more errors occurred. (Create instance of the process, ProcessId=f0941eb0-7afa-44f0-af78-08d97d9fb461, failed.) 
+2021-09-22 16:11:50.0787 | One or more errors occurred. (Create instance of the process, ProcessId=6851a1fc-5c92-4244-af79-08d97d9fb461, failed.) 
+2021-09-22 16:20:58.6545 | One or more errors occurred. (Create instance of the process, ProcessId=8fa728a1-66af-4f37-1540-08d97da1e6ea, failed.) 
+2021-09-22 16:21:58.5390 | One or more errors occurred. (Create instance of the process, ProcessId=34791d6a-b0b7-41f1-1541-08d97da1e6ea, failed.) 
+2021-09-22 16:28:39.0429 | One or more errors occurred. (Create instance of the process, ProcessId=c4618c71-0fe1-43d9-326f-08d97da2f8d4, failed.) 
+2021-09-22 16:33:45.2257 | One or more errors occurred. (Create instance of the process, ProcessId=37b5e18f-b6fe-4cf9-60bb-08d97da3afde, failed.) 
+2021-09-22 16:36:10.4360 | One or more errors occurred. (Create instance of the process, ProcessId=35ac110b-112f-47de-60bc-08d97da3afde, failed.) 
+2021-09-22 16:45:10.3468 | One or more errors occurred. (Create instance of the process, ProcessId=c959fafc-e2b7-46a1-d745-08d97da51d8b, failed.) 
+2021-09-22 16:55:54.0810 | Object reference not set to an instance of an object. 
+2021-09-22 16:57:00.9042 | Object reference not set to an instance of an object. 
+2021-09-22 16:58:20.5459 | Object reference not set to an instance of an object. 
+2021-09-22 17:00:25.9129 | Object reference not set to an instance of an object. 
+2021-09-22 17:01:54.5348 | Object reference not set to an instance of an object. 
+2021-09-22 17:10:32.0598 | Object reference not set to an instance of an object. 
+2021-09-22 17:35:26.1184 | An error occurred while updating the entries. See the inner exception for details. 
+2021-09-22 17:37:27.7605 | One or more errors occurred. (Maximum number of schemes for your license 1.) 

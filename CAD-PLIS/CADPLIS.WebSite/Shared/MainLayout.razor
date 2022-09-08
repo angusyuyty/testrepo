@@ -1,0 +1,306 @@
+﻿@using CADPLIS.WebSite.Notice
+@using System.Security.Claims
+@inherits LayoutComponentBase
+@inject NavigationManager navigationManager
+@inject HttpClient httpClient
+@inject IViewNotifier viewNotifier
+@inject ILogger<MainLayout> logger
+@inject AuthenticationStateProvider ApiAuthenticationProvider
+@inject IAuthService AuthService
+@inject IJSRuntime jsRuntime
+@using CADPLIS.Common.consts
+
+<CascadingValue Value="this">
+    <MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="@bbDrawerClass" >
+        <MatDrawer  @bind-Opened="@_navMenuOpened" Class="@navClass" >
+            <header class="drawer-header">
+                <div class="drawer-logo">
+                    @*<img alt="@appState.AppName" class="logo-img" src="_content/BlazorBoilerplate.Theme.Material/images/logo-dark.svg" title="@appState.AppName">
+                        <a class="miniHover" href="/">@appState.AppName</a>*@
+                    <a class="miniHover" href="/">CADPLIS</a>
+                </div>
+            </header>
+                <NavMenu />
+        </MatDrawer>
+        <MatDrawerContent>
+            <MatAppBarContainer Style="display: flex; flex-direction: column; min-height: 100vh;">
+                <MatAppBar Fixed="true">
+                    <MatAppBarRow>
+                        <MatAppBarSection>
+                            <MatAppBarTitle>
+                            </MatAppBarTitle>
+                            <div class="hidden-mdc-down">
+                                <MatTooltip Tooltip="">
+                                    <MatIconButton Class="navToggle" Icon="menu" ToggleIcon="menu" OnClick="@((e) => NavToggle())" RefBack="@context"></MatIconButton>
+                                </MatTooltip>
+                                <MatTooltip Tooltip="">
+                                    <MatIconButton Class="navToggle" Icon="format_indent_decrease" ToggleIcon="format_indent_increase" OnClick="@((e) => NavMinify())" RefBack="@context"></MatIconButton>
+                                </MatTooltip>
+                            </div>
+                        </MatAppBarSection>
+                        <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+                            @if (isLogin == true)
+                            {
+                                <MatIconButton Icon="notifications_none" @onclick=@(()=>navigationManager.NavigateTo("/ToDoList/List"))>
+                                    <div class="divright">
+                                        <label style="cursor:pointer">@(MessageCount>99?"...":MessageCount.ToString())</label>
+                                    </div>
+                                </MatIconButton>
+                                <MatIconButton Icon="account_circle" Link="/account/profile"></MatIconButton>
+                                <span><b><a href="/account/profile" class="userprofile">@userId</a></b></span>
+                                <MatSelectValue Value="@intRoleValue"
+                                                ValueExpression="@( () => intRoleValue )" ValueChanged="((string role) =>  setCurrentRole(role))" Items="@roles" ValueSelector="@(v => v)" Class="selectdiv">
+                                    <ItemTemplate Context="itemcon">
+                                        @itemcon
+                                    </ItemTemplate>
+                                </MatSelectValue>
+
+                                <MatTooltip Tooltip="Logout">
+                                    <MatIconButton Icon="exit_to_app" RefBack="@context" OnClick="@LogoutClick"></MatIconButton>
+                                </MatTooltip>
+                            }
+                            else
+                            {
+                                <MatIconButton Icon="account_box" @onclick="@(()=>NavigateLogin())"></MatIconButton>
+                            }
+                        </MatAppBarSection>
+                    </MatAppBarRow>
+                </MatAppBar>
+                <MatAppBarContent Style="flex: 1; display: flex; flex-direction: column;">
+                    @*@TopSection*@
+                    <section class="container-fluid" style="flex: 1;">
+                        <Error>
+                            @Body
+                        </Error>
+                    </section>
+
+                </MatAppBarContent>
+            </MatAppBarContainer>
+        </MatDrawerContent>
+
+    </MatDrawerContainer>
+</CascadingValue>
+
+
+@code
+{
+    bool _navMenuOpened = true;
+    bool _navMinified = false;
+    public string bbDrawerClass = string.Empty;
+    public string navClass = "navApplicant";
+    public int MessageCount = 0;
+    string userId = "";
+    string intRoleValue = "";
+    [CascadingParameter]
+    Task<AuthenticationState> authenticationStateTask { get; set; }
+    List<string> roles = new List<string>();
+    string setCurrentRoleUrl = "api/Account/SetCurrentRole";
+    string rolekey = "";
+    bool firstGo = true;
+    void NavToggle()
+    {
+        _navMenuOpened = !_navMenuOpened;
+
+        if (_navMenuOpened)
+        {
+            bbDrawerClass = "full";
+        }
+        else
+        {
+            bbDrawerClass = "closed";
+        }
+
+        StateHasChanged();
+    }
+
+    void NavLock()
+    {
+        //Todo Lock Nav
+    }
+
+    void NavMinify()
+    {
+        _navMinified = !_navMinified;
+
+        if (!_navMenuOpened)
+        {
+            _navMinified = true;
+        }
+
+        if (_navMinified)
+        {
+            bbDrawerClass = "mini";
+            _navMenuOpened = true;
+        }
+        else if (_navMenuOpened)
+        {
+            bbDrawerClass = "full";
+        }
+
+        _navMenuOpened = true;
+
+        StateHasChanged();
+    }
+    bool isLogin = false;
+
+    void NavigateLogin()
+    {
+        navigationManager.NavigateTo("/login");
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var c = await ApiAuthenticationProvider.GetAuthenticationStateAsync();
+        if (c.User.Identity.IsAuthenticated)
+        {
+            isLogin = true;
+            userId = c.User.Identity.Name;
+            rolekey = "role" + userId;
+            var data = c.User.Claims.Where(u => u.Type == ClaimTypes.Role).ToList();
+            setRoles(data);
+            LocalStorageHelper localStorageHelper = new LocalStorageHelper(jsRuntime);
+            var x = await localStorageHelper.GetLocalStorage(rolekey);
+            if (x != null)
+            {
+                intRoleValue = x;
+            }
+            else
+            {
+                if (data.Any())
+                {
+                    var firstRole = data[0];
+                    intRoleValue = firstRole.Value;
+                    await localStorageHelper.SetLocalStorage(rolekey, firstRole.Value);
+                }
+            }
+            SetNavColor();
+            await setCurrentRole(intRoleValue, true);
+            await GetNoticeCount();
+
+        }
+        else
+        {
+            navigationManager.NavigateTo("/login");
+        }
+    }
+
+    void setRoles(List<Claim> list)
+    {
+        foreach (var item in list)
+        {
+            roles.Add(item.Value);
+        }
+    }
+    async Task setCurrentRole(string role, bool first = false)
+    {
+        httpClient.DefaultRequestHeaders.Remove("CurrentRole");
+        httpClient.DefaultRequestHeaders.Add("CurrentRole", role);
+        try
+        {
+            var result = await httpClient.PostJsonAsync<ApiResponse>(setCurrentRoleUrl, null);
+            if (result.IsSuccessStatusCode)
+            {
+                LocalStorageHelper localStorageHelper = new LocalStorageHelper(jsRuntime);
+                await localStorageHelper.SetLocalStorage(rolekey, role);
+                intRoleValue = role;
+                if (!first)
+                {
+                    await jsRuntime.InvokeVoidAsync("reload");
+                }
+
+            }
+            else
+            {
+                viewNotifier.Show(result.Message, ViewNotifierType.Error);
+                logger.LogError(result.Message);
+            }
+        }
+        catch (Exception ex)
+        {
+            var message = ex.GetBaseException().Message;
+            viewNotifier.Show(message, ViewNotifierType.Error);
+            logger.LogError(message);
+        }
+    }
+
+    async Task LogoutClick()
+    {
+        await AuthService.Logout();
+        navigationManager.NavigateTo("/login");
+    }
+
+    async Task GetNoticeCount()
+    {
+        try
+        {
+            var result = await httpClient.GetJsonAsync<ApiResponse<int>>(string.Format("api/ToDoList/GetCount?currentUserId={0}", userId));
+            if (result.IsSuccessStatusCode)
+            {
+                MessageCount = result.Result;
+            }
+            else
+            {
+                viewNotifier.Show(result.Message, ViewNotifierType.Error);
+                logger.LogError(result.Message);
+            }
+        }
+        catch (Exception ex)
+        {
+            var message = ex.GetBaseException().Message;
+            viewNotifier.Show(message, ViewNotifierType.Error);
+            logger.LogError(message);
+        }
+    }
+    void SetNavColor()
+    {
+        @if (intRoleValue == RoleConsts.Administrator)
+        {
+            navClass = "navAdmin mdc-drawer--open";
+        }
+        else if (intRoleValue == RoleConsts.Applicant)
+        {
+            navClass = "navApplicant mdc-drawer--open";
+        }
+        else if (intRoleValue == RoleConsts.AMA || intRoleValue == RoleConsts.AME || intRoleValue == RoleConsts.AME_AMA)
+        {
+            navClass = "navAMA mdc-drawer--open";
+        }
+        else if (intRoleValue == RoleConsts.ATCL_USER || intRoleValue == RoleConsts.ATCL_APPROVER || intRoleValue == RoleConsts.CATS || intRoleValue == RoleConsts.ATMSO || intRoleValue == RoleConsts.ATMD)
+        {
+                navClass = "navAMA mdc-drawer--open";
+            }
+        }
+}
+<style>
+    .navAdmin {
+        background-color: Brown !important;
+        background-image: none !important;
+    }
+
+    .navAMA {
+        background-color: #337ab7 !important;
+        background-image: none !important;
+    }
+
+    .navApplicant {
+        background-color: #f8f9fa !important;
+        background-image: none !important;
+    }
+</style>
+@if (intRoleValue == RoleConsts.Applicant)
+{
+    <style>
+        .mdc-drawer .mdc-list-item {
+            color: black !important;
+        }
+    </style>
+}
+else
+{
+    <style>
+        .mdc-drawer .mdc-list-item {
+            color: #fff !important;
+        }
+    </style>
+}

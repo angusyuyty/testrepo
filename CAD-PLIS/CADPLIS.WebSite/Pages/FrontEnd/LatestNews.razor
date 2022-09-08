@@ -1,0 +1,56 @@
+﻿@page "/latestNews"
+@using CADPLIS.WebSite.Components
+@using CADPLIS.WebSite.Components.FrontEnd
+@using CADPLIS.WebSite.Components.LandingPage
+
+<section id="pilotLicenceInformationSection">
+    <!-- Banner -->
+    <Banner bannerImgUrl="/images/shutterstock_171507251.jpg" bannerTitle="@bannerTitle"></Banner>
+    <!-- Breadcrumbs Home / News -->
+    <BSBreadcrumb Class="m-5 bg-none">
+        <BSBreadcrumbItem>Home</BSBreadcrumbItem>
+        <BSBreadcrumbItem IsActive="true" Class="currentPage">News</BSBreadcrumbItem>
+    </BSBreadcrumb>
+    <!-- Card Loop -->
+
+    @if (newsList != null && newsList.Count > 0)
+    {
+        @foreach (News news in newsList)
+        {
+            <NewsCard title="@news.title" imgSrc="@news.imgUrl" link="@news.link" description="@news.description"></NewsCard>
+        }
+    }
+    <!-- Card Img / Information-->
+</section>
+<style>
+    #pilotLicenceInformationSection {
+    }
+
+    .bg-none {
+        background-color: transparent !important;
+    }
+
+    .currentPage {
+        text-decoration: underline !important;
+    }
+</style>
+
+@code {
+    public class News
+    {
+        public String imgUrl { get; set; }
+        public String title { get; set; }
+        public String description { get; set; }
+        public Tuple<String, String> link { get; set; }
+    }
+    private List<String> bannerTitle = new List<string> { "Latest news", "" };
+    public List<News> newsList = new List<News>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        newsList.Add(new News { imgUrl = "/images/shutterstock_129707585.jpg", link = new Tuple<String, String>("Learn more", "/newsDetail?i=1"), title = "Professional Pilot's Licence requirements update", description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." });
+        newsList.Add(new News { imgUrl = "/images/shutterstock_750976636.jpg", link = new Tuple<String, String>("Learn more", "/newsDetail?i=2"), title = "Flight Crew's Licence requirement update", description = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." });
+        newsList.Add(new News { imgUrl = "/images/img02.jpg", link = new Tuple<String, String>("Learn more", "/newsDetail?i=3"), title = "Private Pilot's Licence requirement update", description = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old." });
+    }
+}

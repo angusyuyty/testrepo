@@ -1,0 +1,17 @@
+2021-09-06 15:45:05.9264 | 列名 'CreatedBy' 无效。
+列名 'CreatedTime' 无效。
+列名 'CreatedUserRoleId' 无效。
+列名 'UpdatedBy' 无效。
+列名 'UpdatedTime' 无效。
+列名 'UpdatedUserRoleId' 无效。 
+2021-09-06 15:53:02.0182 | 列名 'CreatedBy' 无效。
+列名 'CreatedTime' 无效。
+列名 'CreatedUserRoleId' 无效。
+列名 'UpdatedBy' 无效。
+列名 'UpdatedTime' 无效。
+列名 'UpdatedUserRoleId' 无效。 
+2021-09-06 15:54:58.4350 | Error mapping types.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.Groups.UserRoleGroupDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 

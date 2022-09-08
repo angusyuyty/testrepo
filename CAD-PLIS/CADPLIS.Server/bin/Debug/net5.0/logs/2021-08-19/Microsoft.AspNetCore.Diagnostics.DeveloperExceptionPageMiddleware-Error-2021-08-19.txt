@@ -1,0 +1,150 @@
+2021-08-19 10:18:01.7431 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:19:48.8155 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:20:37.6509 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:22:18.1968 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetDocument (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:23:54.3222 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:24:33.9330 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:25:05.6225 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:25:52.1267 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:26:45.0630 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:30:19.1043 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:30:38.9594 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetWorkFlows (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:35:16.7408 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetDocument (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:35:21.8820 | An unhandled exception has occurred while executing the request. Failed to generate Operation for action - CADPLIS.Server.Controllers.WorkFlowController.GetDocument (CADPLIS.Server). See inner exception 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 10:48:15.1721 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'roles') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 10:48:52.5120 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'roles') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 10:50:27.3423 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'roles') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 10:53:36.5315 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 10:53:50.0235 | An unhandled exception has occurred while executing the request. Value cannot be null. (Parameter 'input') 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 14:44:11.1828 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <InvokeAsync>d__4.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:06:16.4503 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.DocumentRepository. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 15:07:00.4152 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.DocumentRepository. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:07:14.3415 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.DocumentRepository. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-19 15:12:55.2805 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:13:42.0228 | An unhandled exception has occurred while executing the request. Object reference not set to an instance of an object. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:14:12.1099 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.DocumentRepository. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:30:26.2886 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:48:18.5253 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:51:17.8158 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:51:25.5150 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:51:36.2725 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:52:04.5857 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:52:12.6794 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:53:32.7550 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:53:45.3558 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:54:02.3463 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:54:44.4072 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:55:14.2891 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:55:32.9846 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:56:30.6237 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 15:57:38.8294 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:00:30.6246 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:06:50.3776 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:07:58.7038 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:12:19.0688 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:21:49.3265 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:23:32.0644 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:50:57.9090 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:51:07.0652 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:51:23.2216 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-19 16:51:40.1766 | An unhandled exception has occurred while executing the request. An exception was thrown while activating CADPLIS.Application.WorkFlows.WorkFlowAppService. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

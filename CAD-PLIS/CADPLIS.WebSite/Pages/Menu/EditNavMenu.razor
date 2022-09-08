@@ -1,0 +1,57 @@
+﻿@using CADPLIS.Application.Contracts.NavMenus;
+@if (menuDto == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar> }
+else
+{
+    <MatDialogTitle Class="dialogTitle">
+        <div class="titleDiv">@action</div>
+        <div @onclick="@(_=>CloseDialog(false))" class="closeDiv">
+            <MatIcon Icon="@MatIconNames.Close"></MatIcon>
+        </div>
+    </MatDialogTitle>
+    <MatDialogContent Class="content">
+        <EditForm EditContext="@editContext">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <p>
+                <MatTextField @bind-Value="@menuDto.MenuName" Label="MenuName" Required="true" FullWidth="true" Outlined="true"></MatTextField>
+                <ValidationMessage For="()=>menuDto.MenuName" />
+            </p>
+            <p>
+                <MatTextField @bind-Value="@menuDto.Icon" Label="Icon" FullWidth="true" Outlined="true"></MatTextField>
+            </p>
+            <p>
+                <MatTextField @bind-Value="@menuDto.OrderNo" Label="OrderNo" FullWidth="true" Outlined="true"></MatTextField>
+                <ValidationMessage For="()=>menuDto.OrderNo" />
+            </p>
+            <p>
+                <MatTextField @bind-Value="@menuDto.RouteUrl" Label="RouteUrl" FullWidth="true" Outlined="true"></MatTextField>
+            </p>
+            <p>
+                @*<MatSelect Label="Pick Parent" @bind-Value="@menuDto.ParentId" Outlined="true">
+                        <MatOption TValue="string" Value=@("/")>Top Menu</MatOption>
+                        @foreach (var item in selectMenus)
+                        {
+                            <MatOption TValue="string" Value="@item.Id">@item.MenuName</MatOption>
+                        }
+                    </MatSelect>*@
+                Top Menu
+                <MatTreeView TNode="NavMenuDto"
+                             RootNode="@menuTree"
+                             @bind-SelectedNode="@SelectedParentNode"
+                             GetChildNodesCallback="@((n)=>n.Children)">
+                    <NodeTemplate Context="con">
+                        @con.MenuName
+                    </NodeTemplate>
+                </MatTreeView>
+
+
+            </p>
+        </EditForm>
+    </MatDialogContent>
+    <MatDialogActions>
+        <MatButton OnClick="@(_ => SaveData())">Save</MatButton>
+        <MatButton OnClick="@(_ => CloseDialog(false))">Close</MatButton>
+    </MatDialogActions>
+}

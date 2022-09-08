@@ -1,0 +1,92 @@
+﻿<section id="newsCarousel">
+    <div class="row w-100">
+        <h1 class="w-100 sectionTitle m-4">
+            @newsCarouselTitle
+        </h1>
+    </div>
+    <div class="w-100 news-carousel row pt-10 pt-md-12 d-none d-lg-flex d-xl-flex">
+        @for (int i = 0; i < newsCarouselObjects.Count; i++)
+        {
+            <div class="carousel-cell col-12 col-lg-4 col-xl-4 rounded-2" style="height: 75vh;">
+                @*490px*@
+                <div class="card rounded w-100 h-100" style="background-image: linear-gradient(to bottom, rgb(255 255 255 / 0%) 40%, #3d4c6700 0%, rgb(0 0 0 / 80%) 90%), url( @newsCarouselObjects[i].imgUrl); background-size: cover; ">
+                    <div class="card-body h-100 newsCarouselBody">
+                        <div class="newsCarouselContent">
+                            <h5 class="newsCarouselHeader">@newsCarouselObjects[i].title</h5>
+                            <a class="knowMoreAnchor" href="@newsCarouselObjects[i].learnMoreRoute">Know more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @*<div class="w-100 news-carousel row pt-10 pt-md-12 d-flex d-lg-none d-xl-none">
+            @for (int i = 0; i < newsCarouselObjects.Count; i++)
+            {
+                <NewsCard imgSrc="@newsCarouselObjects[i].imgUrl" title="@newsCarouselObjects[i].title" link="@(new Tuple<String, String>("Know more", newsCarouselObjects[i].learnMoreRoute))"></NewsCard>
+            }
+        </div>*@
+    <div class="w-100 row moreDetailRow mt-5 mb-2">
+        <NavLink href="/latestNews">More Details</NavLink>
+    </div>
+</section>
+
+<style>
+    .newsCarouselBody {
+        padding-left: 0px;
+    }
+
+    .knowMoreAnchor {
+        font-weight: lighter;
+    }
+
+    .moreDetailRow {
+        justify-content: flex-end;
+        display: flex;
+        text-align: right;
+        color: #2E4161;
+    }
+
+        .moreDetailRow a {
+            color: #2E4161;
+            font-weight: bold;
+        }
+
+    #newsCarousel .news-carousel ol.flickity-page-dots {
+        position: relative;
+    }
+
+    @@media only screen and (max-width: 970px) {
+        .flickity-button {
+            display: none;
+        }
+    }
+</style>
+
+@code {
+    public class NewsCarouselObject
+    {
+        public int id { get; set; }
+        public String title { get; set; }
+        public String description { get; set; }
+        public String imgUrl { get; set; }
+        public String learnMoreRoute { get; set; }
+    }
+    [Parameter]
+    public List<NewsCarouselObject> newsCarouselObjects { get; set; }
+    [Parameter]
+    public String newsCarouselTitle { get; set; } = "Latest news for CAD licence";
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (newsCarouselObjects == null)
+            newsCarouselObjects = new List<NewsCarouselObject>();
+        newsCarouselObjects.Add(new NewsCarouselObject { id = 1, title = "Professional Pilot's Licence requirements update", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_129707585.jpg", learnMoreRoute = "/latestNews" });
+        newsCarouselObjects.Add(new NewsCarouselObject { id = 2, title = "Flight Crew's Licence requirement update", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/shutterstock_750976636.jpg", learnMoreRoute = "/latestNews" });
+        newsCarouselObjects.Add(new NewsCarouselObject { id = 3, title = "Private Pilot's Licence requirement update", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "/latestNews" });
+        newsCarouselObjects.Add(new NewsCarouselObject { id = 4, title = "Object 4", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "/latestNews" });
+        newsCarouselObjects.Add(new NewsCarouselObject { id = 5, title = "Object 5", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "/latestNews" });
+        newsCarouselObjects.Add(new NewsCarouselObject { id = 6, title = "Object 6", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "/images/img02.jpg", learnMoreRoute = "/latestNews" });
+    }
+}

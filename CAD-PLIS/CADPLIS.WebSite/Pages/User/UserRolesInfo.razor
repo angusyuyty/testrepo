@@ -1,0 +1,147 @@
+﻿@page "/User/UserRolesInfo"
+@using CADPLIS.Domain;
+@using CADPLIS.Application.Contracts.Accounts
+@using CADPLIS.WebSite.Notice
+@inject IMatDialogService MatDialogService
+@inject HttpClient httpClient
+@inject IViewNotifier viewNotifier
+<h3>User Role</h3>
+
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <MatTable Class="mat-elevation-z5" Items="@paginator.data" Striped="true" PageSize="@PageSize" ShowPaging="false">
+        <MatTableHeader>
+            <th><MatButton Icon="add" Label="New Role" OnClick="@(() => Add())"></MatButton></th>
+            <th>Name</th>
+            <th>Permissions</th>
+        </MatTableHeader>
+        <MatTableRow Context="RoleRow">
+            <td>
+                <div style="width:155px;">
+                    <MatIconButton Icon="edit" OnClick="@(() => Edit(RoleRow.Name))"></MatIconButton>
+                    <MatIconButton Icon="delete" OnClick="@(()=>Delete(RoleRow.Name))"></MatIconButton>
+                </div>
+            </td>
+            <td><div style="width:130px;">@RoleRow.Name</div></td>
+            <td>
+                <MatChipSet>
+                    @foreach (var permission in RoleRow.Permissions)
+                        {
+                        <MatChip Label="@permission"></MatChip>
+                        }
+                </MatChipSet>
+            </td>
+        </MatTableRow>
+    </MatTable>
+    <div>
+        <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+    </div>
+}
+
+@code
+        {
+    private Paginator<RoleInfoDto> paginator = new();
+
+    private RoleInfoDto roleDto;
+    [CascadingParameter] public Error Error { get; set; }
+
+    private int PageSize { get; set; } = 10;
+    private int PageIndex { get; set; } = 0;
+    private int PageCount { get; set; }
+    string deleteUrl = "api/Account/DeleteRole/{0}";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUserRoleList();
+    }
+
+    async Task GetUserRoleList()
+    {
+        var url = $"api/Account/GetPageRoles/pageSize/{PageSize}/pageIndex/{PageIndex}";
+        try
+        {
+            var result = await httpClient.GetFromJsonAsync<ApiResponse<Paginator<RoleInfoDto>>>(url);
+            if (result.IsSuccessStatusCode)
+            {
+                paginator = result.Result;
+                PageCount = paginator.pageCount;
+            }
+            else
+            {
+                Error.ShowError(result.Message);
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Error.ProcessError(ex);
+        }
+    }
+
+
+    [Parameter]
+    public string RoleName { get; set; } = null;
+
+
+    async Task Edit(string roleName)
+    {
+        RoleName = roleName;
+        await OpenDialogFromService("edit");
+    }
+
+
+    async Task OpenDialogFromService(string action)
+    {
+        var result = await MatDialogService.OpenAsync(typeof(UserRolesEdit),
+                new MatDialogOptions()
+                {
+                    Attributes = new Dictionary<string, object>()
+                    {
+                        {"action", action },
+                        {"RoleName", RoleName}
+                        }
+                });
+        var isSuccess = result.ToString().Equals("True");
+        if (isSuccess)
+        {
+            viewNotifier.Show("success", ViewNotifierType.Success);
+            await GetUserRoleList();
+        }
+    }
+
+
+    async Task Add()
+    {
+        RoleName = null;
+        await OpenDialogFromService("add");
+    }
+    async Task OnPage(MatPaginatorPageEvent e)
+    {
+        PageSize = e.PageSize;
+        PageIndex = e.PageIndex;
+        await GetUserRoleList();
+    }
+
+    async Task Delete(string name)
+    {
+        var boolDelete = await MatDialogService.ConfirmAsync("Are you sure to delete this?");
+        if (boolDelete)
+        {
+            var result=await httpClient.DeleteAsync<ApiResponse>(string.Format(deleteUrl,name));
+            if (result.IsSuccessStatusCode)
+            {
+                viewNotifier.Show("success", ViewNotifierType.Success, result.Message);
+                await GetUserRoleList();
+            }
+            else
+            {
+                Error.ShowError(result.Message);
+            }
+
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿@page "/User/UserRole/View/{Id:int}"
+<div>
+    <h3>User Role Detail</h3>
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">User  ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <label class="label">@userRoleModel.UserId</label>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Role</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    @foreach (var role in roleList.Where(r=>r.Selected))
+                    {
+                        <label class="label">@role.DisplayValue</label><br />
+                    }
+
+                </div>
+            </div>
+        </div>
+</div>
+<div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+            <MatButton OnClick="@(() => Close())" Outlined="true">Back</MatButton>
+        </div>
+    </div>
+</div>

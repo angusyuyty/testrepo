@@ -1,0 +1,24 @@
+2021-08-14 09:46:06.2811 | Failed executing DbCommand (5ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 256), @p3='?' (Size = 36), @p4='?' (DbType = DateTime2), @p5='?' (Size = 512), @p6='?' (DbType = Int32), @p7='?' (Size = 36), @p8='?' (Size = 18), @p9='?' (Size = 36), @p10='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditInfo] ([Id], [ActionName], [Browser], [Controller], [CreatedTime], [ErrorMsg], [ExecuteTime], [IpAddress], [Method], [Operator], [RequestArguments])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 
+2021-08-14 09:46:16.6504 | Failed executing DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 256), @p3='?' (Size = 36), @p4='?' (DbType = DateTime2), @p5='?' (Size = 512), @p6='?' (DbType = Int32), @p7='?' (Size = 36), @p8='?' (Size = 18), @p9='?' (Size = 36), @p10='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditInfo] ([Id], [ActionName], [Browser], [Controller], [CreatedTime], [ErrorMsg], [ExecuteTime], [IpAddress], [Method], [Operator], [RequestArguments])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 
+2021-08-14 09:47:51.2705 | Failed executing DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 256), @p3='?' (Size = 36), @p4='?' (DbType = DateTime2), @p5='?' (Size = 512), @p6='?' (DbType = Int32), @p7='?' (Size = 36), @p8='?' (Size = 18), @p9='?' (Size = 36), @p10='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditInfo] ([Id], [ActionName], [Browser], [Controller], [CreatedTime], [ErrorMsg], [ExecuteTime], [IpAddress], [Method], [Operator], [RequestArguments])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 
+2021-08-14 09:49:41.6097 | Failed executing DbCommand (4ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 256), @p3='?' (Size = 36), @p4='?' (DbType = DateTime2), @p5='?' (Size = 512), @p6='?' (DbType = Int32), @p7='?' (Size = 36), @p8='?' (Size = 18), @p9='?' (Size = 36), @p10='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditInfo] ([Id], [ActionName], [Browser], [Controller], [CreatedTime], [ErrorMsg], [ExecuteTime], [IpAddress], [Method], [Operator], [RequestArguments])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 
+2021-08-14 09:50:43.6743 | Failed executing DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 256), @p3='?' (Size = 36), @p4='?' (DbType = DateTime2), @p5='?' (Size = 512), @p6='?' (DbType = Int32), @p7='?' (Size = 36), @p8='?' (Size = 18), @p9='?' (Size = 36), @p10='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditInfo] ([Id], [ActionName], [Browser], [Controller], [CreatedTime], [ErrorMsg], [ExecuteTime], [IpAddress], [Method], [Operator], [RequestArguments])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 
+2021-08-14 09:51:28.9959 | Failed executing DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (Size = 256), @p3='?' (Size = 36), @p4='?' (DbType = DateTime2), @p5='?' (Size = 512), @p6='?' (DbType = Int32), @p7='?' (Size = 36), @p8='?' (Size = 18), @p9='?' (Size = 36), @p10='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AuditInfo] ([Id], [ActionName], [Browser], [Controller], [CreatedTime], [ErrorMsg], [ExecuteTime], [IpAddress], [Method], [Operator], [RequestArguments])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10); 

@@ -1,0 +1,25 @@
+﻿#faqTitle {
+    font-weight: bold;
+}
+
+#faqSubTitle {
+}
+
+#faqSection {
+    /*display: inline-flex;*/
+}
+
+.faqSection {
+    display: inline-flex;
+    text-align: left;
+    color: #2E4161;
+}
+
+
+#faqBannerImg {
+    background-image: url(/images/shutterstock_631299092.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
+}

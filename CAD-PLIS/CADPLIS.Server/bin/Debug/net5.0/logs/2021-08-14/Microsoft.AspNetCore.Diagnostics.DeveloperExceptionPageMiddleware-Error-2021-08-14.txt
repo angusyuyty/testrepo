@@ -1,0 +1,34 @@
+2021-08-14 09:45:49.9321 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Roles.IUserRoleRelationshipsAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserRoleRelationshipsController'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-14 09:46:06.3968 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-14 09:46:16.6818 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-14 09:47:51.3078 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-14 09:49:41.6914 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-14 09:50:43.7534 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-14 09:51:29.0843 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-14 10:38:40.2857 | An unhandled exception has occurred while executing the request. A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-14 11:22:15.8609 | An unhandled exception has occurred while executing the request. Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> List`1
+System.Object -> System.Collections.Generic.List`1[[CADPLIS.Application.Contracts.Monitorings.AuditInfoDto, CADPLIS.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-14 16:18:27.1535 | An unhandled exception has occurred while executing the request. Unable to resolve service for type 'CADPLIS.Application.Contracts.Roles.IUserRoleRelationshipsAppService' while attempting to activate 'CADPLIS.Server.Controllers.UserRoleRelationshipsController'. 
+ <InvokeAsync>d__4.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

@@ -1,0 +1,77 @@
+﻿@page "/Group/View/{Id:int}"
+<div>
+    <h3>Group Detail</h3>
+    <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Group ID</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.GroupId</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Group Name</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label"> @groupModel.GroupDescription</label>
+            </div>
+        </div>
+
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Created By</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.CreatedBy</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Created User Role</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.CreatedUserRoleId</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Created date</label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Last updated By </label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.UpdatedBy</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Last updated User Role </label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.UpdatedUserRoleId</label>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell">
+                <label class="label">Last updated date </label>
+            </div>
+            <div class="mat-layout-grid-cell">
+                <label class="label">@groupModel.UpdatedTime?.ToString("yyyy-MM-dd HH:mm:ss")</label>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="btndiv">
+    <MatButton OnClick="@(() => Back())" Outlined="true">Back</MatButton>
+</div>
+

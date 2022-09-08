@@ -1,0 +1,606 @@
+﻿<section id="frontEndNavSubMenu">
+    @*License SubMenu Start*@
+    @if (selectedMenu == 1)
+    {
+        <div class="row" id="licenseSubMenu">
+            <div class="col-3 p-0 py-2" id="licenseRootMenu">
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(licencesSelected == 0 || licencesSelected == 1)" id="optFC" @onmouseover="() => { licencesSelected = 1; }">
+                        <NavLink class="nav-link">
+                            <span>Flight Crew (20)</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(licencesSelected == 2)" id="optAM" @onmouseover="() => { licencesSelected = 2; }">
+                        <NavLink class="nav-link">
+                            <span>Aircraft Maintenance (12)</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(licencesSelected == 3)" id="optMC" @onmouseover="() => { licencesSelected = 3; }">
+                        <NavLink class="nav-link">
+                            <span>Medical Certificate (6)</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+            @if (licencesSelected == 0 || licencesSelected == 1)
+            {
+                <!-- Flight Crew Menu Start -->
+                <div class="col-9 row" id="flightCrewMenu">
+                    <div class="col-3">
+                        <ul class="nav flex-column border-right">
+                            <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(flightCrewMenuSelected == 0 || flightCrewMenuSelected == 1)" @onmouseover="() => { flightCrewMenuSelected = 1; }">
+                                <NavLink class="nav-link">
+                                    <span>Aeroplanes</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(flightCrewMenuSelected == 2)" @onmouseover="() => { flightCrewMenuSelected = 2; }">
+                                <NavLink class="nav-link">
+                                    <span>Helicopters</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                    @*Second Level*@
+                    @if (flightCrewMenuSelected == 0 || flightCrewMenuSelected == 1)
+                    {
+                        <div class="col-4" id="aeroplanesMenu">
+                            <ul class="nav flex-column border-right">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(subFlightCrewMenuSelected == 0 || subFlightCrewMenuSelected == 1)" @onmouseover="() => { subFlightCrewMenuSelected = 1; }">
+                                    <NavLink class="nav-link">
+                                        <span>Private Pilot's Licence</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(subFlightCrewMenuSelected == 2)" @onmouseover="() => { subFlightCrewMenuSelected = 2; }">
+                                    <NavLink class="nav-link">
+                                        <span>Professional Pilot's Licence</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(subFlightCrewMenuSelected == 3)" @onmouseover="() => { subFlightCrewMenuSelected = 3; }">
+                                    <NavLink class="nav-link">
+                                        <span>Rating / Endorsement / Certificate</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else if (flightCrewMenuSelected == 2)
+                    {
+                        <div class="col-4" id="helicoptersMenu">
+                            <ul class="nav flex-column border-right">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(subFlightCrewMenuSelected == 0 || subFlightCrewMenuSelected == 1)" @onmouseover="() => { subFlightCrewMenuSelected = 1; }">
+                                    <NavLink class="nav-link">
+                                        <span>Private Pilot's Licence</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuItemClass(subFlightCrewMenuSelected == 3)" @onmouseover="() => { subFlightCrewMenuSelected = 3; }">
+                                    <NavLink class="nav-link">
+                                        <span>Rating / Endorsement / Certificate</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    @*Final Level*@
+                    @if (subFlightCrewMenuSelected == 0 || subFlightCrewMenuSelected == 1)
+                    {
+                        <div class="col-5" id="privatePilotLicenceMenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 1)" @onmouseover="() => { selectedMenuChildItem = 1; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>PPL Ab-initio Issue / Conversion</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 2)" @onmouseover="() => { selectedMenuChildItem = 2; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Flight Radiotelephony Operator's (Restricted) Licence (Initial / Renewal)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 3)" @onmouseover="() => { selectedMenuChildItem = 3; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>AFI/FI Rating - Endorsement</span>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else if (subFlightCrewMenuSelected == 2)
+                    {
+                        <div class="col-5" id="professionalPilotLicenceMenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 4)" @onmouseover="() => { selectedMenuChildItem = 4; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>MPL Ab-initio Issue</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 5)" @onmouseover="() => { selectedMenuChildItem = 5; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>CPL Conversion</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 6)" @onmouseover="() => { selectedMenuChildItem = 6; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>ATPL Conversion</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 7)" @onmouseover="() => { selectedMenuChildItem = 7; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>CPL Ab-initio Issue</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 8)" @onmouseover="() => { selectedMenuChildItem = 8; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>ATPL Upgrade</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 9)" @onmouseover="() => { selectedMenuChildItem = 10; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>ATPL/CPL/MPL Renewal</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 10)" @onmouseover="() => { selectedMenuChildItem = 10; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>ATPL/CPL/MPL Flight Test (Initial / Renewal)</span>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else if (subFlightCrewMenuSelected == 3)
+                    {
+                        <div class="col-5" id="ratingEndorsementCertificateMenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 11)" @onmouseover="() => { selectedMenuChildItem = 11; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Language Proficiency Endorsement</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 12)" @onmouseover="() => { selectedMenuChildItem = 12; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Validation of Licence</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 13)" @onmouseover="() => { selectedMenuChildItem = 13; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Aircraft Rating Endorsement</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 14)" @onmouseover="() => { selectedMenuChildItem = 14; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Instrument Rating Endorsement</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 15)" @onmouseover="() => { selectedMenuChildItem = 15; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Change of Personal Particulars / Licence Remarks / Licence Reprint</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 16)" @onmouseover="() => { selectedMenuChildItem = 16; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Licence Verification</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 17)" @onmouseover="() => { selectedMenuChildItem = 17; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Conversion Terms (ATPL/CPL/AFI Rating)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 18)" @onmouseover="() => { selectedMenuChildItem = 18; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Certificate of Experience (Initial / Renewal)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 19)" @onmouseover="() => { selectedMenuChildItem = 19; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Other Licence Application</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 20)" @onmouseover="() => { selectedMenuChildItem = 20; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Theoretical Knowledge Examination - Result Submission</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 21)" @onmouseover="() => { selectedMenuChildItem = 21; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Theoretical Knowledge Examination - Booking</span>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+                <!-- Flight Crew Menu End -->
+            }
+            @if (licencesSelected == 2)
+            {
+                <!-- Aircraft Maintenance Start -->
+                <div class="col-9 row" id="aircraftMaintenanceMenu">
+                    <div class="col-6">
+                        <ul class="nav flex-column">
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 22)" @onmouseover="() => { selectedMenuChildItem = 22; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Issue of HKAR-66 Aircraft Maintenance Licence</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 23)" @onmouseover="() => { selectedMenuChildItem = 23; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Apply for a HKAR-66 Aircraft Maintenance Licence based on Foreign issued Licence</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 24)" @onmouseover="() => { selectedMenuChildItem = 24; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Renewal of HKAR-66 Aircraft Maintenance Licence</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 25)" @onmouseover="() => { selectedMenuChildItem = 25; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Endorsement with Aircraft Type Rating</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 26)" @onmouseover="() => { selectedMenuChildItem = 26; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Extension to include New Category or Sub-category</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 27)" @onmouseover="() => { selectedMenuChildItem = 27; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Removal of Limitation</span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="nav flex-column">
+                            <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 28)" @onmouseover="() => { selectedMenuChildItem = 28; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Conversion from HKAR-AMEL to HKAR-66</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 29)" @onmouseover="() => { selectedMenuChildItem = 29; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Examination</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 30)" @onmouseover="() => { selectedMenuChildItem = 30; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Change the Personal Details on your Licence</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 31)" @onmouseover="() => { selectedMenuChildItem = 31; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Request a Replacement Licence</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 32)" @onmouseover="() => { selectedMenuChildItem = 32; }">
+                                <NavLink class="nav-link" href="/information">
+                                    <span>Foreign Licence Verification Request</span>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2 border-right @getSelectedMenuChildClass(selectedMenuChildItem == 33)" @onmouseover="() => { selectedMenuChildItem = 33; }">
+                                <NavLink class="nav-link">
+                                    <span>Request for HKCAD licence Verification Letter</span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Aircraft Maintenance End -->
+            }
+            @if (licencesSelected == 3)
+            {
+                <!-- Medical Certificate Start -->
+                <div class="col-9 row" id="medicalCertificateMenu">
+                    <div class="col-6 border-right">
+                        <ul class="nav flex-column ">
+                            <li class="nav-item px-3 py-2" @onmouseover="() => { medicalCertificateMenuSelected = 1; }">
+                                <NavLink class="nav-link">
+                                    <span>Initial application</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2" @onmouseover="() => { medicalCertificateMenuSelected = 2; }">
+                                <NavLink class="nav-link">
+                                    <span>Application Renewal</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </NavLink>
+                            </li>
+                            <li class="nav-item px-3 py-2" @onmouseover="() => { medicalCertificateMenuSelected = 3; }">
+                                <NavLink class="nav-link">
+                                    <span>Notification of Unfitness and Medical Clearance</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                    @*Final Level*@
+                    @if (medicalCertificateMenuSelected == 0 || medicalCertificateMenuSelected == 1)
+                    {
+                        <div class="col-6" id="initialApplicationMenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 34)" @onmouseover="() => { selectedMenuChildItem = 34; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Initial application (Class 1)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 35)" @onmouseover="() => { selectedMenuChildItem = 35; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Initial application (Class 2)</span>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else if (medicalCertificateMenuSelected == 2)
+                    {
+                        <div class="col-6" id="applicationRenewalMenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 36)" @onmouseover="() => { selectedMenuChildItem = 36; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Application Renewal (Class 2)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 37)" @onmouseover="() => { selectedMenuChildItem = 37; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Application Renewal (Class 3)</span>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else if (medicalCertificateMenuSelected == 3)
+                    {
+                        <div class="col-6" id="notificationUnfitnessMcMenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 0 || selectedMenuChildItem == 38)" @onmouseover="() => { selectedMenuChildItem = 38; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Illness (Class 3)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 39)" @onmouseover="() => { selectedMenuChildItem = 39; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Injury (Class 1)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 40)" @onmouseover="() => { selectedMenuChildItem = 40; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Pregnancy (Class 1)</span>
+                                    </NavLink>
+                                </li>
+                                <li class="nav-item px-3 py-2 @getSelectedMenuChildClass(selectedMenuChildItem == 41)" @onmouseover="() => { selectedMenuChildItem = 41; }">
+                                    <NavLink class="nav-link" href="/information">
+                                        <span>Pregnancy (Class 2)</span>
+                                    </NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+                <!-- Medical Certificate End -->
+            }
+        </div>
+        <div class="row">
+            <div class="col-12 p-3 border" id="learnMoreCol">
+                Learn more Licence's information &nbsp; <a href="/information">Click Here</a>
+            </div>
+        </div>
+    }
+    @*License SubMenu End*@
+    @*Registration SubMenu Start*@
+    @if (selectedMenu == 2)
+    {
+        <div class="row" id="regSubMenu">
+            <div class="col-4 p-0" id="individualAccountMenu">
+                <ul class="nav flex-column">
+                    <li class="mb-2 nav-item px-3 py-3 @getSelectedRegistrationMenuClass(selectedRegistrationMenu == 0 || selectedRegistrationMenu == 1)" @onmouseover="() => { selectedRegistrationMenu = 1; }">
+                        <NavLink class="nav-link">
+                            <span>Indivdual Account</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-3 @getSelectedRegistrationItemClass(selectedRegistrationMenu == 0 || selectedRegistrationMenu == 1 || selectedRegistrationItem == 1)" @onmouseover="() => { selectedRegistrationMenu = 1;selectedRegistrationItem = 1; }">
+                        <NavLink class="nav-link">
+                            <span>Authorised Examiner</span>
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4 p-0" id="corporateAccountMenu">
+                <ul class="nav flex-column">
+                    <li class="mb-2 nav-item px-3 py-3 @getSelectedRegistrationMenuClass(selectedRegistrationMenu == 2)" @onmouseover="() => { selectedRegistrationMenu = 2; }">
+                        <NavLink class="nav-link">
+                            <span>Corporate Account</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-3 @getSelectedRegistrationItemClass(selectedRegistrationItem == 2)" @onmouseover="() => { selectedRegistrationMenu = 2;selectedRegistrationItem = 2; }">
+                        <NavLink class="nav-link">
+                            <span>Administrator</span>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-3 @getSelectedRegistrationItemClass(selectedRegistrationItem == 3)" @onmouseover="() => { selectedRegistrationMenu = 2;selectedRegistrationItem = 3; }">
+                        <NavLink class="nav-link">
+                            <span>Authorised Examiner</span>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-3 @getSelectedRegistrationItemClass(selectedRegistrationItem == 4)" @onmouseover="() => { selectedRegistrationMenu = 2;selectedRegistrationItem = 4; }">
+                        <NavLink class="nav-link">
+                            <span>AME</span>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3 py-3 @getSelectedRegistrationItemClass(selectedRegistrationItem == 5)" @onmouseover="() => { selectedRegistrationMenu = 2;selectedRegistrationItem = 5; }">
+                        <NavLink class="nav-link">
+                            <span>AMA</span>
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+    @*Registration SubMenu End*@
+
+    @*Information SubMenu Start*@
+    @if (selectedMenu == 3)
+    {
+<div class="row" id="infoSubMenu">
+    <div class="col-4 p-0">
+        <ul class="nav flex-column">
+            <li class="nav-item px-3 py-3 @getSelectedInformationMenuClass(selectedInformationItem == 1)" @onmouseover="() => { selectedInformationItem = 1; }">
+                <NavLink class="nav-link" href="/information">
+                    <span>Licence's information</span>
+                </NavLink>
+            </li>
+            <li class="nav-item px-3 py-3 @getSelectedInformationMenuClass(selectedInformationItem == 2)" @onmouseover="() => { selectedInformationItem = 2; }">
+                <NavLink class="nav-link" href="/latestNews">
+                    <span>News</span>
+                </NavLink>
+            </li>
+            <li class="nav-item px-3 py-3 @getSelectedInformationMenuClass(selectedInformationItem == 3)" @onmouseover="() => { selectedInformationItem = 3; }">
+                <NavLink class="nav-link" href="/frequentlyAskedQuestion">
+                    <span>FAQ</span>
+                </NavLink>
+            </li>
+            <!-- DK why compile error if there are only odd number of navLink -->
+            <li class="d-none">
+                <NavLink class="nav-link" href="/frequentlyAskedQuestion">
+                    FAQ
+                </NavLink>
+            </li>
+        </ul>
+    </div>
+</div>
+    }
+    @*Information SubMenu End*@
+</section>
+
+<style>
+    li a {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    #frontEndNavSubMenu {
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+    }
+
+        #frontEndNavSubMenu #learnMoreCol {
+            color: #424242;
+            background-color: #FFF;
+            font-weight: bold;
+        }
+
+            #frontEndNavSubMenu #learnMoreCol a {
+                text-decoration: none;
+                font-weight: normal;
+            }
+
+        #frontEndNavSubMenu #licenseSubMenu div, #frontEndNavSubMenu #regSubMenu div, #frontEndNavSubMenu #infoSubMenu div {
+            background-color: #FFF;
+        }
+
+        #frontEndNavSubMenu .nav-link, #frontEndNavSubMenu .nav-link span {
+            color: #848484 !important;
+        }
+
+        #frontEndNavSubMenu #licenseSubMenu #licenseRootMenu {
+            background-color: #EDF1F9;
+        }
+
+            #frontEndNavSubMenu #licenseSubMenu #licenseRootMenu li:hover {
+                background-color: #FFF;
+            }
+
+                #frontEndNavSubMenu #licenseSubMenu #licenseRootMenu li:hover .nav-link {
+                    color: #2E4161 !important;
+                }
+
+        #frontEndNavSubMenu .selectedMenuItem {
+            background-color: #FFF;
+        }
+
+            #frontEndNavSubMenu .selectedMenuItem .nav-link, #frontEndNavSubMenu .selectedMenuItem .nav-link span {
+                color: #2E4161 !important;
+            }
+
+        #frontEndNavSubMenu .selectedMenuChild {
+            background-color: #EDF1F9 !important;
+            color: #2E4161 !important;
+            border-right: solid 10px;
+            text-decoration: underline;
+        }
+
+            #frontEndNavSubMenu .selectedMenuChild .nav-link span, #frontEndNavSubMenu .selectedMenuChild .nav-link {
+                color: #2E4161 !important;
+            }
+
+        #frontEndNavSubMenu .selectedRegMenu, #frontEndNavSubMenu .selectedInfoItem {
+            background-color: #213D99;
+            color: #FFF !important;
+        }
+
+            #frontEndNavSubMenu .selectedRegMenu .nav-link, #frontEndNavSubMenu .selectedRegMenu .nav-link span, #frontEndNavSubMenu .selectedInfoItem .nav-link span, #frontEndNavSubMenu .selectedInfoItem .nav-link {
+                color: #FFF !important;
+            }
+
+        #frontEndNavSubMenu .selectedRegItem {
+            background-color: #EDF1F9 !important;
+            color: #213D99 !important;
+            border-right: solid 10px #213D99;
+        }
+
+            #frontEndNavSubMenu .selectedRegItem .nav-link span, #frontEndNavSubMenu .selectedRegItem .nav-link {
+                color: #213D99 !important;
+            }
+
+    #regSubMenu, #infoSubMenu {
+        justify-content: center;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public int selectedMenu { get; set; } = 0;
+
+    private int licencesSelected { get; set; } = 0;
+    private int flightCrewMenuSelected { get; set; } = 0;
+    private int subFlightCrewMenuSelected { get; set; } = 0;
+    private int medicalCertificateMenuSelected { get; set; } = 0;
+    private int individualAccountMenu { get; set; } = 0;
+    //private bool fcSelected = false;
+    private int selectedMenuChildItem { get; set; } = 0;
+    private int selectedRegistrationMenu { get; set; } = 0;
+    private int selectedRegistrationItem { get; set; } = 0;
+    // information menu
+    private int selectedInformationItem { get; set; } = 0;
+
+    private String getSelectedMenuItemClass(bool isSelected)
+    {
+        return isSelected ? "selectedMenuItem" : "";
+    }
+    private String getSelectedMenuChildClass(bool isSelected)
+    {
+        return isSelected ? "selectedMenuChild" : "";
+    }
+    private String getSelectedRegistrationMenuClass(bool isSelected)
+    {
+        return isSelected ? "selectedRegMenu" : "";
+    }
+    private String getSelectedRegistrationItemClass(bool isSelected)
+    {
+        return isSelected ? "selectedRegItem" : "";
+    }
+    private String getSelectedInformationMenuClass(bool isSelected)
+    {
+        return isSelected ? "selectedInfoItem" : "";
+    }
+}

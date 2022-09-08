@@ -1,0 +1,51 @@
+﻿<ul class="nav flex-row col-1" id="loginList">
+    <li class="nav-item px-3 rootItem" style="text-align: center;">
+        <NavLink class="nav-link" href="@Url" id="loginNavLink" @onclick:preventDefault="false" >
+            @if (!String.IsNullOrEmpty(IconImgUrl))
+            {
+                <img src="@IconImgUrl" alt="icon" />
+            }
+            <br />
+            <span class="oi oi-list-rich" aria-hidden="true">
+                @IconText
+            </span>
+        </NavLink>
+    </li>
+</ul>
+<style>
+    #loginList {
+        justify-content: space-around;
+        flex-direction: row;
+        align-content: center;
+    }
+
+    .rootItem {
+        color: #9C9C9C !important;
+        text-transform: uppercase;
+        text-align: center;
+        align-self: center;
+    }
+
+        .rootItem a, .rootItem a span {
+            color: #9C9C9C !important;
+        }
+
+    #loginNavLink {
+        display: flex !important;
+        flex-direction: column;
+        font-size: 1px;
+    }
+
+        #loginNavLink img {
+            height: 3vh;
+            width: auto;
+        }
+</style>
+@code {
+    [Parameter]
+    public String IconImgUrl { get; set; }
+    [Parameter]
+    public String IconText { get; set; }
+    [Parameter]
+    public String Url { get; set; }
+}

@@ -1,0 +1,57 @@
+﻿@page "/information"
+@using CADPLIS.WebSite.Components
+@using CADPLIS.WebSite.Components.FrontEnd
+@using CADPLIS.WebSite.Components.LandingPage
+
+<section id="pilotLicenceInformationSection">
+    <!-- Banner -->
+    <Banner bannerImgUrl="/images/Img_005.jpeg" bannerTitle="@bannerTitle"></Banner>
+    <!-- Breadcrumbs Home / Information -->
+    <BSBreadcrumb Class="m-5 bg-none">
+        <BSBreadcrumbItem>Home</BSBreadcrumbItem>
+        <BSBreadcrumbItem IsActive="true" Class="currentPage">Information</BSBreadcrumbItem>
+    </BSBreadcrumb>
+    <!-- Card Loop -->
+    @if (informationList != null && informationList.Count > 0)
+    {
+        @foreach (InformationObject information in informationList)
+        {
+            <InformationCard title="@information.title" imgSrc="@information.imgUrl" links="@information.links"></InformationCard>
+        }
+    }
+</section>
+
+<style>
+    #pilotLicenceInformationSection {
+    }
+
+    .bg-none {
+        background-color: transparent !important;
+    }
+
+    .currentPage {
+        text-decoration: underline !important;
+    }
+</style>
+
+@code {
+    public class InformationObject
+    {
+        public String imgUrl { get; set; }
+        public String title { get; set; }
+        public List<Tuple<String, String>> links { get; set; }
+    }
+    private List<String> bannerTitle = new List<string> { "Pilot licence's information", "Requirements for commercial flying" };
+    public List<InformationObject> informationList = new List<InformationObject>();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        informationList.Add(new InformationObject { imgUrl = "/images/Img_004.jpeg", links = new List<Tuple<String, String>> { new Tuple<String, String>("Private Pilot's Licence", "/informationDetail"), new Tuple<String, String>("Professional Pilot's Licence", "/informationDetail") }, title = "Aeroplanes" });
+        informationList.Add(new InformationObject { imgUrl = "/images/Img_006.jpeg", links = new List<Tuple<String, String>> { new Tuple<String, String>("Private Pilot's Licence", "/informationDetail"), new Tuple<String, String>("Rating / Endorsement / Certificate", "/informationDetail") }, title = "Helicopters" });
+        informationList.Add(new InformationObject { imgUrl = "/images/shutterstock_600097127.jpg", links = new List<Tuple<String, String>> { new Tuple<String, String>("Initial application", "/informationDetail"), new Tuple<String, String>("Application Renewal", "/informationDetail"), new Tuple<String, String>("Notificationof Unifitness and Medical Clearance", "/informationDetail") }, title = "Medical requirements" });
+        informationList.Add(new InformationObject { imgUrl = "/images/shutterstock_600097127.jpg", links = new List<Tuple<String, String>> { new Tuple<String, String>("Register for a professional pilot exam", "/informationDetail"), new Tuple<String, String>("Verify your theoretical knowledge exam results", "/informationDetail"), new Tuple<String, String>("Exam timetables", "/informationDetail") }, title = "Examinations" });
+        informationList.Add(new InformationObject { imgUrl = "/images/shutterstock_600097127.jpg", links = new List<Tuple<String, String>> { new Tuple<String, String>("Register for a professional pilot exam", "/informationDetail"), new Tuple<String, String>("Verify your theoretical knowledge exam results", "/informationDetail"), new Tuple<String, String>("Exam timetables", "/informationDetail") }, title = "Instructors and Examiners" });
+        informationList.Add(new InformationObject { imgUrl = "/images/shutterstock_600097127.jpg", links = new List<Tuple<String, String>> { new Tuple<String, String>("Conversion of an EASA flight crew licence to a HK part equivalent licence", "/informationDetail"), new Tuple<String, String>("Recognition of ICAO licences in HK airspace", "/informationDetail"), new Tuple<String, String>("Convert your ICAO instructor certificates", "/informationDetail"), new Tuple<String, String>("Validations", "/informationDetail"), new Tuple<String, String>("Verification of a third country ICAO licence", "/informationDetail") }, title = "Non Hong Kong licences" });
+    }
+}

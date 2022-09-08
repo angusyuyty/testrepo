@@ -1,0 +1,27 @@
+2021-09-22 13:57:39.0486 | Failed executing DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Comment], [t].[ManagerId], [t].[Name], [t].[Number], [t].[Point], [t].[SchemeCode], [t].[State], [t].[StateName], [t].[Sum], [e].[Id], [e].[IsHead], [e].[Name], [e].[StructDivisionId], [e0].[Id], [e0].[IsHead], [e0].[Name], [e0].[StructDivisionId]
+FROM (
+    SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[SchemeCode], [d].[State], [d].[StateName], [d].[Sum]
+    FROM [Document] AS [d]
+    ORDER BY [d].[Number] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Employee] AS [e] ON [t].[AuthorId] = [e].[Id]
+LEFT JOIN [Employee] AS [e0] ON [t].[ManagerId] = [e0].[Id]
+ORDER BY [t].[Number] DESC 
+2021-09-22 16:05:13.0501 | Failed executing DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 1024), @p8='?' (Size = 1024), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [WorkFlowDocument] ([Id], [AuthorId], [Comment], [ManagerId], [Name], [Number], [SchemeCode], [State], [StateName], [Sum])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); 
+2021-09-22 16:07:33.2543 | Failed executing DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 1024), @p8='?' (Size = 1024), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [WorkFlowDocument] ([Id], [AuthorId], [Comment], [ManagerId], [Name], [Number], [SchemeCode], [State], [StateName], [Sum])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); 
+2021-09-22 16:09:08.9423 | Failed executing DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 1024), @p8='?' (Size = 1024), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [WorkFlowDocument] ([Id], [AuthorId], [Comment], [ManagerId], [Name], [Number], [SchemeCode], [State], [StateName], [Sum])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); 
+2021-09-22 17:35:25.6817 | Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 1024), @p8='?' (Size = 1024), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [WorkFlowDocument] ([Id], [AuthorId], [Comment], [ManagerId], [Name], [Number], [SchemeCode], [State], [StateName], [Sum])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); 

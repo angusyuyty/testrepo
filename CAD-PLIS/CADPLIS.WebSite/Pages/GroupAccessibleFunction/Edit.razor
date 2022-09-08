@@ -1,0 +1,85 @@
+﻿@page "/GroupAccessibleFunction/Edit/{Id:int}"
+@page "/GroupAccessibleFunction/Add"
+@using CADPLIS.Application.Contracts;
+
+<div>
+    <h3>@(Id!=default? "Group Accessible Function Edit" : "Group Accessible Function Add")</h3>
+
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                    <label class="label">Group ID</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+
+                    <MatSelectValue Value="@gfModel.GroupId"
+                                    ValueExpression="@( () => gfModel.GroupId )" ValueChanged="((string gid) =>  DisplayFunction(gid))" Items="@groupList" ValueSelector="@(v => v.GroupId)" Class="selectdiv">
+                        <ItemTemplate Context="itemcon">
+                            @itemcon?.GroupId
+                        </ItemTemplate>
+                    </MatSelectValue>
+                </div>
+
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                    <label class="label">Group Name</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+                    <MatTextField @bind-Value="@gfModel.GroupName" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                    <label class="label">Function Type/Function Name</label>
+                </div>
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-8">
+                    <MatTreeView TNode="SelectTree<string>"
+                                 RootNode="@treeModel"
+                                 GetChildNodesCallback="@((n)=>n.Children)" @bind-SelectedNode="@seletedItem">
+                        <NodeTemplate Context="con">
+                            @if (con.Id == null)
+                            {
+                            @con.DisplayValue
+                            }
+                            else
+                            {
+                            <MatCheckbox @bind-Value="@con.Selected" @onclick="@(()=>UpdateFunction(con))">@con.DisplayValue</MatCheckbox>
+                            }
+                        </NodeTemplate>
+                    </MatTreeView>
+
+                    @*<MatChipSet>
+                            @foreach (var item in functionList)
+                            {
+                                <MatChip Label="@item.DisplayValue" LeadingIcon="@((item.Selected) ? "done" : "")" @onclick="@(()=>UpdateFunction(item))" />
+                            }
+                        </MatChipSet>*@
+                </div>
+            </div>
+        </div>
+
+    </EditForm>
+</div>
+
+<div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell">
+
+            <MatButton OnClick="@(() => SaveData())" Raised="true">Save</MatButton>
+            <MatButton OnClick="@(() => Close())" Outlined="true">Back</MatButton>
+        </div>
+    </div>
+</div>
+<style>
+.mat-layout-grid-cell .mat-tree {
+     width: 100% !important; 
+    margin-top: 15px !important;
+}
+.mat-tree-node--selected {
+    background: #F5F5F5;
+}
+  </style>

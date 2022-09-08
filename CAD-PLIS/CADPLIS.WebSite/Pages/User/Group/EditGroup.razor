@@ -1,0 +1,132 @@
+﻿@using CADPLIS.Application.Contracts.Accounts
+@inject HttpClient httpClient
+@inject IMatToaster Toaster
+
+<MatDialogTitle>Edit</MatDialogTitle>
+<MatDialogContent>
+    <EditForm id="updateGroupForm" Model="@groupInfoDto" OnValidSubmit="@UpdateUserAsync">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <fieldset>
+            <div class="form-group">
+                <MatTextField @bind-Value="@groupInfoDto.GroupName" Label=GroupName Icon="person" IconTrailing="true" FullWidth="true" Required="true"></MatTextField>
+            </div>
+
+            <div class="form-group">
+                Parent
+                <MatTreeView TNode="GroupInfoDto"
+                             RootNode="@groupTree"
+                             @bind-SelectedNode="@SelectedParentNode"
+                             GetChildNodesCallback="@((n)=>n.Chilrens)" Class="gtree">
+                    <NodeTemplate Context="con">
+                        @con.GroupName
+                    </NodeTemplate>
+                </MatTreeView>
+            </div>
+        </fieldset>
+    </EditForm>
+</MatDialogContent>
+<MatDialogActions>
+    <MatButton OnClick="@CancelChanges">Cancel</MatButton>
+    <MatButton Type="submit" form="updateGroupForm">Update</MatButton>
+</MatDialogActions>
+
+@code{
+
+        GroupInfoDto groupInfoDto = new();
+        [Parameter] public Guid? Id { get; set; }
+        [Parameter] public string action { get; set; }
+        [CascadingParameter] public MatDialogReference DialogReference { get; set; }
+    private GroupInfoDto groupTree { get; set; } = new GroupInfoDto();
+    private GroupInfoDto SelectedParentNode { get; set; }
+    public Error Error { get; set; }
+    async Task UpdateUserAsync()
+    {
+        groupInfoDto.ParentId = SelectedParentNode?.Id;
+
+        if (action == "add")
+        {
+            var result= await httpClient.PostJsonAsync<ApiResponse>("api/Account/AddGroup", groupInfoDto);
+            if (!result.IsSuccessStatusCode)
+            {
+                Error.ShowError(result.Message);
+            }
+        }
+        else
+        {
+            if (groupInfoDto.Id.Equals(groupInfoDto.ParentId))
+            {
+                Toaster.Add("A father can't be himself!", MatToastType.Warning, "warning");
+                return;
+            }
+
+            var result = await httpClient.PutJsonAsync<ApiResponse>("api/Account/UpdateGroup", groupInfoDto);
+            if (!result.IsSuccessStatusCode)
+            {
+                Error.ShowError(result.Message);
+            }
+        }
+        CloseDialog(true);
+    }
+    void CancelChanges()
+    {
+        CloseDialog(false);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetTreeGroupList();
+
+        if (action == "edit")
+        {
+            var result = await httpClient.GetFromJsonAsync<ApiResponse<GroupInfoDto>>($"api/Account/GetGroup/{Id}");
+            if (result.IsSuccessStatusCode)
+            {
+                groupInfoDto = result.Result;
+            }
+            else
+            {
+                Error.ShowError(result.Message);
+            }
+            GetGroupWithChildren((List<GroupInfoDto>)groupTree.Chilrens, groupInfoDto.ParentId.ToString());
+        }
+        await base.OnInitializedAsync();
+    }
+
+
+    void CloseDialog(bool isSuccess)
+    {
+        DialogReference.Close(isSuccess);
+    }
+    async Task GetTreeGroupList()
+    {
+        var result = await httpClient.GetFromJsonAsync<ApiResponse<List<GroupInfoDto>>>("/api/Account/GetGroupWhithChilds");
+        if (result.IsSuccessStatusCode)
+        {
+            groupTree.GroupName = " Top Group";
+            groupTree.Chilrens = result.Result;
+
+        }
+        else
+        {
+            Error.ShowError(result.Message);
+        }
+    }
+    void GetGroupWithChildren(List<GroupInfoDto> parentMenus, string parentId)
+    {
+        foreach (var item in parentMenus)
+        {
+            if (item.Id.ToString() == parentId)
+            {
+                SelectedParentNode = item;
+                return;
+            }
+            else if (item.Chilrens != null)
+            {
+                GetGroupWithChildren((List<GroupInfoDto>)item.Chilrens, parentId);
+            }
+        }
+
+    }
+
+}

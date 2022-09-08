@@ -1,0 +1,8 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Project\CAD\SourceCode\CADPLIS2021_bak\CAD-PLIS\CADPLIS.WebSite\bin\Release\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Project\CAD\SourceCode\CADPLIS2021_bak\CAD-PLIS\CADPLIS.WebSite\obj\Release\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Project\CAD\SourceCode\CADPLIS2021_bak\CAD-PLIS\CADPLIS.WebSite\wwwroot\" />
+  <ContentRoot BasePath="_content/BlazorStrap" Path="C:\Users\angus\.nuget\packages\blazorstrap\1.5.1\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/BlazorStrap.Extensions.TreeView" Path="C:\Users\angus\.nuget\packages\blazorstrap.extensions.treeview\1.5.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/MatBlazor" Path="C:\Users\angus\.nuget\packages\matblazor\2.9.0-develop-042\build\..\staticwebassets\" />
+</StaticWebAssets>

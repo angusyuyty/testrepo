@@ -1,0 +1,93 @@
+﻿@page "/ToDoList/List"
+@if (paginator.data == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10"> <h3>Notification </h3></div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                @if (isOpen)
+                {
+                    <MatButton Icon="keyboard_arrow_up" Label="Search" Outlined=true OnClick=@(()=>isOpen=!isOpen)></MatButton>
+                }
+                else
+                {
+                    <MatButton Icon="keyboard_arrow_down" Label="Search" Outlined=true OnClick=@(()=>isOpen=!isOpen)></MatButton>
+
+                }
+
+            </div>
+        </div>
+    </div>
+    <div>
+        @if (isOpen == true)
+        {
+
+            <div class="mat-layout-grid">
+                <div class="mat-layout-grid-inner">
+                    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5">
+                        <MatDatePicker @bind-Value="@startDueDate" Label="start Due Date" Format="yyyy-MM-dd" EnableTime="false" Class="datelabel"></MatDatePicker>-
+                        <MatDatePicker @bind-Value="@endDueDate" Label="end Due Date" Format="yyyy-MM-dd" EnableTime="false" Class="datelabel"></MatDatePicker>
+                    </div>
+                    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                        <MatTextField @bind-Value="@category" Label="Category" Class="searchinput"></MatTextField>
+                    </div>
+                    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                        <MatTextField @bind-Value="@sender" Label="Send From" Class="searchinput"></MatTextField>
+                    </div>
+
+                    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5">
+                        <MatDatePicker @bind-Value="@startNotificationDate" Label="start Notification Date" Format="yyyy-MM-dd" EnableTime="false" Class="datelabel"></MatDatePicker>-
+                        <MatDatePicker @bind-Value="@endNotificationDate" Label="end Notification Date" Format="yyyy-MM-dd" EnableTime="false" Class="datelabel"></MatDatePicker>
+                    </div>
+                    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                        <MatTextField @bind-Value="@applicationNo" Label="Application No" Class="searchinput"></MatTextField>
+                    </div>
+                    <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                        <MatButton Icon="search" Label="Search" OnClick="@(() => Search())"></MatButton>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+}
+<MatTable Items="@paginator.data" Class="mat-elevation-z5" Striped="true" ShowPaging="false" PageSize="@PageSize">
+    <MatTableHeader>
+        <th>Notification Date</th>
+        <th class="tableth">Category</th>
+        <th>Application No</th>
+        <th class="tableth">Description</th>
+        <th>Send From</th>
+        <th class="tableth">Due Date</th>
+        <th>Created By</th>
+        <th>Created Date</th>
+
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.NotificationDate.ToString("yyyy-MM-dd")</td>
+        <td>@context.Category</td>
+        <td>@context.ApplicationNo</td>
+        <td>@context.Description</td>
+        <td>@context.SendFrom</td>
+        <td>@context.DueDate?.ToString("yyyy-MM-dd")</td>
+        <td>@context.CreatedBy</td>
+        <td>@context.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+    </MatTableRow>
+</MatTable>
+<div>
+    <MatPaginator Length="@PageCount" PageSize="@PageSize" Page="@OnPage"></MatPaginator>
+</div>
+<div>
+</div>
+
+<style>
+    .mat-layout-grid-cell .datelabel {
+        margin-bottom: 0 !important;
+    }
+</style>

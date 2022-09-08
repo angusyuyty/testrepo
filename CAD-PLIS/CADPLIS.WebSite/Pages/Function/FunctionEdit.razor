@@ -1,0 +1,114 @@
+﻿@page "/Function/Edit/{Id:int}"
+@page "/Function/Add"
+<div>
+    <h3>@(Id!=default? "Function Edit":"Function Add")</h3>
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mat-layout-grid mat-layout-grid-align-left" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Function ID</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.FunctionId" Required="true" Outlined="true"></MatTextField>
+                    <ValidationMessage For="()=>functionModel.FunctionId" />
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Function Type</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatSelect @bind-Value="@functionModel.FunctionType">
+                        @foreach (var item in functionTypes)
+                        {
+                            <MatOptionString Value="@item.Value">@item.Description</MatOptionString>
+                        }
+                    </MatSelect>
+
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Function Name</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.FunctionDescription"  Outlined="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Display Sequence No</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.DisplaySequence"  Outlined="true" ValidationDisabled="true" ></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Is System Function</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatCheckbox @bind-Value="@functionModel.SystemFunction" Disabled="@IsDisabled"></MatCheckbox>
+                </div>
+            </div>
+
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created By</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.CreatedBy" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created User Role</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.CreatedUserRoleId" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Created date</label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.CreatedTimeText" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated By </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.UpdatedBy" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated User Role </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.UpdatedUserRoleId" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <label class="label">Last updated date </label>
+                </div>
+                <div class="mat-layout-grid-cell">
+                    <MatTextField @bind-Value="@functionModel.UpdatedTimeText" Outlined="true" Disabled="true"></MatTextField>
+                </div>
+            </div>
+
+
+        </div>
+
+    </EditForm>
+</div>
+<div class="btndiv">
+    <MatButton Raised="true" OnClick="@(() => SaveData())">Save</MatButton>
+    <MatButton Outlined="true" OnClick="@(() => Back())">Back</MatButton>
+</div>

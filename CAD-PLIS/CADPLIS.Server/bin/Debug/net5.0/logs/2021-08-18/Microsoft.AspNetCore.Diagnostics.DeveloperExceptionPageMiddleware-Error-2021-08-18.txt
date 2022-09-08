@@ -1,0 +1,60 @@
+2021-08-18 10:20:03.9071 | An unhandled exception has occurred while executing the request. Unable to cast object of type 'System.Guid' to type 'System.String'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 10:20:52.1342 | An unhandled exception has occurred while executing the request. Unable to cast object of type 'System.Guid' to type 'System.String'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 10:21:19.3994 | An unhandled exception has occurred while executing the request. Unable to cast object of type 'System.Guid' to type 'System.String'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 10:22:47.4674 | An unhandled exception has occurred while executing the request. Unable to cast object of type 'System.Guid' to type 'System.String'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 10:30:42.4621 | An unhandled exception has occurred while executing the request. Nullable object must have a value. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-18 10:32:09.8196 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-18 10:34:08.2880 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-18 10:39:25.2210 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-18 11:14:03.5979 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:17:08.8079 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:20:38.4713 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:21:16.5784 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:21:52.6903 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:23:07.9418 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:23:42.7655 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:28:01.4081 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-18 11:33:42.1779 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<GroupInfo>.Find' was of type 'string', which does not match the property type of 'Guid'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:34:49.4961 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<GroupInfo>.Find' was of type 'string', which does not match the property type of 'Guid'. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:36:12.4601 | An unhandled exception has occurred while executing the request. The instance of entity type 'NavMenu' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. 
+ <ProcessRequestAsync>d__2.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-18 11:38:47.5972 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+

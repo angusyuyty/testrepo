@@ -1,0 +1,58 @@
+﻿@page "/WorkFlow/Design"
+@using CADPLIS.Domain.CodeLists
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+@inject HttpClient httpClient
+<h3>Design</h3>
+<MatTable Items="@workFlows" AllowSelection="true" ShowPaging="false" PageSize="100000">
+    <MatTableHeader>
+        <th>Scheme Code</th>
+        <th>Oper</th>
+    </MatTableHeader>
+    <MatTableRow Context="WorkFlowCon">
+        <td>@WorkFlowCon</td>
+        <td>
+            <MatIconButton Icon="edit" OnClick="(e=>editWorkFlow(WorkFlowCon))"></MatIconButton>
+        </td>
+    </MatTableRow>
+
+</MatTable>
+@code {
+    List<string> workFlows = new List<string>();
+    public string url = "api/CodeList/GetListByType/{0}";
+    [CascadingParameter] public Error Error { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetListByType("WorkFlowType");
+        await base.OnInitializedAsync();
+    }
+
+    async Task GetListByType(string type)
+    {
+        var urlType = string.Format(url, type);
+        try
+        {
+            var result = await httpClient.GetJsonAsync<ApiResponse<List<DropDownList>>>(urlType);
+            if (result.IsSuccessStatusCode)
+            {
+                workFlows = result.Result.Select(u => u.Value).ToList();
+            }
+            else
+            {
+                Error.ShowError(result.Message);
+            }
+        }
+        catch (Exception ex)
+        {
+            Error.ProcessError(ex);
+        }
+    }
+
+
+    async Task editWorkFlow(string schemeCode)
+    {
+        var url = $"/Designer/Index?code={schemeCode}";
+        await jsRuntime.InvokeVoidAsync("jumpTo", url);
+    }
+}

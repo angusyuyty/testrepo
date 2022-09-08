@@ -1,0 +1,158 @@
+﻿@page "/login"
+@layout UserLayout
+@inject IJSRuntime jsRuntime
+@using System.ComponentModel.DataAnnotations
+@using CADPLIS.Application.Contracts.Auths
+@using Microsoft.AspNetCore.Identity
+@using CADPLIS.Domain.Identity
+@using CADPLIS.Application.Contracts.Accounts
+@using CADPLIS.WebSite.Notice
+@using CADPLIS.Common.Captcha
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider ApiAuthenticationProvider
+@inject HttpClient httpClient
+@inject ILogger<Login> logger
+@inject IAuthService AuthService
+@inject IViewNotifier viewNotifier
+@using CADPLIS.Application.Contracts.Users
+<MatCard>
+    <div class="logo">
+        <a href="/" title="CADPLIS HOME"><img src="https://blazor-server.quarella.net/_content/BlazorBoilerplate.Theme.Material/images/logo.svg" style="width:100px;" title="Blazer Boilerplate Home" alt="Blazer Boilerplate" /></a>
+        <br>
+        <h4>@(is2Fa? "TwoFaValidate" : "Log in")</h4>
+    </div>
+    @if (is2Fa)
+    {
+        <EditForm Model="@loginParameters" OnValidSubmit="@SubmitTwoLogin">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <fieldset>
+                <div class="form-group">
+                    <MatTextField @bind-Value="@loginParameters.ValidateCode" Label="TwoFactorCode" Icon="person" IconTrailing="true" FullWidth="true" Required="true"></MatTextField>
+                </div>
+
+                <div class="form-group" style="margin-top:12px">
+                    <MatButton class="float-right" Type="submit" Raised="true" tabindex="2">Login</MatButton>
+
+                </div>
+            </fieldset>
+        </EditForm>
+
+    }
+    else
+    {
+        <EditForm Model="@loginParameters" OnValidSubmit="@SubmitLogin">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <fieldset>
+                <div class="form-group">
+                    <MatTextField id="userName" @bind-Value="@loginParameters.UserName" Label="User Name" Icon="person" IconTrailing="true" FullWidth="true" Required="true" tabindex="1"></MatTextField>
+                </div>
+                <div class="form-group">
+                    <MatTextField @bind-Value="@loginParameters.Password" Label="Password" Icon="lock_outline" IconTrailing="true" FullWidth="true" Required="true" Type="password" tabindex="2"></MatTextField>
+                </div>
+                <div class="form-group">
+                    <MatTextField @bind-Value="@loginParameters.VerificationCode" Label="Captcha" IconTrailing="true" Required="true"></MatTextField>
+                    <img src="/api/Account/GetCaptchaImg?t=@crand" @onclick="() => Refresh()" /> @*<MatButton @onclick="(()=>Refresh())" Label="刷新"></MatButton>*@
+                </div>
+                <div class="form-group">
+                    <MatButton class="float-right" Type="submit" Raised="true" tabindex="3">Login</MatButton>
+                </div>
+            </fieldset>
+
+
+
+
+        </EditForm>
+
+    }
+
+</MatCard>
+
+@code {
+
+    string getLabel(bool val)
+    {
+        loginParameters.RememberMe = val;
+        return !val ? "Check me!" : "Uncheck me?";
+    }
+
+    string navigateTo = "";
+    bool forgotPasswordToggle = false;
+    LoginInput loginParameters { get; set; } = new LoginInput() { };
+    [CascadingParameter]
+    Task<AuthenticationState> authenticationStateTask { get; set; }
+    [Parameter]
+    public string ReturnUrl { get; set; }
+    public int crand = 1;
+    bool is2Fa=false;
+
+    [CascadingParameter] public Error Error { get; set; }
+    private void GoBack()
+    {
+        if (string.IsNullOrEmpty(ReturnUrl))
+            ReturnUrl = "";
+        navigationManager.NavigateTo(ReturnUrl, forceLoad: false);
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var c = await ApiAuthenticationProvider.GetAuthenticationStateAsync();
+        if (c.User.Identity.IsAuthenticated)
+        {
+            navigationManager.NavigateTo("/");
+        }
+        await Task.CompletedTask;
+    }
+
+    void Register()
+    {
+        navigationManager.NavigateTo("/account/register");
+    }
+
+    async Task SubmitLogin()
+    {
+        var result = await AuthService.Login(loginParameters);
+        if (result.IsSuccessStatusCode)
+        {
+            if (result.Message == "TwoFaValidate")
+            {
+                is2Fa = true;
+            }
+            else
+            {
+                navigationManager.NavigateTo("/");
+            }
+        }
+        else
+        {
+            Refresh();
+            viewNotifier.Show(result.Message, ViewNotifierType.Error);
+        }
+    }
+    async Task SubmitTwoLogin()
+    {
+        var result = await AuthService.TwoFaValidateLogin(loginParameters);
+        if (result.IsSuccessStatusCode)
+        {
+
+            navigationManager.NavigateTo("/");
+        }
+        else
+        {
+            Refresh();
+            viewNotifier.Show(result.Message, ViewNotifierType.Error);
+        }
+    }
+
+    async Task ForgotPassword()
+    {
+        await Task.CompletedTask;
+    }
+
+    void Refresh()
+    {
+        crand += 1;
+    }
+}

@@ -1,0 +1,20 @@
+2021-09-26 15:49:47.2627 | Failed executing DbCommand (3ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 200), @p6='?' (Size = 200), @p7='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PLIS_GENERAL_ACTION_LOG] ([action], [action_by], [action_by_role], [action_datetime], [action_type], [form], [key], [sub_key])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [PLIS_GENERAL_ACTION_LOG]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2021-09-26 16:03:49.0581 | Failed executing DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[Id], [w].[AuthorId], [w].[Comment], [w].[ManagerId], [w].[Name], [w].[Number], [w].[SchemeCode], [w].[State], [w].[StateName], [w].[Sum]
+FROM [WorkFlowDocument] AS [w]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2021-09-26 16:03:54.7136 | Failed executing DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [w].[Id], [w].[AuthorId], [w].[Comment], [w].[ManagerId], [w].[Name], [w].[Number], [w].[SchemeCode], [w].[State], [w].[StateName], [w].[Sum]
+FROM [WorkFlowDocument] AS [w]
+WHERE 0 = 1 
+2021-09-26 21:01:53.6530 | Failed executing DbCommand (29ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 1024), @p8='?' (Size = 1024), @p9='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [WorkFlowDocument] ([Id], [AuthorId], [Comment], [ManagerId], [Name], [Number], [SchemeCode], [State], [StateName], [Sum])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9); 

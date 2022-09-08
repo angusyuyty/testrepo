@@ -1,0 +1,7 @@
+2021-09-17 14:23:50.8186 | 列名 'is_AME_AMA' 无效。 
+2021-09-17 14:48:16.3074 | Unable to resolve service for type 'Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider' while attempting to activate 'CADPLIS.Server.Controllers.RoleController'. 
+2021-09-17 17:13:59.8062 | Object reference not set to an instance of an object. 
+2021-09-17 17:15:19.1984 | Object reference not set to an instance of an object. 
+2021-09-17 17:21:03.4446 | Object reference not set to an instance of an object. 
+2021-09-17 17:27:15.9466 | Object reference not set to an instance of an object. 
+2021-09-17 17:27:29.0976 | Object reference not set to an instance of an object. 

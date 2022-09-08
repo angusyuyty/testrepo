@@ -1,0 +1,6 @@
+2021-07-26 10:05:00.8069 | Connection ID "15780613100211798041", Request ID "8000002c-0001-db00-b63f-84710c7967bb": An unhandled exception was thrown by the application. Object reference not set to an instance of an object. 
+ AsyncMethodBuilderCore.Start => <FireOnCompleted>d__168.MoveNext => IISHttpContext.ReportApplicationError 
+
+2021-07-26 10:05:46.6023 | Connection ID "17870283348786544700", Request ID "80000047-0006-f800-b63f-84710c7967bb": An unhandled exception was thrown by the application. The connection does not support MultipleActiveResultSets. 
+ AsyncMethodBuilderCore.Start => <FireOnCompleted>d__168.MoveNext => IISHttpContext.ReportApplicationError 
+

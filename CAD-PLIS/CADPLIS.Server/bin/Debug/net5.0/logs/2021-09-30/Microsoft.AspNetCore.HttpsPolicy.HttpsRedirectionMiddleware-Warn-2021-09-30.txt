@@ -1,0 +1,16 @@
+2021-09-30 09:42:11.1346 | Failed to determine the https port for redirect. 
+2021-09-30 09:49:56.6800 | Failed to determine the https port for redirect. 
+2021-09-30 10:13:18.3964 | Failed to determine the https port for redirect. 
+2021-09-30 10:14:29.7144 | Failed to determine the https port for redirect. 
+2021-09-30 10:14:34.7548 | Failed to determine the https port for redirect. 
+2021-09-30 10:15:01.1966 | Failed to determine the https port for redirect. 
+2021-09-30 10:15:17.8094 | Failed to determine the https port for redirect. 
+2021-09-30 10:15:31.7791 | Failed to determine the https port for redirect. 
+2021-09-30 10:16:09.0478 | Failed to determine the https port for redirect. 
+2021-09-30 10:16:30.2262 | Failed to determine the https port for redirect. 
+2021-09-30 10:59:24.7890 | Failed to determine the https port for redirect. 
+2021-09-30 11:01:45.1032 | Failed to determine the https port for redirect. 
+2021-09-30 12:30:07.9772 | Failed to determine the https port for redirect. 
+2021-09-30 14:56:16.8756 | Failed to determine the https port for redirect. 
+2021-09-30 15:17:00.5000 | Failed to determine the https port for redirect. 
+2021-09-30 17:31:15.8390 | Failed to determine the https port for redirect. 

@@ -1,0 +1,167 @@
+﻿<section class="pt-10 pt-md-12" id="carouselSection">
+    <div class="container">
+        <div class="row" id="carouselObjectsRow">
+            <div class="col-12">
+                <div class="card card-row shadow-light-lg mb-6 h-100">
+                    <div class="main-carousel h-100">
+                        @foreach (CarouselObject carouselObject in carouselObjects)
+                        {
+                            <div class="col-12 row w-100 carousel-cell h-100">
+                                <div class="col-12 d-block d-lg-none d-xl-none carouselObjectCardImg" style="background-image: url(@carouselObject.imgUrl);">
+                                    &nbsp;
+                                </div>
+                                <div class="col-6 carouselObjectImg d-none d-lg-block d-xl-block" style="background-image: url(@carouselObject.imgUrl);">
+                                    &nbsp;
+                                </div>
+                                <div class="col-12 col-lg-5 col-xl-5 carouselObjectContent h-100">
+                                    <p class="mb-5 mb-md-7">
+                                        <b class="objTitle">
+                                            @carouselObject.title
+                                        </b>
+                                    </p>
+                                    <p class="mb-5 mb-md-7 objContent">
+                                        @carouselObject.description
+                                    </p>
+                                    <p>
+                                        <NavLink href="@carouselObject.learnMoreRoute" class="learnMoreLink">Learn more</NavLink>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .carouselObjectImg {
+        display: flex;
+        /*border-top-right-radius: 30% 70%;
+        border-bottom-right-radius: 30% 70%;*/
+        border-top-right-radius: 5% 30%;
+        border-bottom-right-radius: 45% 80%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-clip: content-box;
+        background-position: center;
+        /* Set border Size */
+        height: 200%;
+        width: 50%;
+        border-top-right-radius: 20% 70%;
+        border-bottom-right-radius: 80% 90%;
+        position: relative;
+        top: -50%;
+        background-size: 100% 50%;
+    }
+        /*.carouselObjectImg:before {
+            content: '';*/
+            /* background-color: blue; */
+            /*height: 200%;
+            width: 100%;
+            display: flex;
+            border-top-right-radius: 20% 70%;
+            border-bottom-right-radius: 80% 90%;
+            position: relative;
+            top: -50%;
+        }*/
+
+    .carouselObjectCardImg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 20vh;
+        /* Set border Size */
+        /*height: 200%;
+        width: 50%;
+        border-top-right-radius: 20% 70%;
+        border-bottom-right-radius: 80% 90%;
+        position: relative;
+        top: -50%;
+        background-size: 100% 50%;*/
+    }
+
+    #carouselSection {
+        display: block;
+    }
+
+    #carouselObjectsRow {
+        min-height: 55vh;
+    }
+
+    .carouselObjectContent {
+        align-self: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        top: -50%;
+    }
+
+        .carouselObjectContent p:first-child {
+            font-size: x-large;
+        }
+
+    .learnMoreLink {
+        text-decoration: underline;
+        color: #374B69;
+    }
+
+    #carouselSection .container {
+        padding: 0px !important;
+        margin: 0px !important;
+        max-width: none;
+    }
+
+    .is-selected .carouselObjectImg {
+        left: -2%;
+    }
+
+    .objTitle {
+        font-size: 2vw;
+    }
+
+    .objContent {
+        letter-spacing: 1.4px;
+        line-height: 2.8vh;
+    }
+
+    @@media only screen and (max-width: 970px) {
+        .flickity-button {
+            display: none;
+        }
+        .carouselObjectContent {
+            align-self: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+        }
+    }
+</style>
+
+@code {
+    [Parameter]
+    public String carouselTitle { get; set; }
+    [Parameter]
+    public String carouselSubTitle { get; set; }
+    [Parameter]
+    public List<CarouselObject> carouselObjects { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        carouselTitle = "Licence and Certificates";
+        carouselSubTitle = "Information for applicant who interested to \n become aviation expert.";
+        if (carouselObjects == null)
+        {
+            carouselObjects = new List<CarouselObject>();
+            carouselObjects.Add(new CarouselObject { id = 1, title = "How to apply for <br/> Aircraft Maintenance Licence", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "images/shutterstock_626787275.jpg", learnMoreRoute = "/information" });
+            carouselObjects.Add(new CarouselObject { id = 2, title = "About Us", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "images/shutterstock_626787275.jpg", learnMoreRoute = "/information" });
+            carouselObjects.Add(new CarouselObject { id = 3, title = "Contact Us", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "images/shutterstock_626787275.jpg", learnMoreRoute = "/information" });
+            carouselObjects.Add(new CarouselObject { id = 4, title = "Object 4", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "images/shutterstock_626787275.jpg", learnMoreRoute = "/information" });
+            carouselObjects.Add(new CarouselObject { id = 5, title = "Object 5", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "images/shutterstock_626787275.jpg", learnMoreRoute = "/information" });
+            carouselObjects.Add(new CarouselObject { id = 6, title = "Object 6", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae libero sapien. Vestibulum elit ex, sodales quis fringilla at, suscipit ut eros. Sed eu bibendum magna. Nam suscipit mattis ante et sodales. Proin elit erat, gravida non nibh id, sodales hendrerit justo. Cras ac ex vel leo vulputate tristique. Suspendisse hendrerit, ex non aliquet mollis", imgUrl = "images/shutterstock_626787275.jpg", learnMoreRoute = "/information" });
+        }
+    }
+}

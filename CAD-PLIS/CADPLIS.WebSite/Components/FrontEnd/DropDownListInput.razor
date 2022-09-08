@@ -1,0 +1,14 @@
+﻿@using CADPLIS.Domain.CodeLists;
+<BSDropdown>
+    <BSDropdownToggle>@(!String.IsNullOrEmpty(selectedValue) ? selectedValue : "Please select...")</BSDropdownToggle>
+    <BSDropdownMenu>
+        @foreach (DropDownList ddlOpt in ddlOpts)
+        {
+            <BSDropdownItem Href="javascript:void(0);" OnClick="() => { onSelectedValue(ddlOpt.Value); }">@ddlOpt.Value</BSDropdownItem>
+        }
+    </BSDropdownMenu>
+</BSDropdown>
+
+@code {
+
+}

@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3f99e3fe-aa71-43bc-83b1-5c8df45ed733": {
+      "ProjectGuid": "3f99e3fe-aa71-43bc-83b1-5c8df45ed733",
+      "DisplayName": "CADPLIS.WebSite",
+      "ColorIndex": 0
+    },
+    "a1dd764e-8e85-472c-83f4-bd4c84a3f31f": {
+      "ProjectGuid": "a1dd764e-8e85-472c-83f4-bd4c84a3f31f",
+      "DisplayName": "CADPLIS.Server",
+      "ColorIndex": 1
+    },
+    "ba5ef3bd-3c0a-405d-8535-42ed9d5edae2": {
+      "ProjectGuid": "ba5ef3bd-3c0a-405d-8535-42ed9d5edae2",
+      "DisplayName": "CADPLIS.Application.Contracts",
+      "ColorIndex": 2
+    },
+    "7f7b7efa-c2a7-4be6-af3b-cfb35030d6ff": {
+      "ProjectGuid": "7f7b7efa-c2a7-4be6-af3b-cfb35030d6ff",
+      "DisplayName": "CADPLIS.Application",
+      "ColorIndex": 3
+    },
+    "01fdf306-b250-4fe5-8d30-2723764c2eb7": {
+      "ProjectGuid": "01fdf306-b250-4fe5-8d30-2723764c2eb7",
+      "DisplayName": "CADPLIS.EntityFrameworkCore",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "078bef6f-be28-4a19-9b74-539af1818df1": {
+      "ProjectGuid": "078bef6f-be28-4a19-9b74-539af1818df1",
+      "DisplayName": "CADPLIS.Domain",
+      "ColorIndex": 5
+    },
+    "a7a62656-aaf7-4ab0-b9ee-7630e0fe07cd": {
+      "ProjectGuid": "a7a62656-aaf7-4ab0-b9ee-7630e0fe07cd",
+      "DisplayName": "CADPLIS.Common",
+      "ColorIndex": 6
+    },
+    "c546227b-054c-46bb-9427-46c3562ae303": {
+      "ProjectGuid": "c546227b-054c-46bb-9427-46c3562ae303",
+      "DisplayName": "CADPLIS.Domain.Shared",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}

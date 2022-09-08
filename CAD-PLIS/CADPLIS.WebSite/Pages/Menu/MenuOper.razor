@@ -1,0 +1,115 @@
+﻿@page "/Menu/add"
+@page "/Menu/edit/{Id:int?}"
+
+@using CADPLIS.Domain.Shared.NavMenus;
+@using CADPLIS.Application.Contracts.NavMenus;
+
+<h3>@(Id.HasValue?"Menu Edit":"Menu Add")</h3>
+
+
+@if (menuDto == null)
+{
+    <MatProgressBar Indeterminate="true"></MatProgressBar>
+}
+else
+{
+<EditForm EditContext="@editContext">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mat-layout-grid mat-layout-grid-align-left">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Menu ID</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                @if (Id.HasValue)
+                {
+                    <MatTextField @bind-Value="@menuDto.MenuId" Required="true" Outlined="true" Disabled="true"></MatTextField>
+                }
+                else
+                {
+                    <MatTextField @bind-Value="@menuDto.MenuId" Required="true" Outlined="true"></MatTextField>
+                }
+                <ValidationMessage For="()=>menuDto.MenuId" />
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Menu Name</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@menuDto.MenuName" Required="true" Outlined="true"></MatTextField>
+                <ValidationMessage For="()=>menuDto.MenuName" />
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Icon</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@menuDto.Icon" Outlined="true"></MatTextField>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">OrderNo</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@menuDto.OrderNo" Outlined="true"></MatTextField>
+                <ValidationMessage For="()=>menuDto.OrderNo" />
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">RouteUrl</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@menuDto.RouteUrl" Outlined="true"></MatTextField>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Menu Type</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatSelect Label="Pick a Menu Type" @bind-Value="@menuDto.MenuType">
+                    <MatOption TValue="int?" Value="1">Front Menu</MatOption>
+                    <MatOption TValue="int?" Value="2">Back Menu</MatOption>
+                </MatSelect>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Menu Description</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTextField @bind-Value="@menuDto.MenuDescription" ></MatTextField>
+            </div>
+        </div>
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <label class="label">Parent Menu</label>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <MatTreeView TNode="NavMenuDto"
+                             RootNode="@menuTree"
+                             @bind-SelectedNode="@SelectedParentNode"
+                             GetChildNodesCallback="@((n)=>n.Children)">
+                    <NodeTemplate Context="con">
+                        @con.MenuName
+                    </NodeTemplate>
+                </MatTreeView>
+            </div>
+        </div>
+        <div class="mat-layout-grid mat-layout-grid-align-middle" style="max-width: 800px;">
+            <div class="mat-layout-grid-inner">
+                <div class="mat-layout-grid-cell">
+                    <MatButton Raised="true" OnClick="@(_ => SaveData())">Save</MatButton>
+                    <MatButton Outlined="true" OnClick="@(_ => CloseDialog())">Back</MatButton>
+                </div>
+            </div>
+        </div>
+    </div>
+</EditForm>
+}

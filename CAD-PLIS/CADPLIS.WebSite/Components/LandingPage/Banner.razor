@@ -1,0 +1,134 @@
+﻿<section id="bannerContainer" style="@bannerContainerCss">
+    <BSJumbotron class="pt-12 pt-md-13 jumbotronContainer py-0">
+        <div id="jumbotronContent">
+            @if (bannerTitle.Count > 0)
+            {
+                @foreach (String title in bannerTitle)
+                {
+                    <p>
+                        <BSLabel Class="bannerTitle">@title</BSLabel>
+                    </p>
+                }
+            }
+        </div>
+    </BSJumbotron>
+</section>
+
+<style>
+    #bannerContainer {
+        position: relative;
+        /*min-height: 35vh;*/
+        min-height: 25vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*background-color: #3D4C67;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) -82%, rgba(124, 144, 177, 0.3) -20%, rgba(46, 65, 97, 0.9) 72%);
+        margin-bottom: 15vh;*/
+    }
+
+        #bannerContainer::before {
+            content: "";
+            /*background-color: #3D4C67;*/
+            background-image: url( @bannerImgUrl );
+            @*background-image: url( @bannerImgUrl ), linear-gradient(to bottom, rgba(255, 255, 255, 0) -82%, rgba(124, 144, 177, 0.3) -20%, rgba(46, 65, 97, 0.9) 72%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) -82%, rgba(124, 144, 177, 0.3) -20%, rgba(46, 65, 97, 0.9) 72%);*@
+            background-image: linear-gradient(to bottom, rgb(255 255 255 / 0%) 0%, #3d4c6700 0%, rgb(14 26 47 / 75%) 70%), url(@bannerImgUrl);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 0px !important;
+            /*min-height: 35vh;*/
+            height: 100%;
+            background-position-y: 35%;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            /*opacity: 30%;*/
+        }
+        #bannerContainer::after {
+            /*content: "";
+            background-color: #3D4C67;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 35vh;
+            opacity: 35%;*/
+        }
+
+    .jumbotronContainer {
+        position: relative;
+        color: #FFF;
+        font-size: 14rem;
+        line-height: 0.9;
+        background-color: transparent;
+        width: 100%;
+        margin-left: 5vw;
+        margin-top: 5vh;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .container {
+        text-align: left;
+    }
+
+    #jumbotronContent {
+        font-family: 'Roboto', sans-serif;
+        /*font-size: 35px;*/
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.91;
+        letter-spacing: normal;
+        color: #fff;
+    }
+        #jumbotronContent p, #jumbotronContent p label {
+            margin-bottom: 0px;
+            font-size: 2.8vw;
+            letter-spacing: 0.7px;
+        }
+        #jumbotronContent p:first-child {
+            /*font-size: 55px;*/
+            /*line-height: 1.22;*/
+        }
+
+    @@media only screen and (max-width: 970px) {
+        #bannerContainer .bannerTitle {
+            font-size: 8vw;
+        }
+        #jumbotronContent p:first-child {
+            font-size: 12vw;
+        }
+        #jumbotronContent p, #jumbotronContent p label {
+            margin-bottom: 0px;
+            font-size: 1.4vh;
+            letter-spacing: 0.7px;
+        }
+        .jumbotronContainer {
+            position: relative;
+            color: #FFF;
+            font-size: 14rem;
+            line-height: 0.9;
+            background-color: transparent;
+            width: 100%;
+            margin-left: 5vw;
+            margin-top: 5vh;
+            height: 15vh;
+        }
+    }
+</style>
+
+@code {
+    [Parameter]
+    public List<String> bannerTitle { get; set; } = new List<string>();
+    [Parameter]
+    public String bannerImgUrl { get; set; } = "/images/shutterstock_171507251.jpg";
+    [Parameter]
+    public String bannerContainerCss { get; set; }
+}

@@ -1,0 +1,119 @@
+﻿<BSContainer Class="mt-4 frontEndFooter">
+    <BSRow Class="justify-content-center">
+        <BSCol Class="col-12 col-lg-3 col-xl-3 my-2 mr-2">
+            <BSRow>
+                <BSImage src="/images/CAD_Icon.png" alt="CAD Icon" Class="cadIcon" />
+            </BSRow>
+            <BSRow>
+                <BSLabel Class="textLabel">
+                    Level 1, Office Building, Civil Aviation Department
+                    Headquarters, 1 Tung Fai Road,
+                    Hong Kong International Airport,
+                    Hong Kong
+                </BSLabel>
+                <BSLabel Class="textLabel">
+                    Tel. (852)2910 6350
+                </BSLabel>
+                <BSLabel Class="textLabel">
+                    Fax. (852)2329 8595
+                </BSLabel>
+                <BSLabel Class="textLabel">
+                    Email. plo@cad.gov.hk
+                </BSLabel>
+            </BSRow>
+        </BSCol>
+        <BSCol Class="footerNavSection col-12 col-lg-2 col-xl-2 my-2">
+            <BSLabel Class="textLabel footerText">
+                About Us
+            </BSLabel>
+            <BSNavLink Href="#" Class="footerText">
+                About PLIS
+            </BSNavLink>
+            <BSNavLink Href="#" Class="footerText">
+                About CAD
+            </BSNavLink>
+        </BSCol>
+        <BSCol Class="footerNavSection col-12 col-lg-3 col-xl-3 my-2">
+            <BSLabel Class="textLabel footerText">
+                Registration
+            </BSLabel>
+            <BSNavLink Href="/information" Class="footerText">
+                Individual Account
+            </BSNavLink>
+            <BSNavLink Href="/information" Class="footerText">
+                Corperate Account
+            </BSNavLink>
+        </BSCol>
+        <BSCol Class="footerNavSection col-12 col-lg-3 col-xl-3 my-2">
+            <BSLabel Class="textLabel footerText">
+                Licence
+            </BSLabel>
+            <BSNavLink Href="/information" Class="footerText">
+                Flight Crew
+            </BSNavLink>
+            <BSNavLink Href="/information" Class="footerText">
+                Aircraft Maintenance
+            </BSNavLink>
+            <BSNavLink Href="/information" Class="footerText">
+                Medical Certificate
+            </BSNavLink>
+        </BSCol>
+    </BSRow>
+</BSContainer>
+
+<style>
+    .textLabel {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        font-weight: bold !important;
+    }
+
+    .footerText, .footerText a {
+        color: #424242 !important;
+        font-size: smaller;
+    }
+
+    .footerNavSection {
+        text-align: left !important;
+    }
+
+        .footerNavSection .textLabel {
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        .footerNavSection .nav-link {
+            padding-left: 0;
+        }
+
+    .footerNavSectionHeader {
+        font-size: 18px;
+    }
+
+    .frontEndFooter {
+        margin-bottom: 15vh;
+    }
+
+    .cadIcon {
+        width: 20vw;
+    }
+
+    /* header height: 10vh;*/
+
+    @@media only screen and (max-width: 970px) {
+        .footerNavSection {
+            text-align: left !important;
+        }
+
+        .cadIcon {
+            width: 80vw;
+        }
+    }
+</style>
+@code {
+
+}

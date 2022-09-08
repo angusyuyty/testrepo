@@ -1,0 +1,159 @@
+2021-08-30 15:07:27.9382 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:07:30.1415 | An unhandled exception has occurred while executing the request. 对象名 'NavMenu' 无效。 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:07:48.3405 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:07:48.6725 | An unhandled exception has occurred while executing the request. 对象名 'NavMenu' 无效。 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:08:19.7891 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:08:23.1006 | An unhandled exception has occurred while executing the request. 对象名 'NavMenu' 无效。 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:08:45.5866 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:09:12.1469 | An unhandled exception has occurred while executing the request. 对象名 'NavMenu' 无效。 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:11:34.4596 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:12:34.6591 | An unhandled exception has occurred while executing the request. 列名 'CreatedUserRoleId' 无效。 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:13:49.0242 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:16:59.1534 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:18:44.4435 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:20:44.9232 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:20:47.6797 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:41:28.1268 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:41:30.6699 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:44:43.3136 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:44:45.5829 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:44:53.8132 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:44:54.3697 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:45:00.0445 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:45:01.1506 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:48:11.9741 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:51:17.2537 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:51:19.0354 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:51:24.4221 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:51:44.5634 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:51:45.2575 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:52:36.2604 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:53:07.8313 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:53:31.0315 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:53:40.3407 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:56:44.3397 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:56:53.7412 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:58:14.4710 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:58:39.6147 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 15:58:46.1464 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:58:51.5294 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:58:59.2728 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:59:25.3593 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 15:59:29.2886 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 16:00:00.8835 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 16:00:17.7813 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ AsyncStateMachineBox`1.MoveNext => ExecutionContext.RunInternal => <Invoke>d__9.MoveNext 
+
+2021-08-30 16:02:11.5933 | An unhandled exception has occurred while executing the request. 对象名 'AspNetUsers' 无效。 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 16:42:57.4386 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<NavMenu>.Find' was of type 'int', which does not match the property type of 'string'. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:25:34.5050 | An unhandled exception has occurred while executing the request. 对象名 'ReferenceValues' 无效。 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:25:46.6994 | An unhandled exception has occurred while executing the request. 对象名 'ReferenceValues' 无效。 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:27:57.3000 | An unhandled exception has occurred while executing the request. 对象名 'GroupInfo' 无效。 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:42:21.6353 | An unhandled exception has occurred while executing the request. An error occurred while updating the entries. See the inner exception for details. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:42:57.9203 | An unhandled exception has occurred while executing the request. 对象名 'ReferenceValues' 无效。 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:43:07.2363 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<NavMenu>.Find' was of type 'int', which does not match the property type of 'string'. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+
+2021-08-30 17:43:20.7501 | An unhandled exception has occurred while executing the request. The key value at position 0 of the call to 'DbSet<NavMenu>.Find' was of type 'int', which does not match the property type of 'string'. 
+ <ExecuteWithFilterAsync>d__7.MoveNext => HostFilteringMiddleware.Invoke => DeveloperExceptionPageMiddleware.Invoke 
+

@@ -1,0 +1,105 @@
+2021-08-11 14:59:22.3333 | Failed executing DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Comment], [t].[EmployeeId], [t].[EmployeeId1], [t].[ManagerId], [t].[Name], [t].[Number], [t].[Point], [t].[State], [t].[StateName], [t].[Sum], [t0].[Id], [t0].[Age], [t0].[CreateTime], [t0].[IsDeleted], [t0].[UpdateTime], [t0].[UserName], [t1].[Id], [t1].[Age], [t1].[CreateTime], [t1].[IsDeleted], [t1].[UpdateTime], [t1].[UserName]
+FROM (
+    SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+    FROM [Document] AS [d]
+    ORDER BY [d].[Number] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[Age], [u].[CreateTime], [u].[IsDeleted], [u].[UpdateTime], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[AuthorId] = [t0].[Id]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[Age], [u0].[CreateTime], [u0].[IsDeleted], [u0].[UpdateTime], [u0].[UserName]
+    FROM [User] AS [u0]
+    WHERE [u0].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[ManagerId] = [t1].[Id]
+ORDER BY [t].[Number] DESC 
+2021-08-11 15:03:37.3985 | Failed executing DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Comment], [t].[EmployeeId], [t].[EmployeeId1], [t].[ManagerId], [t].[Name], [t].[Number], [t].[Point], [t].[State], [t].[StateName], [t].[Sum], [t0].[Id], [t0].[Age], [t0].[CreateTime], [t0].[IsDeleted], [t0].[UpdateTime], [t0].[UserName], [t1].[Id], [t1].[Age], [t1].[CreateTime], [t1].[IsDeleted], [t1].[UpdateTime], [t1].[UserName]
+FROM (
+    SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+    FROM [Document] AS [d]
+    ORDER BY [d].[Number] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[Age], [u].[CreateTime], [u].[IsDeleted], [u].[UpdateTime], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[AuthorId] = [t0].[Id]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[Age], [u0].[CreateTime], [u0].[IsDeleted], [u0].[UpdateTime], [u0].[UserName]
+    FROM [User] AS [u0]
+    WHERE [u0].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[ManagerId] = [t1].[Id]
+ORDER BY [t].[Number] DESC 
+2021-08-11 15:06:31.7347 | Failed executing DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Comment], [t].[EmployeeId], [t].[EmployeeId1], [t].[ManagerId], [t].[Name], [t].[Number], [t].[Point], [t].[State], [t].[StateName], [t].[Sum], [t0].[Id], [t0].[Age], [t0].[CreateTime], [t0].[IsDeleted], [t0].[UpdateTime], [t0].[UserName], [t1].[Id], [t1].[Age], [t1].[CreateTime], [t1].[IsDeleted], [t1].[UpdateTime], [t1].[UserName]
+FROM (
+    SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+    FROM [Document] AS [d]
+    ORDER BY [d].[Number] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[Age], [u].[CreateTime], [u].[IsDeleted], [u].[UpdateTime], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[AuthorId] = [t0].[Id]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[Age], [u0].[CreateTime], [u0].[IsDeleted], [u0].[UpdateTime], [u0].[UserName]
+    FROM [User] AS [u0]
+    WHERE [u0].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[ManagerId] = [t1].[Id]
+ORDER BY [t].[Number] DESC 
+2021-08-11 15:07:47.3403 | Failed executing DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+FROM [Document] AS [d]
+ORDER BY [d].[Number] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2021-08-11 15:11:57.6066 | Failed executing DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Comment], [t].[EmployeeId], [t].[EmployeeId1], [t].[ManagerId], [t].[Name], [t].[Number], [t].[Point], [t].[State], [t].[StateName], [t].[Sum], [t0].[Id], [t0].[Age], [t0].[CreateTime], [t0].[IsDeleted], [t0].[UpdateTime], [t0].[UserName], [t1].[Id], [t1].[Age], [t1].[CreateTime], [t1].[IsDeleted], [t1].[UpdateTime], [t1].[UserName]
+FROM (
+    SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+    FROM [Document] AS [d]
+    ORDER BY [d].[Number] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[Age], [u].[CreateTime], [u].[IsDeleted], [u].[UpdateTime], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[AuthorId] = [t0].[Id]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[Age], [u0].[CreateTime], [u0].[IsDeleted], [u0].[UpdateTime], [u0].[UserName]
+    FROM [User] AS [u0]
+    WHERE [u0].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[ManagerId] = [t1].[Id]
+ORDER BY [t].[Number] DESC 
+2021-08-11 15:16:12.9594 | Failed executing DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+FROM [Document] AS [d]
+ORDER BY [d].[Number] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2021-08-11 15:21:13.3623 | Failed executing DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Comment], [t].[EmployeeId], [t].[EmployeeId1], [t].[ManagerId], [t].[Name], [t].[Number], [t].[Point], [t].[State], [t].[StateName], [t].[Sum], [t0].[Id], [t0].[Age], [t0].[CreateTime], [t0].[IsDeleted], [t0].[UpdateTime], [t0].[UserName], [t1].[Id], [t1].[Age], [t1].[CreateTime], [t1].[IsDeleted], [t1].[UpdateTime], [t1].[UserName]
+FROM (
+    SELECT [d].[Id], [d].[AuthorId], [d].[Comment], [d].[EmployeeId], [d].[EmployeeId1], [d].[ManagerId], [d].[Name], [d].[Number], [d].[Point], [d].[State], [d].[StateName], [d].[Sum]
+    FROM [Document] AS [d]
+    ORDER BY [d].[Number] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[Age], [u].[CreateTime], [u].[IsDeleted], [u].[UpdateTime], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+) AS [t0] ON [t].[AuthorId] = [t0].[Id]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[Age], [u0].[CreateTime], [u0].[IsDeleted], [u0].[UpdateTime], [u0].[UserName]
+    FROM [User] AS [u0]
+    WHERE [u0].[IsDeleted] = CAST(0 AS bit)
+) AS [t1] ON [t].[ManagerId] = [t1].[Id]
+ORDER BY [t].[Number] DESC 

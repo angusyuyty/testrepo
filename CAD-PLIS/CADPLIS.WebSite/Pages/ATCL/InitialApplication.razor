@@ -1,0 +1,217 @@
+﻿@page "/ATCL/initApplication"
+@inject NavigationManager NavigationManager
+
+    
+    
+    <section id="initialApplicationSection">
+        <!DOCTYPE html>
+        <html>
+
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+                <title>Table - Searching Page</title>
+                <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+                <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+                <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+                <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css">
+                <link rel="stylesheet" href="assets/css/untitled-1.css">
+                <link rel="stylesheet" href="assets/css/untitled-2.css">
+                <link rel="stylesheet" href="assets/css/untitled.css">
+                <style>
+                    body {
+                        font-family: Arial;
+                    }
+
+                    /* Style the tab */
+                    .tab {
+                        overflow: hidden;
+                        border: 1px solid #ccc;
+                        background-color: #f1f1f1;
+                    }
+
+                        /* Style the buttons inside the tab */
+                        .tab button {
+                            background-color: inherit;
+                            float: left;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            padding: 14px 16px;
+                            transition: 0.3s;
+                            font-size: 17px;
+                        }
+
+                            /* Change background color of buttons on hover */
+                            .tab button:hover {
+                                background-color: #ddd;
+                            }
+
+                            /* Create an active/current tablink class */
+                            .tab button.active {
+                                background-color: #ccc;
+                            }
+
+                    /* Style the tab content */
+                    .tabcontent {
+                        display: none;
+                        padding: 6px 12px;
+                        border: 1px solid #ccc;
+                        border-top: none;
+                    }
+                </style>
+                
+            </head>
+
+            <body class="text-primary" id="page-top">
+                
+                <div id="wrapper">
+
+                    <div class="d-flex flex-column" id="content-wrapper">
+                        <div id="content">
+
+                            <div class="container-fluid">
+
+
+                                <h3 class="text-dark mb-4"> Initial Application</h3>
+                                
+                                <div class="tab">
+                                    <button class="tablinks" onclick="location.href='/ATCL/initApplication_744_1'" style="background-color: #ccc">DCA 744-1</button>
+                                    <button class="tablinks" onclick="location.href='/ATCL/initApplication_744_2'">DCA 744-2</button>
+                                    <button class="tablinks" onclick="location.href='/ATCL/initApplication_744_5'">DCA 744-5</button>
+                                </div>
+                                <!-- Tab content -->
+                                <div id="London" class="city" style="display:none">
+                                    <h2>London</h2>
+                                    <p>London is the capital of England.</p>
+                                </div>
+
+                                <div id="Paris" class="city" style="display:none">
+                                    <h2>Paris</h2>
+                                    <p>Paris is the capital of France.</p>
+                                </div>
+
+                                <div id="Tokyo" class="city" style="display:none">
+                                    <h2>Tokyo</h2>
+                                    <p>Tokyo is the capital of Japan.</p>
+                                </div>
+
+                                <div style="border-style: groove; border-width:thin">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold table-header"> Part A: Personal Details</p>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div>
+                                                    <div class="row mb-2">
+                                                        <div class="col-md-3"> <span> HKID/Passport Number</span> </div>
+                                                        <div class="col"> <input class="form-control-sm" type="search" name="hkid no" value="Y174287(3)" autocomplete="on" required=""> </div>
+                                                        <div class="col"> <span> Name</span> </div>
+                                                        <div class="col"> <span> </span> <span class="text-secondary"> Valerie NG</span> </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col"> <span> Title</span> </div>
+                                                        <div class="col-md-3"> <span> </span> <span class="text-secondary"> Miss</span> </div>
+                                                        <div class="col-md-3"> <span> Date of Birth</span> </div>
+                                                        <div class="col-md-3"> <span class="text-secondary"> 04/02/1987</span> </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3"> <span> Gender</span> </div>
+                                                        <div class="col-md-3"> <span> </span> <span class="text-secondary"> F</span> </div>
+                                                        <div class="col-md-3"> <span> Nationality</span> </div>
+                                                        <div class="col-md-3"> <span> </span> <input class="form-control-sm" type="search" name="hkid no" value="CHINESE" autocomplete="on" required=""> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold table-header"> Part B: English Language Proficiency</p>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body"> <input type="checkbox" class="checkbox"> <span class="text-secondary"> The above named applicant successfully completed the required language proficiency assessment on 03/03/2021 in accordance with the ICAO standards. The applicant has attained the Language Proficiency Level A + + ** according to the ICAO Rating Scale in Annex 1 to the Convention on International Civil Aviation.<br> <br> </span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold table-header"> Part C: Medical Certificate</p>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div> <input type="checkbox" class="checkbox"> <span class="text-secondary"> I certify that the above named applicant is in possession of a Hong Kong Class Three Medical Certificate which is valid until 31/08/2025, and confirm that the applicant has also satisfied other regulatory requirements for the issue of an Air Traffic Controller Licence.<br> <br> </span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold table-header"> Part D: Supporting Document(s)</p>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="mb-4"> <span class="text-secondary"> Please upload the following documents</span> </div>
+                                                <div class="row mb-4">
+                                                    <div class="col"> <span class="text-secondary"> HKID/Passport</span> </div>
+                                                    <div class="col"> <button class="btn btn-primary text-white bg-secondary border-dark" type="button"> Browse</button> </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col"> <span class="text-secondary"> Medical Certificate</span> </div>
+                                                    <div class="col"> <span class="text-secondary"> <span style="text-decoration: underline;"> candidate-mc-file-1.0.jpg</span> </span> </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col"> <span class="text-secondary"> English Language Proficiency Assessment Report</span> </div>
+                                                    <div class="col"> <span class="text-secondary"> <span style="text-decoration: underline;"> candidate-elp-file-1.0.jpg</span> </span> </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col"> <span class="text-secondary mb-4"> Other(s)</span> </div>
+                                                    <div class="col"> <button class="btn btn-primary bg-secondary border-dark" type="button"> Browse</button> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 font-weight-bold table-header"> Checking by C, ATS</p>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div>
+                                                    <div class="row mb-2">
+                                                        <div class="col"> <span> Decision:</span> </div>
+                                                        <div class="col">
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-light dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button"> Approve</button>
+                                                                <div class="dropdown-menu"> <a class="dropdown-item" href="#"> Approve</a> <a class="dropdown-item" href="#"> Return</a> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col"> <span> Send To:</span> </div>
+                                                        <div class="col"> <span class="text-secondary"> ATMSO</span> </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col"> <span> Reason:</span> </div>
+                                                        <div class="col"> <span class="text-secondary"> <textarea class="textarea11"> </textarea> </span> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br />
+                                <button class="btn btn-primary" type="button"> Submit</button>
+                            </div>
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+            </body>
+
+    </html>
+</section>
+
